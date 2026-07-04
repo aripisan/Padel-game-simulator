@@ -1136,7 +1136,14 @@ function renderHost() {
 
 function updateTieOptions() {
   const [mode, tgt] = $("#hMode").value.split(":");
-  const target = tgt === "custom" ? (+$("#hPoints").value || 24) : +tgt;
+  const pointsEl = $("#hPoints");
+  if (tgt === "custom") {
+    pointsEl.disabled = false;
+  } else {
+    pointsEl.value = tgt;   // mirror the chosen target
+    pointsEl.disabled = true;
+  }
+  const target = tgt === "custom" ? (+pointsEl.value || 24) : +tgt;
   const tie = $("#hTie");
   if (mode === "race") {
     tie.innerHTML = `<option value="tiebreak">Tiebreak game at ${target - 1}–${target - 1} (7-pt TB decides, ends ${target}–${target - 1})</option>
