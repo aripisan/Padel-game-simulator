@@ -109,6 +109,7 @@
 const CONFIG = {
   apiBaseUrl: "",          // live API, e.g. "http://localhost:8000/api"
   dataDir: "data",         // static JSON folder (works on GitHub Pages): data/players.json, data/meets.json, data/upcoming.json
+  liveUpcomingUrl: "",     // Cloudflare Worker URL for real-time refresh, e.g. "https://npc-padel.YOURNAME.workers.dev/upcoming"
   clubName: "Nonstop Padel Club",
   eloK: 32,
   eloStart: 1000
@@ -1073,10 +1074,13 @@ function renderHost() {
   main.innerHTML = `<h2>Host a Meet</h2>
     <div class="panel">
       <label>Pull players from an upcoming Reclub meet</label>
-      <select id="hUpcoming" onchange="applyUpcoming(this.value)">
-        <option value="">— pick day & time (or select players manually below) —</option>
-        ${upOpts}
-      </select>
+      <div style="display:flex;gap:8px;align-items:center">
+        <select id="hUpcoming" onchange="applyUpcoming(this.value)" style="flex:1">
+          <option value="">— pick day & time (or select players manually below) —</option>
+          ${upOpts}
+        </select>
+        ${CONFIG.liveUpcomingUrl ? `<button class="btn ghost small" onclick="refreshUpcoming(true)" title="Get the latest joiners straight from Reclub">&#8635; Refresh</button>` : ""}
+      </div>
       <div class="muted" id="hUpInfo" style="margin-top:6px"></div>
       <div class="row">
         <div><label>Meet name</label><input type="text" id="hName" value="NPC Meet"></div>
@@ -1127,6 +1131,7 @@ function renderHost() {
       <div class="muted" style="margin-top:8px">Americano & fixed formats generate the full schedule up-front. Mexicano generates round-by-round from live standings, like Alfred. No Reclub meet? Just tap players manually or add guests.</div>
     </div>`;
   updateTieOptions();
+  refreshUpcoming(false); // silent auto-refresh when opening Host (max 1x/min)
 }
 
 function updateTieOptions() {
@@ -1145,6 +1150,36 @@ function updateTieOptions() {
   } else {
     tie.innerHTML = `<option value="none">Not possible — odd total, always a winner</option>`;
     tie.disabled = true;
+  }
+}
+
+/* real-time refresh from the Cloudflare Worker (latest joiners, seconds before play) */
+let upcomingRefreshedAt = 0;
+async function refreshUpcoming(force) {
+  if (!CONFIG.liveUpcomingUrl) return;
+  if (!force && Date.now() - upcomingRefreshedAt < 60000) return; // auto-refresh at most 1x/min
+  const info = $("#hUpInfo");
+  if (info) info.textContent = "Refreshing from Reclub…";
+  try {
+    const r = await fetch(CONFIG.liveUpcomingUrl);
+    if (!r.ok) throw new Error(r.status);
+    const fresh = await r.json();
+    if (Array.isArray(fresh)) {
+      UPCOMING = fresh;
+      upcomingRefreshedAt = Date.now();
+      const keepSel = $("#hUpcoming") ? $("#hUpcoming").value : "";
+      if (currentView === "host" && !draftMeet) {
+        renderHost();
+        if (keepSel && UPCOMING.find(u => u.id === keepSel)) {
+          $("#hUpcoming").value = keepSel;
+          applyUpcoming(keepSel);
+        } else if ($("#hUpInfo")) {
+          $("#hUpInfo").textContent = `Updated from Reclub · ${UPCOMING.length} upcoming meets · ${new Date().toLocaleTimeString()}`;
+        }
+      }
+    }
+  } catch (e) {
+    if ($("#hUpInfo")) $("#hUpInfo").textContent = "Refresh failed — using last known data.";
   }
 }
 
