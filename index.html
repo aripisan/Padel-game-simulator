@@ -107,7 +107,8 @@
      GET {apiBaseUrl}/meets   -> [{id, name, date, venue, format, matches:[...]}]
 */
 const CONFIG = {
-  apiBaseUrl: "",          // e.g. "http://localhost:8000/api"
+  apiBaseUrl: "",          // live API, e.g. "http://localhost:8000/api"
+  dataDir: "data",         // static JSON folder (works on GitHub Pages): data/players.json, data/meets.json, data/upcoming.json
   clubName: "Nonstop Padel Club",
   eloK: 32,
   eloStart: 1000
@@ -742,6 +743,28 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;",
 
 /* ---------- data loading ---------- */
 async function loadData() {
+  if (!CONFIG.apiBaseUrl && CONFIG.dataDir) {
+    // static JSON files (e.g. committed to the repo, served by GitHub Pages)
+    try {
+      const [pr, mr] = await Promise.all([
+        fetch(CONFIG.dataDir + "/players.json"),
+        fetch(CONFIG.dataDir + "/meets.json")
+      ]);
+      if (pr.ok && mr.ok) {
+        PLAYERS = await pr.json();
+        MEETS = await mr.json();
+        try {
+          const ur = await fetch(CONFIG.dataDir + "/upcoming.json");
+          UPCOMING = ur.ok ? await ur.json() : [];
+        } catch (e) { UPCOMING = []; }
+        $("#srcBadge").textContent = "live · reclub data";
+        $("#srcBadge").style.color = "var(--accent)";
+        MEETS = MEETS.concat(loadLocalMeets());
+        RATINGS = computeRatings(PLAYERS, MEETS);
+        return;
+      }
+    } catch (e) { /* no data folder -> fall through */ }
+  }
   if (CONFIG.apiBaseUrl) {
     try {
       const [pr, mr] = await Promise.all([
