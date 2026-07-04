@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NPC Padel — Nonstop Padel Club</title>
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --panel: #141416;
+    --panel2: #1c1c1f;
+    --border: #2a2a2e;
+    --text: #f2f2f2;
+    --muted: #9a9aa2;
+    --accent: #c8f04b;
+    --accent-dark: #a5cc35;
+    --red: #ff6b6b;
+    --blue: #5eb3f6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; min-height: 100vh; }
+  a { color: var(--accent); }
+  header { padding: 18px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 20px; letter-spacing: 0.5px; }
+  header h1 span { color: var(--accent); }
+  .src-badge { font-size: 11px; color: var(--muted); border: 1px solid var(--border); border-radius: 20px; padding: 3px 10px; }
+  nav { display: flex; gap: 4px; padding: 12px 24px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  nav button { background: none; border: 1px solid transparent; color: var(--muted); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; }
+  nav button.active { background: var(--panel2); color: var(--accent); border-color: var(--border); }
+  nav button:hover { color: var(--text); }
+  main { padding: 24px; max-width: 1100px; margin: 0 auto; }
+  h2 { font-size: 17px; margin-bottom: 14px; }
+  h3 { font-size: 14px; margin: 14px 0 8px; color: var(--accent); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 14px; cursor: pointer; transition: border-color .15s; }
+  .card:hover { border-color: var(--accent-dark); }
+  .card .name { font-weight: 600; font-size: 15px; }
+  .card .sub { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .statrow { display: flex; gap: 10px; margin-top: 10px; }
+  .stat { flex: 1; background: var(--panel2); border-radius: 8px; padding: 6px 8px; text-align: center; }
+  .stat b { display: block; font-size: 15px; }
+  .stat span { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  .form-dots { margin-top: 10px; display: flex; gap: 4px; }
+  .dot { width: 16px; height: 16px; border-radius: 4px; font-size: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+  .dot.W { background: var(--accent); color: #111; }
+  .dot.L { background: #3a3a3f; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: var(--muted); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  td { padding: 9px 10px; border-bottom: 1px solid var(--border); }
+  tr:hover td { background: var(--panel2); }
+  .num { text-align: right; }
+  th.num { text-align: right; }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; background: var(--panel2); border: 1px solid var(--border); color: var(--muted); }
+  .pill.accent { color: var(--accent); border-color: var(--accent-dark); }
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+  label { display: block; font-size: 12px; color: var(--muted); margin: 10px 0 4px; }
+  input[type=text], input[type=date], input[type=number], select {
+    background: var(--panel2); border: 1px solid var(--border); color: var(--text);
+    padding: 8px 10px; border-radius: 8px; font-size: 14px; width: 100%;
+  }
+  input[type=number].score { width: 54px; text-align: center; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .row > div { flex: 1; min-width: 140px; }
+  .btn { background: var(--accent); color: #111; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 14px; margin-top: 12px; }
+  .btn:hover { background: var(--accent-dark); }
+  .btn.ghost { background: none; border: 1px solid var(--border); color: var(--text); font-weight: 500; }
+  .btn.small { padding: 6px 12px; font-size: 12px; margin-top: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .chip { padding: 7px 14px; border-radius: 20px; border: 1px solid var(--border); background: var(--panel2); color: var(--muted); cursor: pointer; font-size: 13px; user-select: none; }
+  .chip.on { background: var(--accent); color: #111; border-color: var(--accent); font-weight: 600; }
+  .match { display: flex; align-items: center; gap: 10px; padding: 10px; background: var(--panel2); border-radius: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+  .match .team { flex: 1; min-width: 130px; font-size: 13px; }
+  .match .vs { color: var(--muted); font-size: 11px; }
+  .match .court { font-size: 10px; color: var(--muted); text-transform: uppercase; min-width: 52px; }
+  .roundhead { display: flex; justify-content: space-between; align-items: center; margin: 16px 0 8px; }
+  .muted { color: var(--muted); font-size: 12px; }
+  .back { color: var(--muted); font-size: 13px; cursor: pointer; margin-bottom: 12px; display: inline-block; }
+  .back:hover { color: var(--accent); }
+  .banner { background: var(--panel2); border: 1px dashed var(--border); border-radius: 10px; padding: 10px 14px; font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .rank1 { color: var(--accent); font-weight: 700; }
+  @media (max-width: 600px) { main { padding: 14px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>NPC <span>Padel</span></h1>
+  <span class="src-badge" id="srcBadge">sample data</span>
+</header>
+<nav>
+  <button data-view="players" class="active">Players</button>
+  <button data-view="leaderboard">Leaderboard</button>
+  <button data-view="meets">Meets</button>
+  <button data-view="host">Host a Meet</button>
+</nav>
+<main id="main"></main>
+
+<!-- ============================================================
+     CORE: config, data, ratings, generators (no DOM code here)
+     ============================================================ -->
+<script id="core">
+"use strict";
+
+/* ---------- CONFIG ----------
+   Point apiBaseUrl at your Reclub extractor agent to use live data.
+   Expected endpoints (see README.md):
+     GET {apiBaseUrl}/players -> [{id, name}]
+     GET {apiBaseUrl}/meets   -> [{id, name, date, venue, format, matches:[...]}]
+*/
+const CONFIG = {
+  apiBaseUrl: "",          // e.g. "http://localhost:8000/api"
+  clubName: "Nonstop Padel Club",
+  eloK: 32,
+  eloStart: 1000
+};
+
+/* ---------- seeded RNG (for reproducible sample data) ---------- */
+function makeRng(seed) {
+  let s = seed >>> 0;
+  return function () {
+    s = (s * 1664525 + 1013904223) >>> 0;
+    return s / 4294967296;
+  };
+}
+
+/* ---------- sample data ---------- */
+const SAMPLE_PLAYERS = [
+  { id: "p1", name: "Ary", skill: 4.5 },
+  { id: "p2", name: "Dimas", skill: 3.8 },
+  { id: "p3", name: "Raka", skill: 4.2 },
+  { id: "p4", name: "Bima", skill: 3.2 },
+  { id: "p5", name: "Sari", skill: 3.9 },
+  { id: "p6", name: "Kevin", skill: 4.0 },
+  { id: "p7", name: "Yoga", skill: 2.8 },
+  { id: "p8", name: "Andra", skill: 3.5 },
+  { id: "p9", name: "Fikri", skill: 4.4 },
+  { id: "p10", name: "Nadia", skill: 3.0 },
+  { id: "p11", name: "Tania", skill: 3.6 },
+  { id: "p12", name: "Rizky", skill: 2.5 },
+  { id: "p13", name: "Bagus", skill: 3.3 },
+  { id: "p14", name: "Putri", skill: 2.9 },
+  { id: "p15", name: "Eko", skill: 3.7 },
+  { id: "p16", name: "Vino", skill: 4.1 }
+];
+
+function generateSampleMeets(players) {
+  const rng = makeRng(20260704);
+  const meets = [];
+  const dates = ["2026-04-11", "2026-04-25", "2026-05-09", "2026-05-23", "2026-06-06", "2026-06-20"];
+  const names = ["Saturday Social #12", "Saturday Social #13", "NPC Mexicano Night", "Saturday Social #14", "NPC Mexicano Night II", "Saturday Social #15"];
+  const formats = ["americano", "americano", "mexicano", "americano", "mexicano", "americano"];
+  const skillOf = {};
+  players.forEach(p => skillOf[p.id] = p.skill);
+
+  dates.forEach((date, mi) => {
+    // pick 12 of 16 players
+    const pool = players.slice().sort(() => rng() - 0.5).slice(0, 12).map(p => p.id);
+    const matches = [];
+    const roundsN = 4;
+    for (let r = 1; r <= roundsN; r++) {
+      const order = pool.slice().sort(() => rng() - 0.5);
+      for (let c = 0; c < 3; c++) {
+        const four = order.slice(c * 4, c * 4 + 4);
+        const teamA = [four[0], four[1]], teamB = [four[2], four[3]];
+        const sA = (skillOf[teamA[0]] + skillOf[teamA[1]]) / 2;
+        const sB = (skillOf[teamB[0]] + skillOf[teamB[1]]) / 2;
+        // total 24 points, split influenced by skill + noise
+        const pA = 0.5 + (sA - sB) * 0.09 + (rng() - 0.5) * 0.22;
+        let scoreA = Math.round(24 * Math.min(0.85, Math.max(0.15, pA)));
+        let scoreB = 24 - scoreA;
+        matches.push({ round: r, court: c + 1, teamA, teamB, scoreA, scoreB });
+      }
+    }
+    meets.push({
+      id: "sm" + (mi + 1), name: names[mi], date, venue: CONFIG.clubName,
+      format: formats[mi], source: "sample", matches
+    });
+  });
+  return meets;
+}
+
+/* Upcoming meets on Reclub (registered players = who joined the meet).
+   Live version comes from GET {apiBaseUrl}/upcoming — see README. */
+function generateSampleUpcoming() {
+  const day = ms => new Date(Date.now() + ms).toISOString().slice(0, 10);
+  return [
+    {
+      id: "up1", name: "Mabar NPC Malam Ini", date: day(0), time: "19:00",
+      venue: CONFIG.clubName, format: "mexicano",
+      players: [
+        { id: "p1", name: "Ary" }, { id: "p3", name: "Raka" }, { id: "p6", name: "Kevin" },
+        { id: "p9", name: "Fikri" }, { id: "p11", name: "Tania" }, { id: "p15", name: "Eko" },
+        { id: "p16", name: "Vino" }, { id: "p5", name: "Sari" }
+      ]
+    },
+    {
+      id: "up2", name: "NPC Weekend Social", date: day(2 * 864e5), time: "08:00",
+      venue: CONFIG.clubName, format: "americano",
+      players: [
+        { id: "p2", name: "Dimas" }, { id: "p4", name: "Bima" }, { id: "p7", name: "Yoga" },
+        { id: "p8", name: "Andra" }, { id: "p10", name: "Nadia" }, { id: "p12", name: "Rizky" },
+        { id: "p13", name: "Bagus" }, { id: "p14", name: "Putri" },
+        { id: "ru21", name: "Denny" }, { id: "ru22", name: "Maya" } // new Reclub joiners, not yet in roster
+      ]
+    },
+    {
+      id: "up3", name: "Mabar Jumat Malam", date: day(7 * 864e5), time: "20:00",
+      venue: CONFIG.clubName, format: "fixed",
+      players: [
+        { id: "p1", name: "Ary" }, { id: "p2", name: "Dimas" }, { id: "p5", name: "Sari" },
+        { id: "p6", name: "Kevin" }, { id: "p9", name: "Fikri" }, { id: "p16", name: "Vino" },
+        { id: "p3", name: "Raka" }, { id: "p15", name: "Eko" }, { id: "p11", name: "Tania" },
+        { id: "p8", name: "Andra" }, { id: "p13", name: "Bagus" }, { id: "p4", name: "Bima" }
+      ],
+      // fixed-partner pairs as registered on Reclub
+      teams: [["p1", "p2"], ["p5", "p6"], ["p9", "p16"], ["p3", "p15"], ["p11", "p8"], ["p13", "p4"]]
+    }
+  ];
+}
+
+/* ---------- stats & Elo ratings ---------- */
+function computeRatings(players, meets) {
+  const rating = {};
+  players.forEach(p => rating[p.id] = CONFIG.eloStart);
+  const sorted = meets.slice().sort((a, b) => a.date.localeCompare(b.date));
+  sorted.forEach(meet => {
+    meet.matches.forEach(m => {
+      if (m.scoreA == null || m.scoreB == null) return;
+      const ids = [...m.teamA, ...m.teamB];
+      if (ids.some(id => rating[id] == null)) ids.forEach(id => { if (rating[id] == null) rating[id] = CONFIG.eloStart; });
+      const rA = (rating[m.teamA[0]] + rating[m.teamA[1]]) / 2;
+      const rB = (rating[m.teamB[0]] + rating[m.teamB[1]]) / 2;
+      const expA = 1 / (1 + Math.pow(10, (rB - rA) / 400));
+      const total = m.scoreA + m.scoreB;
+      const actualA = total > 0 ? m.scoreA / total : 0.5;
+      const delta = CONFIG.eloK * (actualA - expA);
+      m.teamA.forEach(id => rating[id] += delta);
+      m.teamB.forEach(id => rating[id] -= delta);
+    });
+  });
+  return rating;
+}
+
+function computePlayerStats(playerId, meets) {
+  const s = { matches: 0, wins: 0, losses: 0, draws: 0, ptsFor: 0, ptsAgainst: 0, form: [], partners: {}, meets: 0 };
+  const sorted = meets.slice().sort((a, b) => a.date.localeCompare(b.date));
+  sorted.forEach(meet => {
+    let played = false;
+    meet.matches.forEach(m => {
+      if (m.scoreA == null || m.scoreB == null) return;
+      let mine, opp, my, other, partner;
+      if (m.teamA.includes(playerId)) { mine = m.teamA; my = m.scoreA; other = m.scoreB; }
+      else if (m.teamB.includes(playerId)) { mine = m.teamB; my = m.scoreB; other = m.scoreA; }
+      else return;
+      played = true;
+      partner = mine.find(id => id !== playerId);
+      s.matches++; s.ptsFor += my; s.ptsAgainst += other;
+      const res = my > other ? "W" : my < other ? "L" : "D";
+      if (res === "W") s.wins++; else if (res === "L") s.losses++; else s.draws++;
+      s.form.push(res);
+      if (partner) {
+        if (!s.partners[partner]) s.partners[partner] = { matches: 0, wins: 0 };
+        s.partners[partner].matches++;
+        if (res === "W") s.partners[partner].wins++;
+      }
+    });
+    if (played) s.meets++;
+  });
+  s.winRate = s.matches ? Math.round(100 * s.wins / s.matches) : 0;
+  s.diff = s.ptsFor - s.ptsAgainst;
+  s.form = s.form.slice(-5);
+  return s;
+}
+
+/* ---------- schedule generators ---------- */
+
+/* Americano: rotate partners; greedy minimisation of repeated partners/opponents.
+   players: array of ids. Returns rounds: [[{court, teamA, teamB}, ...], ...] */
+function generateAmericano(playerIds, rounds, courts, seed) {
+  const rng = makeRng(seed || 42);
+  const n = playerIds.length;
+  const perRound = Math.min(courts * 4, Math.floor(n / 4) * 4);
+  const partnerCnt = {}, oppCnt = {}, playCnt = {}, satOut = {};
+  playerIds.forEach(a => {
+    playCnt[a] = 0; satOut[a] = 0; partnerCnt[a] = {}; oppCnt[a] = {};
+    playerIds.forEach(b => { if (a !== b) { partnerCnt[a][b] = 0; oppCnt[a][b] = 0; } });
+  });
+  const schedule = [];
+  for (let r = 0; r < rounds; r++) {
+    // choose who plays: fewest games played, then fewest sit-outs is NOT the tiebreak — most sit-outs should play first
+    const ordered = playerIds.slice().sort((a, b) =>
+      (playCnt[a] - playCnt[b]) || (satOut[b] - satOut[a]) || (rng() - 0.5));
+    const active = ordered.slice(0, perRound);
+    const bench = ordered.slice(perRound);
+    bench.forEach(id => satOut[id]++);
+    // greedy pairing
+    const posPool = active.slice().sort(() => rng() - 0.5);
+    const matches = [];
+    let court = 1;
+    while (posPool.length >= 4) {
+      const a = posPool.shift();
+      // partner: least-partnered with a
+      posPool.sort((x, y) => (partnerCnt[a][x] - partnerCnt[a][y]) || (rng() - 0.5));
+      const b = posPool.shift();
+      // opponents: least-opposed vs a & b
+      posPool.sort((x, y) => {
+        const cx = oppCnt[a][x] + oppCnt[b][x], cy = oppCnt[a][y] + oppCnt[b][y];
+        return (cx - cy) || (rng() - 0.5);
+      });
+      const c = posPool.shift();
+      posPool.sort((x, y) => {
+        const cx = oppCnt[a][x] + oppCnt[b][x] + partnerCnt[c][x];
+        const cy = oppCnt[a][y] + oppCnt[b][y] + partnerCnt[c][y];
+        return (cx - cy) || (rng() - 0.5);
+      });
+      const d = posPool.shift();
+      matches.push({ court: court++, teamA: [a, b], teamB: [c, d], scoreA: null, scoreB: null });
+      // update counts
+      partnerCnt[a][b]++; partnerCnt[b][a]++; partnerCnt[c][d]++; partnerCnt[d][c]++;
+      [[a, c], [a, d], [b, c], [b, d]].forEach(([x, y]) => { oppCnt[x][y]++; oppCnt[y][x]++; });
+      [a, b, c, d].forEach(id => playCnt[id]++);
+    }
+    schedule.push(matches);
+  }
+  return schedule;
+}
+
+/* Mexicano: one round at a time. standings = [{id, points, played?}] sorted desc.
+   Groups of 4 by rank; within group 1&4 vs 2&3.
+   Sit-outs rotate: players with the most games played sit out first. */
+function generateMexicanoRound(standings, courts) {
+  const perRound = Math.min(courts * 4, Math.floor(standings.length / 4) * 4);
+  let pool = standings;
+  const benchN = standings.length - perRound;
+  if (benchN > 0 && standings.some(s => s.played != null)) {
+    // bench those with most games played (tie-break: fewest points)
+    const bench = new Set(standings.slice()
+      .sort((a, b) => (b.played - a.played) || (a.points - b.points))
+      .slice(0, benchN).map(s => s.id));
+    pool = standings.filter(s => !bench.has(s.id));
+  }
+  const active = pool.slice(0, perRound).map(s => s.id);
+  const matches = [];
+  let court = 1;
+  for (let i = 0; i + 3 < active.length; i += 4) {
+    matches.push({
+      court: court++,
+      teamA: [active[i], active[i + 3]],
+      teamB: [active[i + 1], active[i + 2]],
+      scoreA: null, scoreB: null
+    });
+  }
+  return matches;
+}
+
+/* Fixed pairs round-robin (circle method). teams: [[id,id],...] */
+function generateRoundRobin(teams, courts) {
+  const t = teams.slice();
+  if (t.length % 2 === 1) t.push(null); // bye
+  const n = t.length, roundsN = n - 1;
+  const schedule = [];
+  const idx = t.map((_, i) => i);
+  for (let r = 0; r < roundsN; r++) {
+    const pairs = [];
+    for (let i = 0; i < n / 2; i++) {
+      const A = t[idx[i]], B = t[idx[n - 1 - i]];
+      if (A && B) pairs.push([A, B]);
+    }
+    // distribute over courts: chunk pairs into sub-rounds if more pairs than courts
+    for (let c = 0; c < pairs.length; c += courts) {
+      const matches = pairs.slice(c, c + courts).map((p, i) => ({
+        court: i + 1, teamA: p[0].slice(), teamB: p[1].slice(), scoreA: null, scoreB: null
+      }));
+      schedule.push(matches);
+    }
+    // rotate (keep idx[0] fixed)
+    idx.splice(1, 0, idx.pop());
+  }
+  return schedule;
+}
+
+/* Balanced shuffle: pair strongest with weakest by rating, then round-robin */
+function balancedPairs(playerIds, ratings) {
+  const sorted = playerIds.slice().sort((a, b) => (ratings[b] || 1000) - (ratings[a] || 1000));
+  const pairs = [];
+  let lo = 0, hi = sorted.length - 1;
+  while (lo < hi) { pairs.push([sorted[lo], sorted[hi]]); lo++; hi--; }
+  return pairs;
+}
+
+/* ---------- game scoring modes ----------
+   scoring = { mode: 'total'|'race', target: N, tie: 'draw'|'golden'|'winby2'|'none' }
+   total: every game is exactly `target` rally points (e.g. 4 -> 4-0/3-1/2-2/1-3/0-4).
+          tie 'draw'   -> 2-2 stays a draw
+          tie 'golden' -> at 2-2 one golden point decides -> 3-2
+   race:  first team to `target` wins.
+          tie 'golden' -> at 3-3 (race 4) / 5-5 (race 6) next point decides -> 4-3 / 6-5
+          tie 'winby2' -> must win by 2 (e.g. 5-3, 6-4) */
+function validScore(scoring, a, b) {
+  if (a == null || b == null || a < 0 || b < 0) return false;
+  const t = scoring.target;
+  if (scoring.mode === "total") {
+    if (a + b === t && (a !== b || scoring.tie === "draw")) return true;
+    if (scoring.tie === "golden" && a + b === t + 1 && Math.abs(a - b) === 1
+        && Math.max(a, b) === Math.ceil((t + 1) / 2)) return true;
+    return false;
+  }
+  // race
+  const hi = Math.max(a, b), lo = Math.min(a, b), d = hi - lo;
+  if (scoring.tie === "winby2") return (hi === t && d >= 2) || (hi > t && d === 2);
+  return hi === t && d >= 1; // tiebreak/normal/golden: 4-3 / 6-5 allowed
+}
+
+function scoringLabel(sc) {
+  if (!sc) return "";
+  if (sc.mode === "total") {
+    const tie = sc.tie === "draw" ? "draw allowed" : sc.tie === "golden" ? "golden point if tied" : "no draw possible";
+    return `total ${sc.target} points, ${tie}`;
+  }
+  const tie = sc.tie === "winby2" ? "win by 2"
+    : sc.tie === "tiebreak" ? `tiebreak at ${sc.target - 1}–${sc.target - 1}`
+    : sc.tie === "normal" ? `deciding game at ${sc.target - 1}–${sc.target - 1}`
+    : `golden point at ${sc.target - 1}–${sc.target - 1}`;
+  return `race to ${sc.target}, ${tie}`;
+}
+
+/* all valid finals for small totals — used for quick-pick buttons */
+function scoreOptions(scoring) {
+  const out = [];
+  const max = scoring.target + 2;
+  for (let a = max; a >= 0; a--) for (let b = 0; b <= max; b++)
+    if (validScore(scoring, a, b)) out.push([a, b]);
+  return out;
+}
+
+/* standings from played matches: individual points (americano-style) */
+function individualStandings(playerIds, allMatches) {
+  const pts = {}, played = {}, wins = {};
+  playerIds.forEach(id => { pts[id] = 0; played[id] = 0; wins[id] = 0; });
+  allMatches.forEach(m => {
+    if (m.scoreA == null || m.scoreB == null) return;
+    m.teamA.forEach(id => { pts[id] += m.scoreA; played[id]++; if (m.scoreA > m.scoreB) wins[id]++; });
+    m.teamB.forEach(id => { pts[id] += m.scoreB; played[id]++; if (m.scoreB > m.scoreA) wins[id]++; });
+  });
+  return playerIds.map(id => ({ id, points: pts[id], played: played[id], wins: wins[id] }))
+    .sort((a, b) => b.points - a.points || b.wins - a.wins);
+}
+
+function teamStandings(teams, allMatches) {
+  const key = t => t.slice().sort().join("+");
+  const map = {};
+  teams.forEach(t => map[key(t)] = { team: t, played: 0, wins: 0, ptsFor: 0, ptsAgainst: 0 });
+  allMatches.forEach(m => {
+    if (m.scoreA == null || m.scoreB == null) return;
+    const A = map[key(m.teamA)], B = map[key(m.teamB)];
+    if (!A || !B) return;
+    A.played++; B.played++;
+    A.ptsFor += m.scoreA; A.ptsAgainst += m.scoreB;
+    B.ptsFor += m.scoreB; B.ptsAgainst += m.scoreA;
+    if (m.scoreA > m.scoreB) A.wins++; else if (m.scoreB > m.scoreA) B.wins++;
+  });
+  return Object.values(map).sort((a, b) => b.wins - a.wins || (b.ptsFor - b.ptsAgainst) - (a.ptsFor - a.ptsAgainst));
+}
+
+/* ============================================================
+   LIVE SCORING ENGINE (point-by-point, padel rules)
+   - serve: in / let (replay) / fault -> 2nd serve -> double fault
+   - point attribution: winner or error, per player
+   - game scoring 0/15/30/40, deuce-advantage OR golden point
+   - set to 6 games (2 clear), tiebreak at 6-6 (first to 7, 2 clear)
+   - padel serve rotation incl. tiebreak pattern (1 then 2-2-2...)
+   ============================================================ */
+const PTS_LABEL = ["0", "15", "30", "40"];
+const otherTeam = t => t === "A" ? "B" : "A";
+
+function createLiveMatch(teamA, teamB, opts) {
+  const o = opts || {};
+  const st = {
+    teamA: teamA.slice(), teamB: teamB.slice(),
+    goldenPoint: !!o.goldenPoint,
+    bestOf: o.bestOf === 3 ? 3 : 1,
+    /* matchMode 'sets' = classic (6-game sets, TB at 6-6).
+       matchMode 'games' = match target in games, from meet scoring:
+       {mode:'total'|'race', target:N, tie:'draw'|'golden'|'tiebreak'|'normal'|'winby2'} */
+    matchMode: o.matchMode === "games" ? "games" : "sets",
+    gscoring: o.gscoring || null,
+    goldenDecider: false,   // total-games 2-2 -> one golden point decides the match
+    tbFinal: null,
+    servingTeam: o.firstTeam === "B" ? "B" : "A",
+    serverIdx: { A: 0, B: 0 },       // which player of each team serves their next service game
+    pts: { A: 0, B: 0 },             // current game points (numeric)
+    games: { A: 0, B: 0 },
+    sets: [],                        // finished sets: {A, B, tb: {A,B}|null}
+    setsWon: { A: 0, B: 0 },
+    secondServe: false,
+    phase: "serve",                  // 'serve' | 'rally'
+    tiebreak: false,
+    tbPts: { A: 0, B: 0 },
+    tbServesLeft: 0,
+    tbServedBefore: null,
+    tbFirstServer: null,
+    finished: false, winner: null,
+    pointNo: 0,
+    log: []
+  };
+  if (o.firstPlayerIdx === 1) st.serverIdx[st.servingTeam] = 1;
+  return st;
+}
+
+function liveCurrentServer(st) {
+  const team = st.servingTeam;
+  const arr = team === "A" ? st.teamA : st.teamB;
+  return arr[st.serverIdx[team]];
+}
+
+function liveTeamOf(st, playerId) {
+  return st.teamA.includes(playerId) ? "A" : "B";
+}
+
+function livePointsDisplay(st) {
+  if (st.finished) return "Match over";
+  if (st.goldenDecider) return "GOLDEN POINT — winner takes the match";
+  if (st.tiebreak) return `TB ${st.tbPts.A}–${st.tbPts.B}`;
+  const a = st.pts.A, b = st.pts.B;
+  if (a >= 3 && b >= 3) {
+    if (a === b) return st.goldenPoint ? "40–40 · GOLDEN POINT" : "Deuce";
+    return "Ad " + (a > b ? "A" : "B");
+  }
+  return `${PTS_LABEL[Math.min(a, 3)]}–${PTS_LABEL[Math.min(b, 3)]}`;
+}
+
+function liveScoreLine(st) {
+  const sets = st.sets.map(s => `${s.A}–${s.B}`).join(", ");
+  return (sets ? sets + " | " : "") + `${st.games.A}–${st.games.B} | ${livePointsDisplay(st)}`;
+}
+
+/* main action entry. action: 'let'|'fault'|'in'|'winner'|'error', payload: {player} */
+function liveAction(st, action, payload) {
+  if (st.finished) return st;
+  if (action === "let") {
+    st.log.push({ n: ++st.pointNo, type: "let", server: liveCurrentServer(st), second: st.secondServe,
+      set: st.sets.length + 1, game: st.games.A + st.games.B + 1, tb: st.tiebreak, score: liveScoreLine(st) });
+    return st; // replay same serve
+  }
+  if (action === "fault") {
+    if (!st.secondServe) { st.secondServe = true; return st; }
+    // double fault -> point to receivers
+    return liveAwardPoint(st, otherTeam(st.servingTeam), { type: "double", player: liveCurrentServer(st) });
+  }
+  if (action === "in") { st.phase = "rally"; return st; }
+  if (action === "winner") {
+    return liveAwardPoint(st, liveTeamOf(st, payload.player), { type: "winner", player: payload.player });
+  }
+  if (action === "error") {
+    return liveAwardPoint(st, otherTeam(liveTeamOf(st, payload.player)), { type: "error", player: payload.player });
+  }
+  return st;
+}
+
+function liveAwardPoint(st, team, how) {
+  const entry = {
+    n: ++st.pointNo, type: how.type, player: how.player, team,
+    server: liveCurrentServer(st), second: st.secondServe,
+    set: st.sets.length + 1, game: st.games.A + st.games.B + 1, tb: st.tiebreak
+  };
+  if (st.tiebreak) {
+    st.tbPts[team]++;
+    // serve pattern: 1 point, then 2-2-2...
+    st.tbServesLeft--;
+    if (st.tbServesLeft <= 0) {
+      const next = otherTeam(st.servingTeam);
+      if (st.tbServedBefore[next]) st.serverIdx[next] ^= 1; // partner's turn
+      st.tbServedBefore[next] = true;
+      st.servingTeam = next;
+      st.tbServesLeft = 2;
+    }
+    const w = st.tbPts.A > st.tbPts.B ? "A" : "B";
+    const hi = Math.max(st.tbPts.A, st.tbPts.B), lo = Math.min(st.tbPts.A, st.tbPts.B);
+    if (hi >= 7 && hi - lo >= 2) {
+      st.games[w]++;
+      if (st.matchMode === "games") { // race tiebreak decides the match (e.g. 4-3)
+        st.tbFinal = { A: st.tbPts.A, B: st.tbPts.B };
+        st.tiebreak = false;
+        st.finished = true; st.winner = w;
+      } else {
+        liveEndSet(st, w, { A: st.tbPts.A, B: st.tbPts.B }); // 7-6 set
+      }
+    }
+  } else if (st.goldenDecider) {
+    // total-games tied: one golden point decides the whole match
+    st.games[team]++;
+    st.goldenDecider = false;
+    st.finished = true; st.winner = team;
+  } else {
+    st.pts[team]++;
+    const a = st.pts.A, b = st.pts.B;
+    const w = a > b ? "A" : "B";
+    const hi = Math.max(a, b), lo = Math.min(a, b);
+    const gameWon = st.goldenPoint ? (hi >= 4) : (hi >= 4 && hi - lo >= 2);
+    if (gameWon) liveEndGame(st, w);
+  }
+  st.secondServe = false;
+  st.phase = "serve";
+  entry.score = liveScoreLine(st);
+  st.log.push(entry);
+  return st;
+}
+
+function liveStartTiebreak(st) {
+  st.tiebreak = true;
+  st.tbPts = { A: 0, B: 0 };
+  st.tbServesLeft = 1;
+  st.tbFirstServer = st.servingTeam;
+  st.tbServedBefore = { A: false, B: false };
+  st.tbServedBefore[st.servingTeam] = true;
+}
+
+function liveEndGame(st, w) {
+  st.games[w]++;
+  st.pts = { A: 0, B: 0 };
+  // serve passes to other team; the team that just served alternates its server for next time
+  st.serverIdx[st.servingTeam] ^= 1;
+  st.servingTeam = otherTeam(st.servingTeam);
+  const ga = st.games.A, gb = st.games.B;
+  const hi = Math.max(ga, gb), lo = Math.min(ga, gb);
+
+  if (st.matchMode === "games") {
+    const g = st.gscoring;
+    if (g.mode === "race") {
+      if (g.tie === "winby2") {
+        if (hi >= g.target && hi - lo >= 2) { st.finished = true; st.winner = w; }
+      } else if (st.games[w] === g.target) {
+        st.finished = true; st.winner = w;
+      } else if (g.tie === "tiebreak" && ga === g.target - 1 && gb === g.target - 1) {
+        liveStartTiebreak(st); // TB game decides, recorded e.g. 4-3
+      }
+      // tie 'normal': just play the deciding game normally
+    } else { // total: fixed number of games
+      if (ga + gb === g.target) {
+        if (ga !== gb) { st.finished = true; st.winner = ga > gb ? "A" : "B"; }
+        else if (g.tie === "golden") st.goldenDecider = true; // one point for the match
+        else { st.finished = true; st.winner = null; } // draw
+      }
+    }
+    return;
+  }
+
+  // classic sets mode
+  if (hi >= 6 && hi - lo >= 2) {
+    liveEndSet(st, ga > gb ? "A" : "B", null);
+  } else if (ga === 6 && gb === 6) {
+    liveStartTiebreak(st);
+  }
+}
+
+function liveEndSet(st, w, tbScore) {
+  st.sets.push({ A: st.games.A, B: st.games.B, tb: tbScore });
+  st.setsWon[w]++;
+  const wasTb = st.tiebreak;
+  const tbFirst = st.tbFirstServer;
+  st.games = { A: 0, B: 0 };
+  st.pts = { A: 0, B: 0 };
+  st.tiebreak = false; st.tbPts = { A: 0, B: 0 };
+  if (wasTb) st.servingTeam = otherTeam(tbFirst); // receiver of TB first point serves next set
+  if (st.setsWon[w] > st.bestOf / 2) { st.finished = true; st.winner = w; }
+}
+
+/* per-player stats from the point log, incl. serve stats:
+   svc = service points played, svcSecond = points on 2nd serve (i.e. 1st-serve faults),
+   doubles = double faults (serve errors that cost the point) */
+function liveStatsFromLog(log) {
+  const stats = {};
+  const ensure = id => stats[id] = stats[id] || { winners: 0, errors: 0, doubles: 0, svc: 0, svcSecond: 0 };
+  log.forEach(e => {
+    if (e.type === "let") return;
+    if (e.server) { const s = ensure(e.server); s.svc++; if (e.second) s.svcSecond++; }
+    if (e.type === "winner") ensure(e.player).winners++;
+    else if (e.type === "error") ensure(e.player).errors++;
+    else if (e.type === "double") ensure(e.player).doubles++;
+  });
+  return stats;
+}
+
+/* one player's analytics for one meet (live-tracked matches + W/L from all scored matches) */
+function playerMeetAnalytics(playerId, meet) {
+  const a = { meetId: meet.id, date: meet.date, name: meet.name,
+    matches: 0, wins: 0, tracked: 0, winners: 0, errors: 0, doubles: 0, svc: 0, svcSecond: 0 };
+  meet.matches.forEach(m => {
+    const inA = m.teamA.includes(playerId), inB = m.teamB.includes(playerId);
+    if (!inA && !inB) return;
+    if (m.scoreA != null && m.scoreB != null) {
+      a.matches++;
+      const my = inA ? m.scoreA : m.scoreB, ot = inA ? m.scoreB : m.scoreA;
+      if (my > ot) a.wins++;
+    }
+    if (m.live && m.live.log) {
+      a.tracked++;
+      m.live.log.forEach(e => {
+        if (e.type === "let") return;
+        if (e.server === playerId) { a.svc++; if (e.second) a.svcSecond++; }
+        if (e.player === playerId) {
+          if (e.type === "winner") a.winners++;
+          else if (e.type === "error") a.errors++;
+          else if (e.type === "double") a.doubles++;
+        }
+      });
+    }
+  });
+  a.winRate = a.matches ? Math.round(100 * a.wins / a.matches) : null;
+  a.firstIn = a.svc ? Math.round(100 * (a.svc - a.svcSecond) / a.svc) : null;
+  return a;
+}
+
+/* per-meet series + overall totals across every meet the player joined */
+function playerOverallAnalytics(playerId, meets) {
+  const perMeet = meets.slice().sort((x, y) => x.date.localeCompare(y.date))
+    .map(meet => playerMeetAnalytics(playerId, meet))
+    .filter(a => a.matches > 0 || a.tracked > 0);
+  const tot = { meets: perMeet.length, matches: 0, wins: 0, tracked: 0,
+    winners: 0, errors: 0, doubles: 0, svc: 0, svcSecond: 0 };
+  perMeet.forEach(a => ["matches", "wins", "tracked", "winners", "errors", "doubles", "svc", "svcSecond"]
+    .forEach(k => tot[k] += a[k]));
+  tot.winRate = tot.matches ? Math.round(100 * tot.wins / tot.matches) : null;
+  tot.firstIn = tot.svc ? Math.round(100 * (tot.svc - tot.svcSecond) / tot.svc) : null;
+  return { perMeet, tot };
+}
+</script>
+
+<!-- ============================================================
+     UI
+     ============================================================ -->
+<script id="ui">
+"use strict";
+
+let PLAYERS = [], MEETS = [], RATINGS = {}, UPCOMING = [];
+let currentView = "players";
+let draftMeet = null; // meet being hosted
+
+const $ = sel => document.querySelector(sel);
+const main = $("#main");
+const nameOf = id => (PLAYERS.find(p => p.id === id) || { name: id }).name;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* ---------- data loading ---------- */
+async function loadData() {
+  if (CONFIG.apiBaseUrl) {
+    try {
+      const [pr, mr] = await Promise.all([
+        fetch(CONFIG.apiBaseUrl + "/players"),
+        fetch(CONFIG.apiBaseUrl + "/meets")
+      ]);
+      PLAYERS = await pr.json();
+      MEETS = await mr.json();
+      try {
+        const ur = await fetch(CONFIG.apiBaseUrl + "/upcoming");
+        UPCOMING = ur.ok ? await ur.json() : [];
+      } catch (e) { UPCOMING = []; }
+      $("#srcBadge").textContent = "live · reclub agent";
+      $("#srcBadge").style.color = "var(--accent)";
+    } catch (e) {
+      console.error("API load failed, falling back to sample data", e);
+      loadSample();
+    }
+  } else {
+    loadSample();
+  }
+  // merge locally saved meets
+  MEETS = MEETS.concat(loadLocalMeets());
+  RATINGS = computeRatings(PLAYERS, MEETS);
+}
+
+function loadSample() {
+  PLAYERS = SAMPLE_PLAYERS.map(p => ({ id: p.id, name: p.name }));
+  MEETS = generateSampleMeets(SAMPLE_PLAYERS);
+  UPCOMING = generateSampleUpcoming();
+  $("#srcBadge").textContent = "sample data";
+}
+
+function loadLocalMeets() {
+  try { return JSON.parse(localStorage.getItem("npc_local_meets") || "[]"); }
+  catch (e) { return []; }
+}
+function saveLocalMeet(meet) {
+  const all = loadLocalMeets();
+  all.push(meet);
+  try { localStorage.setItem("npc_local_meets", JSON.stringify(all)); } catch (e) {}
+}
+
+/* ---------- navigation ---------- */
+document.querySelectorAll("nav button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentView = btn.dataset.view;
+    render();
+  });
+});
+
+function render() {
+  if (currentView === "players") renderPlayers();
+  else if (currentView === "leaderboard") renderLeaderboard();
+  else if (currentView === "meets") renderMeets();
+  else if (currentView === "host") renderHost();
+}
+
+/* ---------- players ---------- */
+function renderPlayers() {
+  const cards = PLAYERS.map(p => {
+    const s = computePlayerStats(p.id, MEETS);
+    const form = s.form.map(f => `<div class="dot ${f}">${f}</div>`).join("");
+    return `<div class="card" onclick="showPlayer('${p.id}')">
+      <div class="name">${esc(p.name)}</div>
+      <div class="sub">${Math.round(RATINGS[p.id] || 1000)} rating · ${s.meets} meets</div>
+      <div class="statrow">
+        <div class="stat"><b>${s.matches}</b><span>matches</span></div>
+        <div class="stat"><b>${s.winRate}%</b><span>win rate</span></div>
+        <div class="stat"><b>${s.diff > 0 ? "+" : ""}${s.diff}</b><span>pt diff</span></div>
+      </div>
+      <div class="form-dots">${form || '<span class="muted">no matches yet</span>'}</div>
+    </div>`;
+  }).join("");
+  main.innerHTML = `<h2>Players — ${esc(CONFIG.clubName)}</h2>
+    <div class="banner">Overall performance from every meet at ${esc(CONFIG.clubName)} on Reclub${CONFIG.apiBaseUrl ? "" : " (sample data — connect your Reclub agent in CONFIG)"}.</div>
+    <div class="grid">${cards}</div>`;
+}
+
+function showPlayer(id) {
+  const p = PLAYERS.find(x => x.id === id);
+  const s = computePlayerStats(id, MEETS);
+  const partners = Object.entries(s.partners)
+    .filter(([, v]) => v.matches >= 2)
+    .map(([pid, v]) => ({ pid, ...v, rate: Math.round(100 * v.wins / v.matches) }))
+    .sort((a, b) => b.rate - a.rate);
+  const partnerRows = partners.map(x =>
+    `<tr><td>${esc(nameOf(x.pid))}</td><td class="num">${x.matches}</td><td class="num">${x.wins}</td><td class="num">${x.rate}%</td></tr>`).join("");
+  // match history
+  const rows = [];
+  MEETS.slice().sort((a, b) => b.date.localeCompare(a.date)).forEach(meet => {
+    meet.matches.forEach(m => {
+      if (m.scoreA == null) return;
+      let my, other, mine, opp;
+      if (m.teamA.includes(id)) { mine = m.teamA; opp = m.teamB; my = m.scoreA; other = m.scoreB; }
+      else if (m.teamB.includes(id)) { mine = m.teamB; opp = m.teamA; my = m.scoreB; other = m.scoreA; }
+      else return;
+      const partner = mine.find(x => x !== id);
+      const res = my > other ? "W" : my < other ? "L" : "D";
+      rows.push(`<tr>
+        <td>${meet.date}</td><td>${esc(meet.name)}</td>
+        <td>${esc(nameOf(partner))}</td>
+        <td>${opp.map(nameOf).map(esc).join(" & ")}</td>
+        <td class="num"><span class="pill ${res === "W" ? "accent" : ""}">${my}–${other}</span></td>
+      </tr>`);
+    });
+  });
+  main.innerHTML = `<span class="back" onclick="renderPlayers()">&larr; all players</span>
+    <h2>${esc(p ? p.name : id)} <span class="pill accent">${Math.round(RATINGS[id] || 1000)}</span></h2>
+    <div class="statrow" style="max-width:520px">
+      <div class="stat"><b>${s.matches}</b><span>matches</span></div>
+      <div class="stat"><b>${s.wins}–${s.losses}</b><span>W–L</span></div>
+      <div class="stat"><b>${s.winRate}%</b><span>win rate</span></div>
+      <div class="stat"><b>${s.ptsFor}</b><span>pts won</span></div>
+      <div class="stat"><b>${s.diff > 0 ? "+" : ""}${s.diff}</b><span>diff</span></div>
+    </div>
+    ${renderPlayerAnalytics(id)}
+    ${partnerRows ? `<h3>Partners (2+ matches)</h3>
+      <table><tr><th>Partner</th><th class="num">Matches</th><th class="num">Wins</th><th class="num">Win %</th></tr>${partnerRows}</table>` : ""}
+    <h3>Match history</h3>
+    <table><tr><th>Date</th><th>Meet</th><th>Partner</th><th>Opponents</th><th class="num">Score</th></tr>${rows.join("")}</table>`;
+}
+
+/* ---------- player analytics section ---------- */
+function renderPlayerAnalytics(id) {
+  const { perMeet, tot } = playerOverallAnalytics(id, MEETS);
+  if (!perMeet.length) return "";
+  const hasLive = tot.tracked > 0;
+  const totalsRow = `
+    <div class="statrow" style="max-width:640px;flex-wrap:wrap">
+      <div class="stat"><b>${tot.meets}</b><span>meets</span></div>
+      <div class="stat"><b>${tot.winRate == null ? "–" : tot.winRate + "%"}</b><span>win rate</span></div>
+      <div class="stat"><b style="color:var(--accent)">${hasLive ? tot.winners : "–"}</b><span>winners</span></div>
+      <div class="stat"><b style="color:var(--red)">${hasLive ? tot.errors : "–"}</b><span>errors</span></div>
+      <div class="stat"><b style="color:var(--red)">${hasLive ? tot.doubles : "–"}</b><span>double faults</span></div>
+      <div class="stat"><b>${tot.firstIn == null ? "–" : tot.firstIn + "%"}</b><span>1st serve in</span></div>
+    </div>`;
+  const meetRows = perMeet.slice().reverse().map(a => `<tr>
+      <td>${a.date}</td><td>${esc(a.name)}</td>
+      <td class="num">${a.matches}</td>
+      <td class="num">${a.winRate == null ? "–" : a.winRate + "%"}</td>
+      <td class="num">${a.tracked ? a.winners : "–"}</td>
+      <td class="num">${a.tracked ? a.errors : "–"}</td>
+      <td class="num">${a.tracked ? a.doubles : "–"}</td>
+      <td class="num">${a.firstIn == null ? "–" : a.firstIn + "%"}</td>
+    </tr>`).join("");
+  return `<h3>Overall performance — all meets</h3>
+    ${totalsRow}
+    ${perfChart(perMeet) ? `<div style="margin:12px 0">${perfChart(perMeet)}</div>` : ""}
+    ${hasLive ? "" : `<div class="banner">Winners / errors / serve stats appear once matches are scored with &#9889; Live (point-by-point). Win rate works for all scored matches.</div>`}
+    <table><tr><th>Date</th><th>Meet</th><th class="num">Matches</th><th class="num">Win %</th><th class="num">Winners</th><th class="num">Errors</th><th class="num">DF</th><th class="num">1st in</th></tr>${meetRows}</table>`;
+}
+
+/* ---------- performance chart (SVG, no deps) ---------- */
+function perfChart(perMeet) {
+  const n = perMeet.length;
+  if (n < 2) return "";
+  const W = 680, H = 230, L = 38, R = 40, T = 16, B = 44;
+  const iw = W - L - R, ih = H - T - B;
+  const x = i => L + iw * (i + 0.5) / n;
+  const maxC = Math.max(1, ...perMeet.map(d => Math.max(d.winners, d.errors + d.doubles)));
+  const yc = v => T + ih - (v / maxC) * ih;
+  const yr = v => T + ih - (v / 100) * ih;
+  const bw = Math.min(16, iw / (n * 3));
+  let bars = "", labels = "";
+  perMeet.forEach((d, i) => {
+    const cx = x(i);
+    if (d.tracked) {
+      bars += `<rect x="${cx - bw - 1}" y="${yc(d.winners)}" width="${bw}" height="${T + ih - yc(d.winners)}" fill="var(--accent)" rx="2"><title>${d.winners} winners</title></rect>`;
+      bars += `<rect x="${cx + 1}" y="${yc(d.errors + d.doubles)}" width="${bw}" height="${T + ih - yc(d.errors + d.doubles)}" fill="var(--red)" rx="2"><title>${d.errors} errors + ${d.doubles} DF</title></rect>`;
+    }
+    const dt = d.date.slice(5); // MM-DD
+    labels += `<text x="${cx}" y="${H - B + 14}" text-anchor="middle" font-size="9" fill="var(--muted)">${dt}</text>`;
+  });
+  const pts = perMeet.map((d, i) => d.winRate == null ? null : `${x(i)},${yr(d.winRate)}`).filter(Boolean).join(" ");
+  const dots = perMeet.map((d, i) => d.winRate == null ? "" :
+    `<circle cx="${x(i)}" cy="${yr(d.winRate)}" r="3" fill="var(--blue)"><title>${d.winRate}% win rate</title></circle>`).join("");
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:${W}px;background:var(--panel);border:1px solid var(--border);border-radius:12px">
+    <line x1="${L}" y1="${T + ih}" x2="${W - R}" y2="${T + ih}" stroke="var(--border)"/>
+    <text x="${L - 6}" y="${yc(maxC) + 4}" text-anchor="end" font-size="9" fill="var(--muted)">${maxC}</text>
+    <text x="${L - 6}" y="${T + ih + 4}" text-anchor="end" font-size="9" fill="var(--muted)">0</text>
+    <text x="${W - R + 6}" y="${yr(100) + 4}" font-size="9" fill="var(--blue)">100%</text>
+    <text x="${W - R + 6}" y="${yr(0) + 4}" font-size="9" fill="var(--blue)">0%</text>
+    ${bars}
+    ${pts ? `<polyline points="${pts}" fill="none" stroke="var(--blue)" stroke-width="2"/>` : ""}${dots}
+    ${labels}
+    <g font-size="10">
+      <rect x="${L}" y="${H - 14}" width="9" height="9" fill="var(--accent)" rx="2"/><text x="${L + 13}" y="${H - 6}" fill="var(--muted)">Winners</text>
+      <rect x="${L + 75}" y="${H - 14}" width="9" height="9" fill="var(--red)" rx="2"/><text x="${L + 88}" y="${H - 6}" fill="var(--muted)">Errors + DF</text>
+      <circle cx="${L + 175}" cy="${H - 9}" r="4" fill="var(--blue)"/><text x="${L + 184}" y="${H - 6}" fill="var(--muted)">Win rate %</text>
+    </g>
+  </svg>`;
+}
+
+/* ---------- leaderboard ---------- */
+function renderLeaderboard() {
+  const rows = PLAYERS.map(p => ({ p, s: computePlayerStats(p.id, MEETS), r: Math.round(RATINGS[p.id] || 1000) }))
+    .filter(x => x.s.matches > 0)
+    .sort((a, b) => b.r - a.r);
+  main.innerHTML = `<h2>Leaderboard</h2>
+    <table>
+      <tr><th>#</th><th>Player</th><th class="num">Rating</th><th class="num">Matches</th><th class="num">Win %</th><th class="num">Pt Diff</th></tr>
+      ${rows.map((x, i) => `<tr>
+        <td class="${i === 0 ? "rank1" : ""}">${i + 1}</td>
+        <td class="${i === 0 ? "rank1" : ""}" style="cursor:pointer" onclick="showPlayer('${x.p.id}')">${esc(x.p.name)}</td>
+        <td class="num">${x.r}</td>
+        <td class="num">${x.s.matches}</td>
+        <td class="num">${x.s.winRate}%</td>
+        <td class="num">${x.s.diff > 0 ? "+" : ""}${x.s.diff}</td>
+      </tr>`).join("")}
+    </table>`;
+}
+
+/* ---------- meets ---------- */
+function renderMeets() {
+  const sorted = MEETS.slice().sort((a, b) => b.date.localeCompare(a.date));
+  main.innerHTML = `<h2>Meets</h2><div class="grid">` + sorted.map(m => {
+    const ids = new Set();
+    m.matches.forEach(x => [...x.teamA, ...x.teamB].forEach(id => ids.add(id)));
+    return `<div class="card" onclick="showMeet('${m.id}')">
+      <div class="name">${esc(m.name)}</div>
+      <div class="sub">${m.date} · ${esc(m.venue || "")}</div>
+      <div class="statrow">
+        <div class="stat"><b>${ids.size}</b><span>players</span></div>
+        <div class="stat"><b>${m.matches.length}</b><span>matches</span></div>
+        <div class="stat"><b>${esc(m.format)}</b><span>format</span></div>
+      </div>
+    </div>`;
+  }).join("") + `</div>`;
+}
+
+function showMeet(id) {
+  const meet = MEETS.find(m => m.id === id);
+  if (!meet) return renderMeets();
+  const ids = new Set();
+  meet.matches.forEach(x => [...x.teamA, ...x.teamB].forEach(i => ids.add(i)));
+  const standings = individualStandings([...ids], meet.matches);
+  const byRound = {};
+  meet.matches.forEach(m => { (byRound[m.round] = byRound[m.round] || []).push(m); });
+  const roundsHtml = Object.keys(byRound).sort((a, b) => a - b).map(r =>
+    `<h3>Round ${r}</h3>` + byRound[r].map(m => {
+      const setsPill = m.sets ? ` <span class="pill accent">${m.sets.map(s => s.A + "–" + s.B + (s.tb ? ` (${s.tb.A}–${s.tb.B})` : "")).join(", ")}</span>` : "";
+      let recap = "";
+      if (m.live && m.live.log) {
+        const lstats = liveStatsFromLog(m.live.log); // recompute so serve stats exist on older saves
+        const statRows = Object.entries(lstats).map(([id, s]) =>
+          `<tr><td>${esc(nameOf(id))}</td><td class="num">${s.winners}</td><td class="num">${s.errors}</td><td class="num">${s.doubles}</td>
+           <td class="num">${s.svc}</td><td class="num">${s.svc ? Math.round(100 * (s.svc - s.svcSecond) / s.svc) + "%" : "–"}</td></tr>`).join("");
+        const logRows = m.live.log.filter(e => e.type !== "let").map(e => {
+          const how = e.type === "winner" ? `Winner — ${esc(nameOf(e.player))}`
+            : e.type === "error" ? `Error — ${esc(nameOf(e.player))}`
+            : `Double fault — ${esc(nameOf(e.player))}`;
+          return `<tr><td>${e.n}</td><td>S${e.set} G${e.game}${e.tb ? " TB" : ""}</td><td>${esc(nameOf(e.server))}${e.second ? " (2nd)" : ""}</td><td>${how}</td><td class="muted">${esc(e.score || "")}</td></tr>`;
+        }).join("");
+        recap = `<details style="margin:-2px 0 10px 62px"><summary class="muted" style="cursor:pointer;font-size:12px">Match recap — point by point</summary>
+          <table style="max-width:560px;margin-top:8px"><tr><th>Player</th><th class="num">Winners</th><th class="num">Errors</th><th class="num">DF</th><th class="num">Serve pts</th><th class="num">1st in</th></tr>${statRows}</table>
+          <table style="margin-top:8px"><tr><th>#</th><th>Pos</th><th>Server</th><th>Outcome</th><th>Score after</th></tr>${logRows}</table></details>`;
+      }
+      return `<div class="match">
+        <span class="court">Court ${m.court}</span>
+        <span class="team">${m.teamA.map(nameOf).map(esc).join(" & ")}</span>
+        <span class="pill ${m.scoreA > m.scoreB ? "accent" : ""}">${m.scoreA}</span>
+        <span class="vs">vs</span>
+        <span class="pill ${m.scoreB > m.scoreA ? "accent" : ""}">${m.scoreB}</span>
+        <span class="team">${m.teamB.map(nameOf).map(esc).join(" & ")}</span>
+        ${setsPill}
+      </div>${recap}`;
+    }).join("")).join("");
+  // meet-level player analytics (from live-tracked matches)
+  const anyLive = meet.matches.some(m => m.live && m.live.log);
+  let analyticsHtml = "";
+  if (anyLive) {
+    const rows = [...ids].map(pid => ({ pid, a: playerMeetAnalytics(pid, meet) }))
+      .filter(x => x.a.tracked > 0)
+      .sort((x, y) => y.a.winners - x.a.winners)
+      .map(x => `<tr><td>${esc(nameOf(x.pid))}</td>
+        <td class="num">${x.a.tracked}</td>
+        <td class="num" style="color:var(--accent)">${x.a.winners}</td>
+        <td class="num" style="color:var(--red)">${x.a.errors}</td>
+        <td class="num" style="color:var(--red)">${x.a.doubles}</td>
+        <td class="num">${x.a.firstIn == null ? "–" : x.a.firstIn + "%"}</td></tr>`).join("");
+    analyticsHtml = `<h3>Player analytics — this meet (live-tracked matches)</h3>
+      <table style="max-width:640px"><tr><th>Player</th><th class="num">Tracked</th><th class="num">Winners</th><th class="num">Errors</th><th class="num">DF</th><th class="num">1st serve in</th></tr>${rows}</table>`;
+  }
+  main.innerHTML = `<span class="back" onclick="renderMeets()">&larr; all meets</span>
+    <h2>${esc(meet.name)}</h2>
+    <div class="muted">${meet.date} · ${esc(meet.venue || "")} · ${esc(meet.format)}</div>
+    ${analyticsHtml}
+    <h3>Final standings</h3>
+    <table><tr><th>#</th><th>Player</th><th class="num">Points</th><th class="num">Wins</th><th class="num">Played</th></tr>
+    ${standings.map((s, i) => `<tr><td class="${i === 0 ? "rank1" : ""}">${i + 1}</td><td class="${i === 0 ? "rank1" : ""}">${esc(nameOf(s.id))}</td><td class="num">${s.points}</td><td class="num">${s.wins}</td><td class="num">${s.played}</td></tr>`).join("")}
+    </table>
+    ${roundsHtml}`;
+}
+
+/* ---------- host a meet ---------- */
+function renderHost() {
+  if (draftMeet) return renderDraft();
+  const chips = PLAYERS.map(p =>
+    `<div class="chip" data-id="${p.id}" onclick="this.classList.toggle('on')">${esc(p.name)} <span style="opacity:.6;font-size:11px">${Math.round(RATINGS[p.id] || 1000)}</span></div>`).join("");
+  const dayName = d => new Date(d + "T00:00").toLocaleDateString("en-US", { weekday: "short", day: "numeric", month: "short" });
+  const upOpts = UPCOMING.slice().sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time))
+    .map(u => `<option value="${u.id}">${esc(u.name)} — ${dayName(u.date)} · ${u.time} · ${u.players.length} players</option>`).join("");
+  main.innerHTML = `<h2>Host a Meet</h2>
+    <div class="panel">
+      <label>Pull players from an upcoming Reclub meet</label>
+      <select id="hUpcoming" onchange="applyUpcoming(this.value)">
+        <option value="">— pick day & time (or select players manually below) —</option>
+        ${upOpts}
+      </select>
+      <div class="muted" id="hUpInfo" style="margin-top:6px"></div>
+      <div class="row">
+        <div><label>Meet name</label><input type="text" id="hName" value="NPC Meet"></div>
+        <div><label>Date</label><input type="date" id="hDate" value="${new Date().toISOString().slice(0, 10)}"></div>
+      </div>
+      <div class="row">
+        <div><label>Format</label>
+          <select id="hFormat">
+            <option value="americano">Americano — rotating partners, individual points</option>
+            <option value="mexicano">Mexicano — matchups follow the standings</option>
+            <option value="fixed">Fixed pairs — round robin</option>
+            <option value="shuffle">Balanced shuffle — auto-pair by rating, round robin</option>
+            <option value="match">Single match — live point-by-point scoring</option>
+          </select></div>
+        <div><label>Courts</label><input type="number" id="hCourts" value="2" min="1" max="10"></div>
+        <div><label>Rounds (americano)</label><input type="number" id="hRounds" value="5" min="1" max="20"></div>
+      </div>
+      <div class="row">
+        <div><label>Game scoring</label>
+          <select id="hMode" onchange="updateTieOptions()">
+            <option value="total:4">Total 4 points (finals: 4-0, 3-1, 2-2, 1-3, 0-4)</option>
+            <option value="total:5">Total 5 points (no draw possible)</option>
+            <option value="total:custom" selected>Total points — custom</option>
+            <option value="race:4">Race to 4 — first team to 4 wins</option>
+            <option value="race:6">Race to 6 — first team to 6 wins</option>
+          </select></div>
+        <div><label>Custom total</label><input type="number" id="hPoints" value="24" min="4" max="64" onchange="updateTieOptions()"></div>
+        <div><label>If tied</label><select id="hTie"></select></div>
+      </div>
+      <div class="row">
+        <div><label>Deuce rule (live scoring)</label>
+          <select id="hDeuce">
+            <option value="golden">Golden point at 40–40</option>
+            <option value="ad">Advantage (classic deuce)</option>
+          </select></div>
+        <div><label>Sets (live scoring)</label>
+          <select id="hSets">
+            <option value="1">1 set</option>
+            <option value="3">Best of 3</option>
+          </select></div>
+      </div>
+      <label>Players (${PLAYERS.length} in club — tap to select)</label>
+      <div class="chips" id="hChips">${chips}</div>
+      <label>Add guest player</label>
+      <div class="row"><div><input type="text" id="hGuest" placeholder="Guest name"></div>
+      <div><button class="btn ghost small" onclick="addGuest()">Add guest</button></div></div>
+      <button class="btn" onclick="startMeet()">Generate game sequence</button>
+      <div class="muted" style="margin-top:8px">Americano & fixed formats generate the full schedule up-front. Mexicano generates round-by-round from live standings, like Alfred. No Reclub meet? Just tap players manually or add guests.</div>
+    </div>`;
+  updateTieOptions();
+}
+
+function updateTieOptions() {
+  const [mode, tgt] = $("#hMode").value.split(":");
+  const target = tgt === "custom" ? (+$("#hPoints").value || 24) : +tgt;
+  const tie = $("#hTie");
+  if (mode === "race") {
+    tie.innerHTML = `<option value="tiebreak">Tiebreak game at ${target - 1}–${target - 1} (7-pt TB decides, ends ${target}–${target - 1})</option>
+      <option value="normal">Normal game at ${target - 1}–${target - 1} (ends ${target}–${target - 1})</option>
+      <option value="winby2">Win by 2 — play on past ${target - 1}–${target - 1} (e.g. ${target + 1}–${target - 1})</option>`;
+    tie.disabled = false;
+  } else if (target % 2 === 0) {
+    tie.innerHTML = `<option value="golden">Golden point decider (${target / 2}–${target / 2} becomes ${target / 2 + 1}–${target / 2})</option>
+      <option value="draw">Draw — ${target / 2}–${target / 2} stands</option>`;
+    tie.disabled = false;
+  } else {
+    tie.innerHTML = `<option value="none">Not possible — odd total, always a winner</option>`;
+    tie.disabled = true;
+  }
+}
+
+function applyUpcoming(upId) {
+  // clear all selections first
+  document.querySelectorAll("#hChips .chip").forEach(c => c.classList.remove("on"));
+  const info = $("#hUpInfo");
+  window.hostUpSel = upId || null;
+  if (!upId) { info.textContent = ""; $("#hFormat").disabled = false; return; }
+  const up = UPCOMING.find(u => u.id === upId);
+  if (!up) return;
+  // format follows Reclub — locked; scoring options stay open
+  if (up.format) { $("#hFormat").value = up.format; $("#hFormat").disabled = true; }
+  else $("#hFormat").disabled = false;
+  // add players from the Reclub meet that aren't in the roster yet
+  let added = false;
+  up.players.forEach(rp => {
+    if (!PLAYERS.find(p => p.id === rp.id)) {
+      PLAYERS.push({ id: rp.id, name: rp.name });
+      RATINGS[rp.id] = CONFIG.eloStart;
+      added = true;
+    }
+  });
+  if (added) { // re-render chips to include new players, then re-apply selection
+    renderHost();
+    $("#hUpcoming").value = upId;
+  }
+  $("#hName").value = up.name;
+  $("#hDate").value = up.date;
+  up.players.forEach(rp => {
+    const el = document.querySelector(`#hChips .chip[data-id="${rp.id}"]`);
+    if (el) el.classList.add("on");
+  });
+  const fmtNote = up.format ? ` Format locked from Reclub: ${up.format}${up.teams ? " (partners as registered)" : ""}.` : "";
+  $("#hUpInfo").textContent = `${up.players.length} players registered on Reclub · ${up.venue} · ${up.date} ${up.time}.${fmtNote} Point rules below are yours to choose.`;
+}
+
+function addGuest() {
+  const name = $("#hGuest").value.trim();
+  if (!name) return;
+  const id = "g" + Date.now();
+  PLAYERS.push({ id, name: name + " (guest)" });
+  RATINGS[id] = CONFIG.eloStart;
+  $("#hGuest").value = "";
+  // re-render keeping selections and form values
+  const on = [...document.querySelectorAll("#hChips .chip.on")].map(c => c.dataset.id);
+  const keep = { up: $("#hUpcoming").value, name: $("#hName").value, date: $("#hDate").value,
+    fmt: $("#hFormat").value, fmtDis: $("#hFormat").disabled };
+  renderHost();
+  $("#hUpcoming").value = keep.up; $("#hName").value = keep.name; $("#hDate").value = keep.date;
+  $("#hFormat").value = keep.fmt; $("#hFormat").disabled = keep.fmtDis;
+  window.hostUpSel = keep.up || null;
+  on.forEach(pid => { const el = document.querySelector(`#hChips .chip[data-id="${pid}"]`); if (el) el.classList.add("on"); });
+}
+
+function startMeet() {
+  const sel = [...document.querySelectorAll("#hChips .chip.on")].map(c => c.dataset.id);
+  const format = $("#hFormat").value;
+  const courts = Math.max(1, +$("#hCourts").value || 1);
+  const rounds = Math.max(1, +$("#hRounds").value || 5);
+  const points = Math.max(4, +$("#hPoints").value || 24);
+  const [scMode, scTgt] = $("#hMode").value.split(":");
+  const scoring = {
+    mode: scMode,
+    target: scTgt === "custom" ? points : +scTgt,
+    tie: $("#hTie").disabled ? "none" : $("#hTie").value
+  };
+  if (sel.length < 4) { alert("Select at least 4 players."); return; }
+  if ((format === "fixed" || format === "shuffle") && sel.length % 2 === 1) { alert("Even number of players needed for pair formats."); return; }
+  if (format === "match" && sel.length !== 4) { alert("Single match needs exactly 4 players (first two = team A)."); return; }
+
+  const meet = {
+    id: "local" + Date.now(),
+    name: $("#hName").value.trim() || "NPC Meet",
+    date: $("#hDate").value,
+    venue: CONFIG.clubName,
+    format, courts, points, scoring,
+    liveOpts: { goldenPoint: $("#hDeuce").value === "golden", bestOf: +$("#hSets").value },
+    players: sel,
+    matches: [],
+    source: "local"
+  };
+
+  if (format === "match") {
+    meet.teams = [[sel[0], sel[1]], [sel[2], sel[3]]];
+    meet.matches.push({ round: 1, court: 1, teamA: [sel[0], sel[1]], teamB: [sel[2], sel[3]], scoreA: null, scoreB: null });
+  } else if (format === "americano") {
+    const sched = generateAmericano(sel, rounds, courts, Date.now() % 100000);
+    sched.forEach((ms, i) => ms.forEach(m => meet.matches.push({ ...m, round: i + 1 })));
+  } else if (format === "mexicano") {
+    // round 1 seeded by rating
+    const seeded = sel.map(id => ({ id, points: Math.round(RATINGS[id] || 1000) }))
+      .sort((a, b) => b.points - a.points);
+    generateMexicanoRound(seeded, courts).forEach(m => meet.matches.push({ ...m, round: 1 }));
+  } else {
+    let pairs;
+    if (format === "shuffle") pairs = balancedPairs(sel, RATINGS);
+    else {
+      pairs = [];
+      // fixed pairs: take partner pairs registered on Reclub first
+      const upSel = $("#hUpcoming") ? $("#hUpcoming").value : "";
+      const up = upSel ? UPCOMING.find(u => u.id === upSel) : null;
+      if (up && up.teams) {
+        pairs = up.teams.filter(t => t.every(id => sel.includes(id))).map(t => t.slice());
+      }
+      // any remaining selected players: pair in selection order
+      const used = new Set(pairs.flat());
+      const rest = sel.filter(id => !used.has(id));
+      for (let i = 0; i + 1 < rest.length; i += 2) pairs.push([rest[i], rest[i + 1]]);
+    }
+    meet.teams = pairs;
+    const sched = generateRoundRobin(pairs, courts);
+    sched.forEach((ms, i) => ms.forEach(m => meet.matches.push({ ...m, round: i + 1 })));
+  }
+  draftMeet = meet;
+  renderDraft();
+}
+
+function renderDraft() {
+  const meet = draftMeet;
+  const byRound = {};
+  meet.matches.forEach(m => { (byRound[m.round] = byRound[m.round] || []).push(m); });
+  const roundsHtml = Object.keys(byRound).sort((a, b) => a - b).map(r =>
+    `<div class="roundhead"><h3 style="margin:0">Round ${r}</h3></div>` +
+    byRound[r].map((m, i) => {
+      const gi = meet.matches.indexOf(m);
+      const setsPill = m.sets ? `<span class="pill accent">${m.sets.map(s => s.A + "–" + s.B).join(", ")}</span>` : "";
+      const liveBtn = m.scoreA == null
+        ? `<button class="btn ghost small" onclick="openLive(${gi})">&#9889; Live score</button>`
+        : setsPill;
+      const sc = meet.scoring;
+      let entry;
+      if (meet.format !== "match" && sc && sc.mode === "total" && sc.target <= 8) {
+        // quick-pick: all valid finals as tappable pills
+        entry = `<span style="display:flex;gap:4px;flex-wrap:wrap">` + scoreOptions(sc).map(([a, b]) =>
+          `<span class="chip ${m.scoreA === a && m.scoreB === b ? "on" : ""}" style="padding:4px 9px;font-size:12px"
+            onclick="setScorePreset(${gi},${a},${b})">${a}–${b}</span>`).join("") + `</span>`;
+      } else {
+        const bad = meet.format !== "match" && sc && m.scoreA != null && m.scoreB != null && !m.sets && !validScore(sc, m.scoreA, m.scoreB);
+        entry = `<input class="score" type="number" min="0" max="99" value="${m.scoreA == null ? "" : m.scoreA}"
+            onchange="setScore(${gi},'A',this.value)" ${bad ? 'style="border-color:var(--red)"' : ""}>
+          <span class="vs">vs</span>
+          <input class="score" type="number" min="0" max="99" value="${m.scoreB == null ? "" : m.scoreB}"
+            onchange="setScore(${gi},'B',this.value)" ${bad ? 'style="border-color:var(--red)"' : ""}>`;
+      }
+      return `<div class="match">
+        <span class="court">Court ${m.court}</span>
+        <span class="team">${m.teamA.map(nameOf).map(esc).join(" & ")}</span>
+        ${entry}
+        <span class="team">${m.teamB.map(nameOf).map(esc).join(" & ")}</span>
+        ${liveBtn}
+      </div>`;
+    }).join("")).join("");
+
+  const standings = meet.teams
+    ? teamStandings(meet.teams, meet.matches)
+    : individualStandings(meet.players, meet.matches);
+  const standingsHtml = meet.teams
+    ? `<table><tr><th>#</th><th>Pair</th><th class="num">Played</th><th class="num">Wins</th><th class="num">Diff</th></tr>
+       ${standings.map((s, i) => `<tr><td class="${i === 0 ? "rank1" : ""}">${i + 1}</td><td class="${i === 0 ? "rank1" : ""}">${s.team.map(nameOf).map(esc).join(" & ")}</td><td class="num">${s.played}</td><td class="num">${s.wins}</td><td class="num">${s.ptsFor - s.ptsAgainst > 0 ? "+" : ""}${s.ptsFor - s.ptsAgainst}</td></tr>`).join("")}</table>`
+    : `<table><tr><th>#</th><th>Player</th><th class="num">Points</th><th class="num">Wins</th><th class="num">Played</th></tr>
+       ${standings.map((s, i) => `<tr><td class="${i === 0 ? "rank1" : ""}">${i + 1}</td><td class="${i === 0 ? "rank1" : ""}">${esc(nameOf(s.id))}</td><td class="num">${s.points}</td><td class="num">${s.wins}</td><td class="num">${s.played}</td></tr>`).join("")}</table>`;
+
+  const allScored = meet.matches.every(m => m.scoreA != null && m.scoreB != null);
+  const mexBtn = meet.format === "mexicano"
+    ? `<button class="btn ghost" onclick="nextMexicanoRound()" ${allScored ? "" : "disabled"}>Generate next round from standings</button>` : "";
+
+  main.innerHTML = `<span class="back" onclick="if(confirm('Discard this meet?')){draftMeet=null;renderHost();}">&larr; discard</span>
+    <h2>${esc(meet.name)} <span class="pill">${esc(meet.format)}</span> <span class="pill">${meet.date}</span></h2>
+    <div class="banner">Rules: <b>${esc(scoringLabel(meet.scoring) || "free scoring")}</b>. Enter scores as matches finish — standings update live. ${meet.format === "mexicano" ? "Next round is generated from current standings." : ""}</div>
+    ${roundsHtml}
+    <div style="display:flex;gap:10px;flex-wrap:wrap">${mexBtn}
+    <button class="btn" onclick="finishMeet()" ${allScored ? "" : "disabled"}>Finish & save meet</button></div>
+    <h3>Live standings</h3>${standingsHtml}`;
+}
+
+/* ---------- live scoring UI ---------- */
+let draftLive = null; // { matchIdx, state, snaps: [] }
+
+function openLive(matchIdx) {
+  draftLive = { matchIdx, state: null, snaps: [] };
+  renderLiveSetup();
+}
+
+function renderLiveSetup() {
+  const m = draftMeet.matches[draftLive.matchIdx];
+  const opts = draftMeet.liveOpts || { goldenPoint: true, bestOf: 1 };
+  const radio = (team, idx, id) =>
+    `<label style="display:flex;align-items:center;gap:8px;margin:6px 0;cursor:pointer;color:var(--text);font-size:14px">
+      <input type="radio" name="firstSrv" value="${team}:${idx}" ${team === "A" && idx === 0 ? "checked" : ""}>
+      ${esc(nameOf(id))} <span class="muted">(Team ${team})</span></label>`;
+  main.innerHTML = `<span class="back" onclick="draftLive=null;renderDraft()">&larr; back to meet</span>
+    <h2>Live scoring — Court ${m.court}</h2>
+    <div class="panel">
+      <h3 style="margin-top:0">${m.teamA.map(nameOf).map(esc).join(" & ")} <span class="vs">vs</span> ${m.teamB.map(nameOf).map(esc).join(" & ")}</h3>
+      <label>Who serves first?</label>
+      ${radio("A", 0, m.teamA[0])}${radio("A", 1, m.teamA[1])}${radio("B", 0, m.teamB[0])}${radio("B", 1, m.teamB[1])}
+      <div class="muted">Rules: ${opts.goldenPoint ? "golden point at 40–40" : "advantage deuce"} · ${draftMeet.format !== "match" && draftMeet.scoring ? esc(scoringLabel(draftMeet.scoring)) + " (games)" : (opts.bestOf === 3 ? "best of 3 sets" : "1 set") + " · tiebreak at 6–6"}</div>
+      <button class="btn" onclick="startLive()">Start match</button>
+    </div>`;
+}
+
+function startLive() {
+  const m = draftMeet.matches[draftLive.matchIdx];
+  const opts = draftMeet.liveOpts || { goldenPoint: true, bestOf: 1 };
+  const [team, idx] = document.querySelector('input[name="firstSrv"]:checked').value.split(":");
+  const engineOpts = {
+    goldenPoint: opts.goldenPoint, bestOf: opts.bestOf,
+    firstTeam: team, firstPlayerIdx: +idx
+  };
+  // meet matches (not "Single match") play to the meet's game target, not full sets
+  if (draftMeet.format !== "match" && draftMeet.scoring) {
+    engineOpts.matchMode = "games";
+    engineOpts.gscoring = draftMeet.scoring;
+  }
+  draftLive.state = createLiveMatch(m.teamA, m.teamB, engineOpts);
+  renderLive();
+}
+
+function liveDo(action, player) {
+  const st = draftLive.state;
+  draftLive.snaps.push(JSON.stringify(st));
+  if (draftLive.snaps.length > 500) draftLive.snaps.shift();
+  liveAction(st, action, player ? { player } : undefined);
+  renderLive();
+}
+
+function liveUndo() {
+  if (!draftLive.snaps.length) return;
+  draftLive.state = JSON.parse(draftLive.snaps.pop());
+  renderLive();
+}
+
+function renderLive() {
+  const st = draftLive.state;
+  const server = liveCurrentServer(st);
+  const setCells = t => st.sets.map(s => `<td class="num">${s[t]}${s.tb ? `<sup class="muted">${s.tb[t]}</sup>` : ""}</td>`).join("");
+  const ptsLbl = livePointsDisplay(st);
+  const teamRow = (t, ids) => `<tr>
+      <td style="font-weight:600">${ids.map(id => `${esc(nameOf(id))}${id === server && !st.finished ? ' <span class="pill accent" style="font-size:9px">SERVE' + (st.secondServe ? " · 2nd" : "") + "</span>" : ""}`).join(" & ")}</td>
+      ${setCells(t)}
+      <td class="num" style="font-size:18px;font-weight:700">${st.games[t]}</td>
+      <td class="num" style="font-size:18px;font-weight:700;color:var(--accent)">${st.tiebreak ? st.tbPts[t] : (st.pts.A >= 3 && st.pts.B >= 3 ? (st.pts[t] > st.pts[t === "A" ? "B" : "A"] ? "Ad" : "40") : PTS_LABEL[Math.min(st.pts[t], 3)])}</td>
+    </tr>`;
+
+  let controls = "";
+  if (st.finished) {
+    const finalScore = st.matchMode === "games"
+      ? `${st.games.A}–${st.games.B}${st.tbFinal ? ` (TB ${st.tbFinal.A}–${st.tbFinal.B})` : ""}`
+      : st.sets.map(s => s.A + "–" + s.B).join(", ");
+    const headline = st.winner == null
+      ? `Match over — draw ${finalScore}`
+      : `Match over — ${esc((st.winner === "A" ? st.teamA : st.teamB).map(nameOf).join(" & "))} win ${finalScore}`;
+    controls = `<div class="banner" style="border-color:var(--accent);color:var(--accent)">${headline}</div>
+      <button class="btn" onclick="saveLive()">Save result to meet</button>`;
+  } else if (st.phase === "serve") {
+    controls = `<h3>Serve — ${esc(nameOf(server))} (${st.secondServe ? "2nd serve" : "1st serve"})</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" onclick="liveDo('in')">In — play on</button>
+        <button class="btn ghost" onclick="liveDo('let')">Let — replay</button>
+        <button class="btn ghost" style="color:var(--red)" onclick="liveDo('fault')">${st.secondServe ? "Double fault" : "Fault"}</button>
+      </div>`;
+  } else {
+    const btns = (ids, team) => ids.map(id => `
+      <div style="display:flex;gap:6px;align-items:center;margin:4px 0">
+        <span style="min-width:110px;font-size:13px">${esc(nameOf(id))}</span>
+        <button class="btn small" onclick="liveDo('winner','${id}')">Winner</button>
+        <button class="btn ghost small" style="color:var(--red)" onclick="liveDo('error','${id}')">Error</button>
+      </div>`).join("");
+    controls = `<h3>Rally over — who ended it, and how?</h3>
+      <div class="row">
+        <div><div class="muted">Team A</div>${btns(st.teamA, "A")}</div>
+        <div><div class="muted">Team B</div>${btns(st.teamB, "B")}</div>
+      </div>
+      <div class="muted" style="margin-top:6px">Winner = clean point by that player · Error = that player's fault/mistake (point goes to the other team)</div>`;
+  }
+
+  const logRows = st.log.slice(-12).reverse().map(e => {
+    if (e.type === "let") return `<tr><td>${e.n}</td><td colspan="3" class="muted">Let — serve replayed (${esc(nameOf(e.server))})</td><td></td></tr>`;
+    const how = e.type === "winner" ? `Winner — ${esc(nameOf(e.player))}`
+      : e.type === "error" ? `Error — ${esc(nameOf(e.player))}`
+      : `Double fault — ${esc(nameOf(e.player))}`;
+    return `<tr><td>${e.n}</td><td>S${e.set} G${e.game}${e.tb ? " TB" : ""}</td>
+      <td>${esc(nameOf(e.server))}${e.second ? " (2nd)" : ""}</td>
+      <td>${how}</td><td class="muted">${esc(e.score || "")}</td></tr>`;
+  }).join("");
+
+  const stats = liveStatsFromLog(st.log);
+  const statRows = Object.entries(stats).map(([id, s]) =>
+    `<tr><td>${esc(nameOf(id))}</td><td class="num">${s.winners}</td><td class="num">${s.errors}</td><td class="num">${s.doubles}</td>
+     <td class="num">${s.svc}</td><td class="num">${s.svc ? Math.round(100 * (s.svc - s.svcSecond) / s.svc) + "%" : "–"}</td></tr>`).join("");
+
+  main.innerHTML = `<span class="back" onclick="if(confirm('Leave this match? Progress is lost.')){draftLive=null;renderDraft();}">&larr; abandon match</span>
+    <h2>Live — ${ptsLbl}</h2>
+    <table style="max-width:560px"><tr><th>Team</th>${st.sets.map((_, i) => `<th class="num">S${i + 1}</th>`).join("")}<th class="num">Games</th><th class="num">Pts</th></tr>
+      ${teamRow("A", st.teamA)}${teamRow("B", st.teamB)}</table>
+    <div style="margin:16px 0">${controls}</div>
+    <button class="btn ghost small" onclick="liveUndo()" ${draftLive.snaps.length ? "" : "disabled"}>&#8630; Undo last action</button>
+    ${statRows ? `<h3>Player stats</h3><table style="max-width:560px"><tr><th>Player</th><th class="num">Winners</th><th class="num">Errors</th><th class="num">DF</th><th class="num">Serve pts</th><th class="num">1st in</th></tr>${statRows}</table>` : ""}
+    ${logRows ? `<h3>Point log (latest first)</h3><table><tr><th>#</th><th>Pos</th><th>Server</th><th>Outcome</th><th>Score after</th></tr>${logRows}</table>` : ""}`;
+}
+
+function saveLive() {
+  const st = draftLive.state;
+  const m = draftMeet.matches[draftLive.matchIdx];
+  if (st.matchMode === "games") {
+    m.scoreA = st.games.A;
+    m.scoreB = st.games.B;
+    if (st.tbFinal) m.tbFinal = st.tbFinal;
+  } else {
+    m.scoreA = st.sets.reduce((s, x) => s + x.A, 0);
+    m.scoreB = st.sets.reduce((s, x) => s + x.B, 0);
+    m.sets = st.sets;
+  }
+  m.live = { log: st.log, stats: liveStatsFromLog(st.log), winner: st.winner };
+  draftLive = null;
+  renderDraft();
+}
+
+function setScore(matchIdx, side, val) {
+  const m = draftMeet.matches[matchIdx];
+  const v = val === "" ? null : Math.max(0, +val);
+  if (side === "A") m.scoreA = v; else m.scoreB = v;
+  // total-points mode: auto-fill the other side when it makes a valid score
+  const sc = draftMeet.scoring;
+  if (sc && sc.mode === "total" && v != null && draftMeet.format !== "match") {
+    const other = side === "A" ? "scoreB" : "scoreA";
+    if (m[other] == null) {
+      const guess = sc.target - v;
+      if (validScore(sc, side === "A" ? v : guess, side === "A" ? guess : v)) m[other] = guess;
+    }
+  }
+  renderDraft();
+}
+
+function setScorePreset(matchIdx, a, b) {
+  const m = draftMeet.matches[matchIdx];
+  m.scoreA = a; m.scoreB = b;
+  renderDraft();
+}
+
+function nextMexicanoRound() {
+  const meet = draftMeet;
+  const standings = individualStandings(meet.players, meet.matches);
+  const nextRound = Math.max(...meet.matches.map(m => m.round)) + 1;
+  generateMexicanoRound(standings, meet.courts).forEach(m => meet.matches.push({ ...m, round: nextRound }));
+  renderDraft();
+}
+
+function finishMeet() {
+  const meet = draftMeet;
+  if (meet.scoring && meet.format !== "match") {
+    const bad = meet.matches.filter(m => !m.sets && !validScore(meet.scoring, m.scoreA, m.scoreB));
+    if (bad.length) {
+      alert("Invalid scores for the chosen rules (" + scoringLabel(meet.scoring) + "):\n" +
+        bad.map(m => `Round ${m.round} Court ${m.court}: ${m.scoreA}–${m.scoreB}`).join("\n"));
+      return;
+    }
+  }
+  saveLocalMeet(meet);
+  MEETS.push(meet);
+  RATINGS = computeRatings(PLAYERS, MEETS);
+  draftMeet = null;
+  currentView = "meets";
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("active", b.dataset.view === "meets"));
+  showMeet(meet.id);
+}
+
+/* ---------- boot ---------- */
+loadData().then(render);
+</script>
+</body>
+</html>
