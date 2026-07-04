@@ -1094,7 +1094,8 @@ function renderHost() {
           <option value="">— pick day & time (or select players manually below) —</option>
           ${upOpts}
         </select>
-        ${CONFIG.liveUpcomingUrl ? `<button class="btn ghost small" onclick="refreshUpcoming(true)" title="Get the latest joiners straight from Reclub">&#8635; Refresh</button>` : ""}
+        ${CONFIG.liveUpcomingUrl ? `<button class="btn ghost small" onclick="refreshUpcoming(true)" title="Get the latest joiners straight from Reclub">&#8635; Refresh</button>
+        <button class="btn ghost small" onclick="hostUpdateData()" title="Host only: re-sync all Reclub data to the site (needs password)">&#128274; Update data</button>` : ""}
       </div>
       <div class="muted" id="hUpInfo" style="margin-top:6px"></div>
       <div class="row">
@@ -1202,6 +1203,31 @@ async function refreshUpcoming(force) {
     }
   } catch (e) {
     if ($("#hUpInfo")) $("#hUpInfo").textContent = "Refresh failed — using last known data.";
+  }
+}
+
+/* host-only: trigger the GitHub Actions full data sync (password checked by the Worker) */
+async function hostUpdateData() {
+  if (!CONFIG.liveUpcomingUrl) return;
+  const pw = prompt("Host password:");
+  if (!pw) return;
+  const base = CONFIG.liveUpcomingUrl.replace(/\/upcoming\/?$/, "");
+  const info = $("#hUpInfo");
+  if (info) info.textContent = "Starting full data update…";
+  try {
+    const r = await fetch(base + "/update", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ password: pw })
+    });
+    const d = await r.json().catch(() => ({}));
+    if (r.ok && d.ok) {
+      if (info) info.textContent = "Update started — site data refreshes in ±3 minutes. For instant joiners, use ↻ Refresh.";
+    } else {
+      if (info) info.textContent = d.error === "wrong password" ? "Wrong password." : "Update failed: " + (d.error || r.status);
+    }
+  } catch (e) {
+    if (info) info.textContent = "Update failed — check connection.";
   }
 }
 

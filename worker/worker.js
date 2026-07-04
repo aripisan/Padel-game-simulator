@@ -36,8 +36,37 @@ export default {
   async fetch(request, env) {
     if (request.method === "OPTIONS") return new Response(null, { headers: CORS });
     const url = new URL(request.url);
+
+    /* POST /update — host-only trigger for the GitHub Actions data sync.
+       Password is verified HERE (server-side), never embedded in the site.
+       Needs Worker secrets: HOST_PASSWORD, GITHUB_PAT (fine-grained, Actions read+write
+       on the repo only) and var GITHUB_REPO e.g. "aripisan/Padel-game-simulator". */
+    if (url.pathname.endsWith("/update") && request.method === "POST") {
+      const noCache = { ...CORS, "cache-control": "no-store" };
+      let body = {};
+      try { body = await request.json(); } catch (e) {}
+      if (!env.HOST_PASSWORD || body.password !== env.HOST_PASSWORD)
+        return new Response(JSON.stringify({ error: "wrong password" }), { status: 401, headers: noCache });
+      const gh = await fetch(
+        `https://api.github.com/repos/${env.GITHUB_REPO}/actions/workflows/update-data.yml/dispatches`,
+        {
+          method: "POST",
+          headers: {
+            authorization: `Bearer ${env.GITHUB_PAT}`,
+            accept: "application/vnd.github+json",
+            "content-type": "application/json",
+            "user-agent": "npc-padel-worker"
+          },
+          body: JSON.stringify({ ref: "main" })
+        }
+      );
+      if (gh.status === 204)
+        return new Response(JSON.stringify({ ok: true, message: "Update started" }), { headers: noCache });
+      return new Response(JSON.stringify({ error: `GitHub said ${gh.status}` }), { status: 502, headers: noCache });
+    }
+
     if (!url.pathname.endsWith("/upcoming"))
-      return new Response(JSON.stringify({ error: "use /upcoming" }), { status: 404, headers: CORS });
+      return new Response(JSON.stringify({ error: "use /upcoming or POST /update" }), { status: 404, headers: CORS });
 
     const H = {
       authorization: `Bearer ${env.RECLUB_TOKEN}`,
