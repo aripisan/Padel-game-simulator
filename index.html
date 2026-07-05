@@ -129,6 +129,19 @@ const CONFIG = {
   // (PBKDF2-SHA256 310k iters + AES-256-GCM). Generated with scripts/encrypt_pat.js.
   ghRepo: "aripisan/Padel-game-simulator",
   ghWorkflow: "update-data.yml",
+  /* Firebase Realtime Database — lets several hosts score different courts
+     simultaneously from their own phones, and makes saved meets visible to
+     everyone (not just the host's browser). databaseURL comes from the
+     Realtime Database page in the Firebase console. */
+  firebase: {
+    apiKey: "AIzaSyBVLmH4oKtxLmCkXfxMQiefALVAdCtUjUg",
+    authDomain: "padel-game-simulator.firebaseapp.com",
+    projectId: "padel-game-simulator",
+    storageBucket: "padel-game-simulator.firebasestorage.app",
+    messagingSenderId: "191637292813",
+    appId: "1:191637292813:web:dacee56edbb64c95ac9244",
+    databaseURL: "https://padel-game-simulator-default-rtdb.asia-southeast1.firebasedatabase.app"
+  },
   updateBlob: "1XihmHwQoP1FIWaK+cWiuS3CXbLEo+IrLbnOBXFhuBoplDpbGn8iSCKu5vePQIDoHsOcKh3JZNF888E6GQCDjRZU3yW84+GGjwSOIkdzeudDyfqBOhgEl1AK8hEiis4SE9AUJ3zmFMcB3A7ifYNP+7gNidL5s92BfB3MOr1MbFBB6RB9Ym5Klpw=",
   clubName: "Nonstop Padel Club",
   eloK: 32,
@@ -853,6 +866,10 @@ function playerOverallAnalytics(playerId, meets) {
 }
 </script>
 
+<!-- Firebase (realtime multi-host scoring); loaded from Google CDN -->
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+
 <!-- ============================================================
      UI
      ============================================================ -->
@@ -860,8 +877,85 @@ function playerOverallAnalytics(playerId, meets) {
 "use strict";
 
 let PLAYERS = [], MEETS = [], RATINGS = {}, UPCOMING = [];
+let BASE_MEETS = [];        // meets from data files / API
+let FBMEETS = [];           // finished meets stored in Firebase (shared with everyone)
+let LIVELIST = {};          // ongoing meets in Firebase (multi-host scoring)
 let currentView = "leaderboard";
 let draftMeet = null; // meet being hosted
+
+/* ---------- Firebase realtime layer (no-ops when not configured) ---------- */
+let FB = null, liveUnsub = null;
+const fbClean = x => JSON.parse(JSON.stringify(x)); // strip undefined for RTDB
+
+function initFirebase() {
+  if (!CONFIG.firebase || !CONFIG.firebase.databaseURL || !window.firebase) return;
+  try {
+    firebase.initializeApp(CONFIG.firebase);
+    FB = firebase.database();
+    FB.ref("meets").on("value", snap => {
+      const v = snap.val() || {};
+      FBMEETS = Object.values(v).map(m => ({ ...m, matches: m.matches || [] }));
+      rebuildMeets();
+    });
+    FB.ref("live").on("value", snap => {
+      LIVELIST = snap.val() || {};
+      if (currentView === "meets" && !draftMeet) renderMeets();
+    });
+  } catch (e) { console.error("Firebase init failed", e); FB = null; }
+}
+
+function rebuildMeets() {
+  // shared Firebase meets win over anything with the same id; local-only meets kept as fallback
+  const byId = {};
+  BASE_MEETS.forEach(m => byId[m.id] = m);
+  loadLocalMeets().forEach(m => byId[m.id] = m);
+  FBMEETS.forEach(m => byId[m.id] = m);
+  MEETS = Object.values(byId);
+  RATINGS = computeRatings(PLAYERS, MEETS);
+  if (!draftMeet && !draftLive) render();
+}
+
+function fbSubscribeLive(id) {
+  if (!FB) return;
+  fbUnsubLive();
+  const ref = FB.ref("live/" + id);
+  const cb = snap => {
+    const v = snap.val();
+    if (!v) { // ended or abandoned on another device
+      if (draftMeet && draftMeet.id === id) {
+        draftMeet = null; draftLive = null;
+        currentView = "meets";
+        document.querySelectorAll("nav button").forEach(b => b.classList.toggle("active", b.dataset.view === "meets"));
+        render();
+      }
+      return;
+    }
+    v.matches = (v.matches || []).map(m => ({ scoreA: null, scoreB: null, ...m }));
+    draftMeet = v;
+    if (currentView === "host" && !draftLive) renderDraft();
+  };
+  ref.on("value", cb);
+  liveUnsub = () => ref.off("value", cb);
+}
+function fbUnsubLive() { if (liveUnsub) { liveUnsub(); liveUnsub = null; } }
+function fbWriteMatch(gi) {
+  if (!FB || !draftMeet || !draftMeet.fbLive) return;
+  FB.ref(`live/${draftMeet.id}/matches/${gi}`).set(fbClean(draftMeet.matches[gi]));
+}
+function fbWriteMeet() {
+  if (!FB || !draftMeet || !draftMeet.fbLive) return;
+  FB.ref("live/" + draftMeet.id).set(fbClean(draftMeet));
+}
+
+function joinLive(id) {
+  const v = LIVELIST[id];
+  if (!v) return;
+  draftMeet = { ...v, matches: (v.matches || []).map(m => ({ scoreA: null, scoreB: null, ...m })) };
+  fbSubscribeLive(id);
+  currentView = "host";
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("active", b.dataset.view === "host"));
+  renderDraft();
+}
 
 const $ = sel => document.querySelector(sel);
 const main = $("#main");
@@ -879,15 +973,14 @@ async function loadData() {
       ]);
       if (pr.ok && mr.ok) {
         PLAYERS = await pr.json();
-        MEETS = await mr.json();
+        BASE_MEETS = await mr.json();
         try {
           const ur = await fetch(CONFIG.dataDir + "/upcoming.json");
           UPCOMING = ur.ok ? await ur.json() : [];
         } catch (e) { UPCOMING = []; }
         $("#srcBadge").textContent = "live · reclub data";
         $("#srcBadge").style.color = "var(--accent)";
-        MEETS = MEETS.concat(loadLocalMeets());
-        RATINGS = computeRatings(PLAYERS, MEETS);
+        rebuildMeets();
         return;
       }
     } catch (e) { /* no data folder -> fall through */ }
@@ -899,7 +992,7 @@ async function loadData() {
         fetch(CONFIG.apiBaseUrl + "/meets")
       ]);
       PLAYERS = await pr.json();
-      MEETS = await mr.json();
+      BASE_MEETS = await mr.json();
       try {
         const ur = await fetch(CONFIG.apiBaseUrl + "/upcoming");
         UPCOMING = ur.ok ? await ur.json() : [];
@@ -913,14 +1006,12 @@ async function loadData() {
   } else {
     loadSample();
   }
-  // merge locally saved meets
-  MEETS = MEETS.concat(loadLocalMeets());
-  RATINGS = computeRatings(PLAYERS, MEETS);
+  rebuildMeets();
 }
 
 function loadSample() {
   PLAYERS = SAMPLE_PLAYERS.map(p => ({ id: p.id, name: p.name }));
-  MEETS = generateSampleMeets(SAMPLE_PLAYERS);
+  BASE_MEETS = generateSampleMeets(SAMPLE_PLAYERS);
   UPCOMING = generateSampleUpcoming();
   $("#srcBadge").textContent = "sample data";
 }
@@ -1114,8 +1205,21 @@ function renderLeaderboard() {
 
 /* ---------- meets ---------- */
 function renderMeets() {
+  const liveIds = Object.keys(LIVELIST || {});
+  const liveHtml = liveIds.length ? `<h2>Live now</h2>
+    <div class="banner" style="border-color:var(--accent)">Meets being scored right now — join to enter scores for your court from your own phone.</div>
+    <div class="grid">` + liveIds.map(id => {
+      const m = LIVELIST[id];
+      const matches = m.matches || [];
+      const done = matches.filter(x => x.scoreA != null && x.scoreB != null).length;
+      return `<div class="card" onclick="joinLive('${id}')" style="border-color:var(--accent-dark)">
+        <div class="name">&#128308; ${esc(m.name)}</div>
+        <div class="sub">${m.date} · ${esc(m.format)} · ${done}/${matches.length} matches scored</div>
+        <button class="btn small" style="margin-top:10px">Join live scoring</button>
+      </div>`;
+    }).join("") + `</div><h2 style="margin-top:22px">Past meets</h2>` : `<h2>Meets</h2>`;
   const sorted = MEETS.slice().sort((a, b) => b.date.localeCompare(a.date));
-  main.innerHTML = `<h2>Meets</h2><div class="grid">` + sorted.map(m => {
+  main.innerHTML = liveHtml + `<div class="grid">` + sorted.map(m => {
     const ids = new Set();
     m.matches.forEach(x => [...x.teamA, ...x.teamB].forEach(id => ids.add(id)));
     return `<div class="card" onclick="showMeet('${m.id}')">
@@ -1592,6 +1696,11 @@ function startMeet() {
     sched.forEach((ms, i) => ms.forEach(m => meet.matches.push({ ...m, round: i + 1 })));
   }
   draftMeet = meet;
+  if (FB) {
+    meet.fbLive = true;
+    FB.ref("live/" + meet.id).set(fbClean(meet));
+    fbSubscribeLive(meet.id);
+  }
   renderDraft();
 }
 
@@ -1664,7 +1773,7 @@ function renderDraft() {
     : (meet.format === "team" && meet.kingRestingBt != null
       ? `<span class="pill" style="align-self:center">Resting: ${esc(meet.bigTeams[meet.kingRestingBt].name)}</span>` : "");
 
-  main.innerHTML = `<span class="back" onclick="if(confirm('Discard this meet?')){draftMeet=null;renderHost();}">&larr; discard</span>
+  main.innerHTML = `<span class="back" onclick="leaveDraft()">&larr; leave (meet keeps running)</span>
     <h2>${esc(meet.name)} <span class="pill">${esc(meet.format)}</span> <span class="pill">${meet.date}</span></h2>
     <div class="banner">Rules: <b>${esc(scoringLabel(meet.scoring) || "free scoring")}</b>. Enter scores as matches finish — standings update live. ${meet.format === "mexicano" ? "Next round is generated from current standings." : ""}</div>
     ${roundsHtml}
@@ -1813,6 +1922,7 @@ function saveLive() {
     m.sets = st.sets;
   }
   m.live = { log: st.log, stats: liveStatsFromLog(st.log), winner: st.winner };
+  fbWriteMatch(draftMeet.matches.indexOf(m));
   draftLive = null;
   renderDraft();
 }
@@ -1830,12 +1940,14 @@ function setScore(matchIdx, side, val) {
       if (validScore(sc, side === "A" ? v : guess, side === "A" ? guess : v)) m[other] = guess;
     }
   }
+  fbWriteMatch(matchIdx);
   renderDraft();
 }
 
 function setScorePreset(matchIdx, a, b) {
   const m = draftMeet.matches[matchIdx];
   m.scoreA = a; m.scoreB = b;
+  fbWriteMatch(matchIdx);
   renderDraft();
 }
 
@@ -1855,6 +1967,7 @@ function cycleTeamPlayer(matchIdx, side, slot) {
     const cand = members[(i + step) % members.length];
     if (!cur.includes(cand)) { cur[slot] = cand; break; }
   }
+  fbWriteMatch(matchIdx);
   renderDraft();
 }
 
@@ -1890,6 +2003,7 @@ function nextTeamRound() {
       pairs.push({ court: pairs.length + 1, a: pool[i], b: pool[i + 1] });
     materializeTeamPairs(meet, pairs, lastRound + 1);
   }
+  fbWriteMeet();
   renderDraft();
 }
 
@@ -1901,6 +2015,7 @@ function nextKingRound() {
   if (!res) { alert("Every match needs a winner (no ties) before the next round."); return; }
   res.matches.forEach(m => meet.matches.push({ ...m, round: lastRound + 1 }));
   meet.kingResting = res.resting;
+  fbWriteMeet();
   renderDraft();
 }
 
@@ -1909,11 +2024,27 @@ function nextMexicanoRound() {
   const standings = individualStandings(meet.players, meet.matches);
   const nextRound = Math.max(...meet.matches.map(m => m.round)) + 1;
   generateMexicanoRound(standings, meet.courts).forEach(m => meet.matches.push({ ...m, round: nextRound }));
+  fbWriteMeet();
   renderDraft();
+}
+
+function leaveDraft() {
+  // leave this device only — the meet stays alive for other hosts (Firebase)
+  if (draftMeet && draftMeet.fbLive) {
+    fbUnsubLive();
+    draftMeet = null; draftLive = null;
+    renderHost();
+    return;
+  }
+  if (confirm("Discard this meet?")) { draftMeet = null; draftLive = null; renderHost(); }
 }
 
 function abandonMeet() {
   if (!confirm("Abandon this meet? All scores in it will be lost. This cannot be undone.")) return;
+  if (FB && draftMeet && draftMeet.fbLive) {
+    FB.ref("live/" + draftMeet.id).remove();
+    fbUnsubLive();
+  }
   draftMeet = null;
   draftLive = null;
   renderHost();
@@ -1939,7 +2070,14 @@ function finishMeet() {
     }
   }
   if (!confirm("Save this meet? Results become permanent and count toward player stats.")) return;
-  saveLocalMeet(meet);
+  if (FB && meet.fbLive) {
+    FB.ref("meets/" + meet.id).set(fbClean(meet));
+    FB.ref("live/" + meet.id).remove();
+    fbUnsubLive();
+  } else {
+    saveLocalMeet(meet);
+  }
+  MEETS = MEETS.filter(m => m.id !== meet.id);
   MEETS.push(meet);
   RATINGS = computeRatings(PLAYERS, MEETS);
   draftMeet = null;
@@ -1949,6 +2087,7 @@ function finishMeet() {
 }
 
 /* ---------- boot ---------- */
+initFirebase();
 loadData().then(render);
 </script>
 </body>
