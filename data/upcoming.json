@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm4142740",
-  "name": "PC NANDA",
-  "date": "2026-07-05",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u1114907",
-    "name": "Trisa Manganti"
-   },
-   {
-    "id": "u1292117",
-    "name": "Widhi"
-   }
-  ]
- },
- {
   "id": "rm4143073",
   "name": "NPC COACHING CLASS - PADEL BEGINNER by Coach Nanda",
   "date": "2026-07-06",
