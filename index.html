@@ -457,6 +457,20 @@ function teamRRRounds(T) {
   return rounds;
 }
 
+/* parse the custom-players box: "Name" = single player, "Name & Name" = fixed pair,
+   commas separate multiple entries on one line */
+function parseCustomEntries(text) {
+  const names = [], pairs = [];
+  (text || "").split("\n").forEach(line => {
+    line.split(",").forEach(item => {
+      const duo = item.split("&").map(s => s.trim()).filter(Boolean);
+      if (duo.length >= 2) { pairs.push([duo[0], duo[1]]); duo.slice(2).forEach(n => names.push(n)); }
+      else if (duo.length === 1) names.push(duo[0]);
+    });
+  });
+  return { names, pairs };
+}
+
 /* games played per player in this meet (for fair auto-rotation) */
 function teamPlayCounts(meet) {
   const cnt = {};
@@ -1248,8 +1262,8 @@ function renderHost() {
       <div id="playersBlock">
         <label>Players from the selected Reclub meet (tap to include/exclude)</label>
         <div class="chips" id="hChips"><span class="muted">Pick a Reclub meet above — its players show up here. Or just type names below.</span></div>
-        <label>Custom / extra players — one name per line (for any mabar, Reclub or not)</label>
-        <textarea id="hCustom" rows="4" placeholder="Ary&#10;Budi&#10;Chandra&#10;Dewi" style="width:100%;background:var(--panel2);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:10px;font-size:14px;font-family:inherit"></textarea>
+        <label>Custom / extra players — one name per line. Write <b>Name & Name</b> to set a fixed pair (used by Fixed pairs & King of Court)</label>
+        <textarea id="hCustom" rows="4" placeholder="Ary & Budi&#10;Chandra & Dewi&#10;Eka&#10;Fani" style="width:100%;background:var(--panel2);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:10px;font-size:14px;font-family:inherit"></textarea>
       </div>
       <div id="teamBlock" style="display:none">
         <label>Teams — one team per line, format: <b>Team name: player, player, player</b> (any squad size, names are free text)</label>
@@ -1439,8 +1453,16 @@ function applyUpcoming(upId) {
 function startMeet() {
   const format = $("#hFormat").value;
   // selected players = reclub chips (on) + custom names typed below
+  // "Name & Name" lines become fixed pairs (used by Fixed pairs & King of Court)
   let sel = [...document.querySelectorAll("#hChips .chip.on")].map(c => c.dataset.id);
-  ($("#hCustom").value || "").split("\n").map(s => s.trim()).filter(Boolean).forEach(n => {
+  const entries = parseCustomEntries($("#hCustom").value);
+  const customPairs = [];
+  entries.pairs.forEach(([a, b]) => {
+    const ia = resolveName(a), ib = resolveName(b);
+    customPairs.push([ia, ib]);
+    [ia, ib].forEach(id => { if (!sel.includes(id)) sel.push(id); });
+  });
+  entries.names.forEach(n => {
     const id = resolveName(n);
     if (id && !sel.includes(id)) sel.push(id);
   });
@@ -1501,9 +1523,11 @@ function startMeet() {
     meet.teams = [[sel[0], sel[1]], [sel[2], sel[3]]];
     meet.matches.push({ round: 1, court: 1, teamA: [sel[0], sel[1]], teamB: [sel[2], sel[3]], scoreA: null, scoreB: null });
   } else if (format === "king") {
-    // teams in selection order: players 1&2 = team 1, 3&4 = team 2, ...
-    const pairs = [];
-    for (let i = 0; i + 1 < sel.length; i += 2) pairs.push([sel[i], sel[i + 1]]);
+    // teams: explicit "Name & Name" pairs first, remaining players in order
+    const pairs = customPairs.filter(t => t.every(id => sel.includes(id))).map(t => t.slice());
+    const usedK = new Set(pairs.flat());
+    const restK = sel.filter(id => !usedK.has(id));
+    for (let i = 0; i + 1 < restK.length; i += 2) pairs.push([restK[i], restK[i + 1]]);
     meet.teams = pairs;
     // round 1: teams fill courts top to bottom; the extra team (if any) rests
     for (let c = 1; c <= courts; c++) {
@@ -1550,15 +1574,16 @@ function startMeet() {
     let pairs;
     if (format === "shuffle") pairs = balancedPairs(sel, RATINGS);
     else {
-      pairs = [];
-      // fixed pairs: take partner pairs registered on Reclub first
+      // fixed pairs: explicit "Name & Name" pairs first, then Reclub-registered pairs
+      pairs = customPairs.filter(t => t.every(id => sel.includes(id))).map(t => t.slice());
+      let used = new Set(pairs.flat());
       const upSel = $("#hUpcoming") ? $("#hUpcoming").value : "";
       const up = upSel ? UPCOMING.find(u => u.id === upSel) : null;
       if (up && up.teams) {
-        pairs = up.teams.filter(t => t.every(id => sel.includes(id))).map(t => t.slice());
+        up.teams.filter(t => t.every(id => sel.includes(id) && !used.has(id)))
+          .forEach(t => { pairs.push(t.slice()); t.forEach(id => used.add(id)); });
       }
       // any remaining selected players: pair in selection order
-      const used = new Set(pairs.flat());
       const rest = sel.filter(id => !used.has(id));
       for (let i = 0; i + 1 < rest.length; i += 2) pairs.push([rest[i], rest[i + 1]]);
     }
@@ -1644,7 +1669,8 @@ function renderDraft() {
     <div class="banner">Rules: <b>${esc(scoringLabel(meet.scoring) || "free scoring")}</b>. Enter scores as matches finish — standings update live. ${meet.format === "mexicano" ? "Next round is generated from current standings." : ""}</div>
     ${roundsHtml}
     <div style="display:flex;gap:10px;flex-wrap:wrap">${mexBtn}${kingBtn}${teamBtn}${restingNote}
-    <button class="btn" onclick="finishMeet()" ${allScored ? "" : "disabled"}>Finish & save meet</button></div>
+    <button class="btn" onclick="finishMeet()">Finish & save meet</button>
+    <button class="btn ghost" style="color:var(--red);border-color:var(--red)" onclick="abandonMeet()">Abandon meet</button></div>
     <h3>Live standings</h3>${standingsHtml}`;
 }
 
@@ -1886,8 +1912,24 @@ function nextMexicanoRound() {
   renderDraft();
 }
 
+function abandonMeet() {
+  if (!confirm("Abandon this meet? All scores in it will be lost. This cannot be undone.")) return;
+  draftMeet = null;
+  draftLive = null;
+  renderHost();
+}
+
 function finishMeet() {
   const meet = draftMeet;
+  // clear message when scores are still missing (a disabled button explains nothing)
+  const unscored = meet.matches.filter(m => m.scoreA == null || m.scoreB == null);
+  if (unscored.length) {
+    alert(`${unscored.length} match(es) still have no score:\n` +
+      unscored.slice(0, 6).map(m => `Round ${m.round} Court ${m.court}`).join("\n") +
+      (unscored.length > 6 ? "\n…" : "") +
+      "\n\nFill them in (tap a score pill / type numbers / use Live score) before saving.");
+    return;
+  }
   if (meet.scoring && meet.format !== "match") {
     const bad = meet.matches.filter(m => !m.sets && !validScore(meet.scoring, m.scoreA, m.scoreB));
     if (bad.length) {
@@ -1896,6 +1938,7 @@ function finishMeet() {
       return;
     }
   }
+  if (!confirm("Save this meet? Results become permanent and count toward player stats.")) return;
   saveLocalMeet(meet);
   MEETS.push(meet);
   RATINGS = computeRatings(PLAYERS, MEETS);
