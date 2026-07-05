@@ -115,6 +115,15 @@
   ]
  },
  {
+  "id": "rm4077429",
+  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
+  "date": "2026-07-06",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": []
+ },
+ {
   "id": "rm4075514",
   "name": "NPC GOES TO KBP SLAY LADIES Mexicano 1C2H6P upper beginner++",
   "date": "2026-07-06",
@@ -123,19 +132,18 @@
   "format": "mexicano",
   "players": [
    {
+    "id": "u896226",
+    "name": "Esa"
+   },
+   {
+    "id": "u1311591",
+    "name": "CHiK4"
+   },
+   {
     "id": "u341047",
     "name": "Sherlyta"
    }
   ]
- },
- {
-  "id": "rm4077429",
-  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
-  "date": "2026-07-06",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": []
  },
  {
   "id": "rm3891199",
@@ -172,6 +180,14 @@
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
   "players": [
+   {
+    "id": "u890237",
+    "name": "Riela"
+   },
+   {
+    "id": "u657253",
+    "name": "Arkie Tirtosudiro"
+   },
    {
     "id": "u1221572",
     "name": "Timmy"
