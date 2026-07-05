@@ -436,6 +436,62 @@ function kingNextRound(prevMatches, resting) {
   return { matches, resting: resting ? l[N] : null };
 }
 
+/* ---------- Team Match: flexible squad sizes (3, 4, mixed per team) ----------
+   Big teams play each other; every match is still doubles — 2 players per side,
+   auto-picked from each squad by least games played (host can swap). */
+
+/* round robin between T teams (indices), circle method. Returns rounds of [a,b] index pairs. */
+function teamRRRounds(T) {
+  const arr = [...Array(T).keys()];
+  if (T % 2) arr.push(-1); // bye
+  const n = arr.length, rounds = [];
+  for (let r = 0; r < n - 1; r++) {
+    const pairs = [];
+    for (let i = 0; i < n / 2; i++) {
+      const a = arr[i], b = arr[n - 1 - i];
+      if (a !== -1 && b !== -1) pairs.push([a, b]);
+    }
+    rounds.push(pairs);
+    arr.splice(1, 0, arr.pop());
+  }
+  return rounds;
+}
+
+/* games played per player in this meet (for fair auto-rotation) */
+function teamPlayCounts(meet) {
+  const cnt = {};
+  meet.bigTeams.forEach(t => t.players.forEach(p => cnt[p] = 0));
+  meet.matches.forEach(m => [...m.teamA, ...m.teamB].forEach(p => { if (cnt[p] != null) cnt[p]++; }));
+  return cnt;
+}
+
+/* pairs: [{court, a, b}] with big-team indices -> creates matches with auto-picked doubles */
+function materializeTeamPairs(meet, pairs, round) {
+  const cnt = teamPlayCounts(meet);
+  pairs.forEach(({ court, a, b }) => {
+    const pick = t => {
+      const two = meet.bigTeams[t].players.slice().sort((x, y) => cnt[x] - cnt[y]).slice(0, 2);
+      two.forEach(p => cnt[p]++);
+      return two;
+    };
+    meet.matches.push({ round, court, btA: a, btB: b, teamA: pick(a), teamB: pick(b), scoreA: null, scoreB: null });
+  });
+}
+
+/* team standings from matches carrying btA/btB (big-team indices) */
+function bigTeamStandings(bigTeams, matches) {
+  const s = bigTeams.map((t, i) => ({ bt: i, name: t.name, played: 0, wins: 0, ptsFor: 0, ptsAgainst: 0 }));
+  matches.forEach(m => {
+    if (m.btA == null || m.scoreA == null || m.scoreB == null) return;
+    const A = s[m.btA], B = s[m.btB];
+    A.played++; B.played++;
+    A.ptsFor += m.scoreA; A.ptsAgainst += m.scoreB;
+    B.ptsFor += m.scoreB; B.ptsAgainst += m.scoreA;
+    if (m.scoreA > m.scoreB) A.wins++; else if (m.scoreB > m.scoreA) B.wins++;
+  });
+  return s.slice().sort((a, b) => b.wins - a.wins || (b.ptsFor - b.ptsAgainst) - (a.ptsFor - a.ptsAgainst) || b.ptsFor - a.ptsFor);
+}
+
 /* Balanced shuffle: pair strongest with weakest by rating, then round-robin */
 function balancedPairs(playerIds, ratings) {
   const sorted = playerIds.slice().sort((a, b) => (ratings[b] || 1000) - (ratings[a] || 1000));
@@ -1113,10 +1169,15 @@ function showMeet(id) {
     analyticsHtml = `<h3>Player analytics — this meet (live-tracked matches)</h3>
       <table style="max-width:640px"><tr><th>Player</th><th class="num">Tracked</th><th class="num">Winners</th><th class="num">Errors</th><th class="num">DF</th><th class="num">1st serve in</th></tr>${rows}</table>`;
   }
+  const bigStMeet = meet.bigTeams ? `<h3>Team standings</h3>
+    <table><tr><th>#</th><th>Team</th><th class="num">Played</th><th class="num">Wins</th><th class="num">Diff</th></tr>
+    ${bigTeamStandings(meet.bigTeams, meet.matches).map((s, i) =>
+      `<tr><td class="${i === 0 ? "rank1" : ""}">${i + 1}</td><td class="${i === 0 ? "rank1" : ""}">${esc(s.name)}</td><td class="num">${s.played}</td><td class="num">${s.wins}</td><td class="num">${s.ptsFor - s.ptsAgainst > 0 ? "+" : ""}${s.ptsFor - s.ptsAgainst}</td></tr>`).join("")}</table>` : "";
   main.innerHTML = `<span class="back" onclick="renderMeets()">&larr; all meets</span>
     <h2>${esc(meet.name)}</h2>
     <div class="muted">${meet.date} · ${esc(meet.venue || "")} · ${esc(meet.format)}</div>
     ${analyticsHtml}
+    ${bigStMeet}
     <h3>Final standings</h3>
     <table><tr><th>#</th><th>Player</th><th class="num">Points</th><th class="num">Wins</th><th class="num">Played</th></tr>
     ${standings.map((s, i) => `<tr><td class="${i === 0 ? "rank1" : ""}">${i + 1}</td><td class="${i === 0 ? "rank1" : ""}">${esc(nameOf(s.id))}</td><td class="num">${s.points}</td><td class="num">${s.wins}</td><td class="num">${s.played}</td></tr>`).join("")}
@@ -1127,8 +1188,6 @@ function showMeet(id) {
 /* ---------- host a meet ---------- */
 function renderHost() {
   if (draftMeet) return renderDraft();
-  const chips = PLAYERS.map(p =>
-    `<div class="chip" data-id="${p.id}" onclick="this.classList.toggle('on')">${esc(p.name)} <span style="opacity:.6;font-size:11px">${Math.round(RATINGS[p.id] || 1000)}</span></div>`).join("");
   const dayName = d => new Date(d + "T00:00").toLocaleDateString("en-US", { weekday: "short", day: "numeric", month: "short" });
   const upOpts = UPCOMING.slice().sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time))
     .map(u => `<option value="${u.id}">${esc(u.name)} — ${dayName(u.date)} · ${u.time} · ${u.players.length} players</option>`).join("");
@@ -1150,12 +1209,13 @@ function renderHost() {
       </div>
       <div class="row">
         <div><label>Format</label>
-          <select id="hFormat">
+          <select id="hFormat" onchange="onFormatChange()">
             <option value="americano">Americano — rotating partners, individual points</option>
             <option value="mexicano">Mexicano — matchups follow the standings</option>
             <option value="fixed">Fixed pairs — round robin</option>
             <option value="shuffle">Balanced shuffle — auto-pair by rating, round robin</option>
             <option value="king">King/Queen of Court — winners move up, losers move down</option>
+            <option value="team">Team Match — squads of any size (3, 4, mixed)</option>
             <option value="match">Single match — live point-by-point scoring</option>
           </select></div>
         <div><label>Courts</label><input type="number" id="hCourts" value="2" min="1" max="10"></div>
@@ -1185,15 +1245,28 @@ function renderHost() {
             <option value="3">Best of 3</option>
           </select></div>
       </div>
-      <label>Players (${PLAYERS.length} in club — tap to select)</label>
-      <div class="chips" id="hChips">${chips}</div>
-      <label>Add guest player</label>
-      <div class="row"><div><input type="text" id="hGuest" placeholder="Guest name"></div>
-      <div><button class="btn ghost small" onclick="addGuest()">Add guest</button></div></div>
+      <div id="playersBlock">
+        <label>Players from the selected Reclub meet (tap to include/exclude)</label>
+        <div class="chips" id="hChips"><span class="muted">Pick a Reclub meet above — its players show up here. Or just type names below.</span></div>
+        <label>Custom / extra players — one name per line (for any mabar, Reclub or not)</label>
+        <textarea id="hCustom" rows="4" placeholder="Ary&#10;Budi&#10;Chandra&#10;Dewi" style="width:100%;background:var(--panel2);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:10px;font-size:14px;font-family:inherit"></textarea>
+      </div>
+      <div id="teamBlock" style="display:none">
+        <label>Teams — one team per line, format: <b>Team name: player, player, player</b> (any squad size, names are free text)</label>
+        <textarea id="hTeams" rows="6" placeholder="Tim Merah: Ary, Budi, Chandra&#10;Tim Biru: Dewi, Eka, Fani, Gita&#10;Tim Hijau: Hadi, Indra, Joko" style="width:100%;background:var(--panel2);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:10px;font-size:14px;font-family:inherit"></textarea>
+        <label>Team schedule</label>
+        <select id="hTeamMode">
+          <option value="rr">Round robin — every team meets every team</option>
+          <option value="mexicano">Mexicano — matchups follow team standings</option>
+          <option value="king">King of Court — winning team moves up</option>
+        </select>
+        <div class="muted" style="margin-top:6px">Every match is doubles: 2 players auto-picked per team (least games played first). Tap a name in the schedule to swap with a teammate.</div>
+      </div>
       <button class="btn" onclick="startMeet()">Generate game sequence</button>
       <div class="muted" style="margin-top:8px">Americano & fixed formats generate the full schedule up-front. Mexicano generates round-by-round from live standings, like Alfred. No Reclub meet? Just tap players manually or add guests.</div>
     </div>`;
   updateTieOptions();
+  onFormatChange();
   refreshUpcoming(false); // silent auto-refresh when opening Host (max 1x/min)
 }
 
@@ -1221,6 +1294,25 @@ function updateTieOptions() {
     tie.innerHTML = `<option value="none">Not possible — odd total, always a winner</option>`;
     tie.disabled = true;
   }
+}
+
+function onFormatChange() {
+  const isTeam = $("#hFormat").value === "team";
+  $("#playersBlock").style.display = isTeam ? "none" : "";
+  $("#teamBlock").style.display = isTeam ? "" : "none";
+}
+
+/* resolve a free-text name to a roster player (case-insensitive) or create a new one */
+let customSeq = 0;
+function resolveName(name) {
+  const n = name.trim();
+  if (!n) return null;
+  const p = PLAYERS.find(x => x.name.toLowerCase() === n.toLowerCase());
+  if (p) return p.id;
+  const id = "c" + Date.now() + "_" + (++customSeq);
+  PLAYERS.push({ id, name: n });
+  RATINGS[id] = CONFIG.eloStart;
+  return id;
 }
 
 /* real-time refresh from the Cloudflare Worker (latest joiners, seconds before play) */
@@ -1314,60 +1406,61 @@ async function hostUpdateData() {
 }
 
 function applyUpcoming(upId) {
-  // clear all selections first
-  document.querySelectorAll("#hChips .chip").forEach(c => c.classList.remove("on"));
-  const info = $("#hUpInfo");
+  const info = $("#hUpInfo"), chips = $("#hChips");
   window.hostUpSel = upId || null;
-  if (!upId) { info.textContent = ""; $("#hFormat").disabled = false; return; }
+  if (!upId) {
+    info.textContent = "";
+    $("#hFormat").disabled = false;
+    chips.innerHTML = '<span class="muted">Pick a Reclub meet above — its players show up here. Or just type names below.</span>';
+    return;
+  }
   const up = UPCOMING.find(u => u.id === upId);
   if (!up) return;
   // format follows Reclub — locked; scoring options stay open
-  if (up.format) { $("#hFormat").value = up.format; $("#hFormat").disabled = true; }
+  if (up.format) { $("#hFormat").value = up.format; $("#hFormat").disabled = true; onFormatChange(); }
   else $("#hFormat").disabled = false;
   // add players from the Reclub meet that aren't in the roster yet
-  let added = false;
   up.players.forEach(rp => {
     if (!PLAYERS.find(p => p.id === rp.id)) {
       PLAYERS.push({ id: rp.id, name: rp.name });
       RATINGS[rp.id] = CONFIG.eloStart;
-      added = true;
     }
   });
-  if (added) { // re-render chips to include new players, then re-apply selection
-    renderHost();
-    $("#hUpcoming").value = upId;
-  }
   $("#hName").value = up.name;
   $("#hDate").value = up.date;
-  up.players.forEach(rp => {
-    const el = document.querySelector(`#hChips .chip[data-id="${rp.id}"]`);
-    if (el) el.classList.add("on");
-  });
+  // chips = only this meet's registered players, all selected
+  chips.innerHTML = up.players.map(rp =>
+    `<div class="chip on" data-id="${rp.id}" onclick="this.classList.toggle('on')">${esc(rp.name)}</div>`).join("")
+    || '<span class="muted">Nobody has joined this meet yet — type names below or use ↻ Refresh.</span>';
   const fmtNote = up.format ? ` Format locked from Reclub: ${up.format}${up.teams ? " (partners as registered)" : ""}.` : "";
-  $("#hUpInfo").textContent = `${up.players.length} players registered on Reclub · ${up.venue} · ${up.date} ${up.time}.${fmtNote} Point rules below are yours to choose.`;
-}
-
-function addGuest() {
-  const name = $("#hGuest").value.trim();
-  if (!name) return;
-  const id = "g" + Date.now();
-  PLAYERS.push({ id, name: name + " (guest)" });
-  RATINGS[id] = CONFIG.eloStart;
-  $("#hGuest").value = "";
-  // re-render keeping selections and form values
-  const on = [...document.querySelectorAll("#hChips .chip.on")].map(c => c.dataset.id);
-  const keep = { up: $("#hUpcoming").value, name: $("#hName").value, date: $("#hDate").value,
-    fmt: $("#hFormat").value, fmtDis: $("#hFormat").disabled };
-  renderHost();
-  $("#hUpcoming").value = keep.up; $("#hName").value = keep.name; $("#hDate").value = keep.date;
-  $("#hFormat").value = keep.fmt; $("#hFormat").disabled = keep.fmtDis;
-  window.hostUpSel = keep.up || null;
-  on.forEach(pid => { const el = document.querySelector(`#hChips .chip[data-id="${pid}"]`); if (el) el.classList.add("on"); });
+  info.textContent = `${up.players.length} players registered on Reclub · ${up.venue} · ${up.date} ${up.time}.${fmtNote} Point rules below are yours to choose.`;
 }
 
 function startMeet() {
-  const sel = [...document.querySelectorAll("#hChips .chip.on")].map(c => c.dataset.id);
   const format = $("#hFormat").value;
+  // selected players = reclub chips (on) + custom names typed below
+  let sel = [...document.querySelectorAll("#hChips .chip.on")].map(c => c.dataset.id);
+  ($("#hCustom").value || "").split("\n").map(s => s.trim()).filter(Boolean).forEach(n => {
+    const id = resolveName(n);
+    if (id && !sel.includes(id)) sel.push(id);
+  });
+
+  // Team Match: teams come from the team textarea instead
+  let bigTeams = null;
+  if (format === "team") {
+    bigTeams = [];
+    const lines = ($("#hTeams").value || "").split("\n").map(s => s.trim()).filter(Boolean);
+    for (const line of lines) {
+      const ci = line.indexOf(":");
+      const tname = ci > -1 ? line.slice(0, ci).trim() : `Team ${bigTeams.length + 1}`;
+      const members = (ci > -1 ? line.slice(ci + 1) : line).split(",").map(s => s.trim()).filter(Boolean).map(resolveName);
+      if (members.length) bigTeams.push({ name: tname || `Team ${bigTeams.length + 1}`, players: members });
+    }
+    if (bigTeams.length < 2) { alert("Team Match needs at least 2 teams (one per line: Name: player, player, ...)."); return; }
+    const small = bigTeams.filter(t => t.players.length < 2);
+    if (small.length) { alert("Every team needs at least 2 players: " + small.map(t => t.name).join(", ")); return; }
+    sel = bigTeams.flatMap(t => t.players);
+  }
   const courts = Math.max(1, +$("#hCourts").value || 1);
   const rounds = Math.max(1, +$("#hRounds").value || 5);
   const points = Math.max(4, +$("#hPoints").value || 24);
@@ -1377,7 +1470,7 @@ function startMeet() {
     target: scTgt === "custom" ? points : +scTgt,
     tie: $("#hTie").disabled ? "none" : $("#hTie").value
   };
-  if (sel.length < 4) { alert("Select at least 4 players."); return; }
+  if (sel.length < 4) { alert("At least 4 players needed — tap Reclub chips or type names."); return; }
   if ((format === "fixed" || format === "shuffle") && sel.length % 2 === 1) { alert("Even number of players needed for pair formats."); return; }
   if (format === "match" && sel.length !== 4) { alert("Single match needs exactly 4 players (first two = team A)."); return; }
   if (format === "king") {
@@ -1421,6 +1514,30 @@ function startMeet() {
       });
     }
     meet.kingResting = pairs.length === courts * 2 + 1 ? pairs[courts * 2].slice() : null;
+  } else if (format === "team") {
+    meet.bigTeams = bigTeams;
+    meet.teamMode = $("#hTeamMode").value;
+    const T = bigTeams.length;
+    const C = Math.min(courts, Math.floor(T / 2));
+    if (meet.teamMode === "king" && T !== 2 * C && T !== 2 * C + 1) {
+      alert(`Team King of Court with ${courts} court(s) needs ${2 * C} or ${2 * C + 1} teams (you have ${T}). Add/remove a team or change courts.`);
+      return;
+    }
+    if (meet.teamMode === "rr") {
+      let roundNo = 0;
+      teamRRRounds(T).forEach(pairs => {
+        for (let c = 0; c < pairs.length; c += C) {
+          roundNo++;
+          materializeTeamPairs(meet, pairs.slice(c, c + C).map((p, i) => ({ court: i + 1, a: p[0], b: p[1] })), roundNo);
+        }
+      });
+    } else {
+      // mexicano & king start from listed order; extra teams rest
+      const pairs = [];
+      for (let i = 0; i + 1 < 2 * C; i += 2) pairs.push({ court: i / 2 + 1, a: i, b: i + 1 });
+      materializeTeamPairs(meet, pairs, 1);
+      meet.kingRestingBt = (meet.teamMode === "king" && T === 2 * C + 1) ? 2 * C : null;
+    }
   } else if (format === "americano") {
     const sched = generateAmericano(sel, rounds, courts, Date.now() % 100000);
     sched.forEach((ms, i) => ms.forEach(m => meet.matches.push({ ...m, round: i + 1 })));
@@ -1480,19 +1597,31 @@ function renderDraft() {
           <input class="score" type="number" min="0" max="99" value="${m.scoreB == null ? "" : m.scoreB}"
             onchange="setScore(${gi},'B',this.value)" ${bad ? 'style="border-color:var(--red)"' : ""}>`;
       }
+      const teamHtml = (ids, side, bt) => {
+        const names = meet.format === "team" && m.scoreA == null && m.scoreB == null
+          ? ids.map((id, slot) => `<span style="text-decoration:underline dotted;cursor:pointer" title="Tap to swap with a teammate" onclick="cycleTeamPlayer(${gi},'${side}',${slot})">${esc(nameOf(id))}</span>`).join(" & ")
+          : ids.map(nameOf).map(esc).join(" & ");
+        const label = bt != null ? `<span class="muted" style="font-size:10px;text-transform:uppercase;letter-spacing:.5px">${esc(meet.bigTeams[bt].name)}</span><br>` : "";
+        return label + names;
+      };
       return `<div class="match">
         <span class="court">Court ${m.court}</span>
-        <span class="team">${m.teamA.map(nameOf).map(esc).join(" & ")}</span>
+        <span class="team">${teamHtml(m.teamA, "A", m.btA)}</span>
         ${entry}
-        <span class="team">${m.teamB.map(nameOf).map(esc).join(" & ")}</span>
+        <span class="team">${teamHtml(m.teamB, "B", m.btB)}</span>
         ${liveBtn}
       </div>`;
     }).join("")).join("");
 
+  if (meet.bigTeams) {
+    var bigStHtml = `<table><tr><th>#</th><th>Team</th><th class="num">Played</th><th class="num">Wins</th><th class="num">Diff</th></tr>
+      ${bigTeamStandings(meet.bigTeams, meet.matches).map((s, i) =>
+        `<tr><td class="${i === 0 ? "rank1" : ""}">${i + 1}</td><td class="${i === 0 ? "rank1" : ""}">${esc(s.name)} <span class="muted">(${meet.bigTeams[s.bt].players.length}p)</span></td><td class="num">${s.played}</td><td class="num">${s.wins}</td><td class="num">${s.ptsFor - s.ptsAgainst > 0 ? "+" : ""}${s.ptsFor - s.ptsAgainst}</td></tr>`).join("")}</table>`;
+  }
   const standings = meet.teams
     ? teamStandings(meet.teams, meet.matches)
     : individualStandings(meet.players, meet.matches);
-  const standingsHtml = meet.teams
+  const standingsHtml = meet.bigTeams ? bigStHtml : meet.teams
     ? `<table><tr><th>#</th><th>Pair</th><th class="num">Played</th><th class="num">Wins</th><th class="num">Diff</th></tr>
        ${standings.map((s, i) => `<tr><td class="${i === 0 ? "rank1" : ""}">${i + 1}</td><td class="${i === 0 ? "rank1" : ""}">${s.team.map(nameOf).map(esc).join(" & ")}</td><td class="num">${s.played}</td><td class="num">${s.wins}</td><td class="num">${s.ptsFor - s.ptsAgainst > 0 ? "+" : ""}${s.ptsFor - s.ptsAgainst}</td></tr>`).join("")}</table>`
     : `<table><tr><th>#</th><th>Player</th><th class="num">Points</th><th class="num">Wins</th><th class="num">Played</th></tr>
@@ -1503,14 +1632,18 @@ function renderDraft() {
     ? `<button class="btn ghost" onclick="nextMexicanoRound()" ${allScored ? "" : "disabled"}>Generate next round from standings</button>` : "";
   const kingBtn = meet.format === "king"
     ? `<button class="btn ghost" onclick="nextKingRound()" ${allScored ? "" : "disabled"}>Next round — winners up, losers down</button>` : "";
+  const teamBtn = meet.format === "team" && meet.teamMode !== "rr"
+    ? `<button class="btn ghost" onclick="nextTeamRound()" ${allScored ? "" : "disabled"}>${meet.teamMode === "king" ? "Next round — winning team moves up" : "Next round from team standings"}</button>` : "";
   const restingNote = meet.format === "king" && meet.kingResting
-    ? `<span class="pill" style="align-self:center">Resting: ${meet.kingResting.map(nameOf).map(esc).join(" & ")}</span>` : "";
+    ? `<span class="pill" style="align-self:center">Resting: ${meet.kingResting.map(nameOf).map(esc).join(" & ")}</span>`
+    : (meet.format === "team" && meet.kingRestingBt != null
+      ? `<span class="pill" style="align-self:center">Resting: ${esc(meet.bigTeams[meet.kingRestingBt].name)}</span>` : "");
 
   main.innerHTML = `<span class="back" onclick="if(confirm('Discard this meet?')){draftMeet=null;renderHost();}">&larr; discard</span>
     <h2>${esc(meet.name)} <span class="pill">${esc(meet.format)}</span> <span class="pill">${meet.date}</span></h2>
     <div class="banner">Rules: <b>${esc(scoringLabel(meet.scoring) || "free scoring")}</b>. Enter scores as matches finish — standings update live. ${meet.format === "mexicano" ? "Next round is generated from current standings." : ""}</div>
     ${roundsHtml}
-    <div style="display:flex;gap:10px;flex-wrap:wrap">${mexBtn}${kingBtn}${restingNote}
+    <div style="display:flex;gap:10px;flex-wrap:wrap">${mexBtn}${kingBtn}${teamBtn}${restingNote}
     <button class="btn" onclick="finishMeet()" ${allScored ? "" : "disabled"}>Finish & save meet</button></div>
     <h3>Live standings</h3>${standingsHtml}`;
 }
@@ -1677,6 +1810,60 @@ function setScore(matchIdx, side, val) {
 function setScorePreset(matchIdx, a, b) {
   const m = draftMeet.matches[matchIdx];
   m.scoreA = a; m.scoreB = b;
+  renderDraft();
+}
+
+/* ---------- Team Match helpers (pure parts live in core) ---------- */
+
+/* swap a fielded player with the next teammate on the bench (tap the name) */
+function cycleTeamPlayer(matchIdx, side, slot) {
+  const meet = draftMeet;
+  const m = meet.matches[matchIdx];
+  if (m.scoreA != null || m.scoreB != null) return; // locked once scored
+  const bt = side === "A" ? m.btA : m.btB;
+  const cur = side === "A" ? m.teamA : m.teamB;
+  const members = meet.bigTeams[bt].players;
+  if (members.length <= 2) return;
+  let i = members.indexOf(cur[slot]);
+  for (let step = 1; step <= members.length; step++) {
+    const cand = members[(i + step) % members.length];
+    if (!cur.includes(cand)) { cur[slot] = cand; break; }
+  }
+  renderDraft();
+}
+
+function nextTeamRound() {
+  const meet = draftMeet;
+  const lastRound = Math.max(...meet.matches.map(m => m.round));
+  const prev = meet.matches.filter(m => m.round === lastRound);
+  if (prev.some(m => m.scoreA == null || m.scoreB == null)) return;
+  const T = meet.bigTeams.length;
+  const C = Math.min(meet.courts, Math.floor(T / 2));
+
+  if (meet.teamMode === "king") {
+    if (prev.some(m => m.scoreA === m.scoreB)) { alert("Every match needs a winner (no ties) before the next round."); return; }
+    // reuse the tested king engine via pseudo team ids "t<idx>"
+    const pseudo = prev.map(m => ({ court: m.court, teamA: ["t" + m.btA], teamB: ["t" + m.btB], scoreA: m.scoreA, scoreB: m.scoreB }));
+    const res = kingNextRound(pseudo, meet.kingRestingBt != null ? ["t" + meet.kingRestingBt] : null);
+    if (!res) { alert("Every match needs a winner (no ties)."); return; }
+    materializeTeamPairs(meet, res.matches.map(m => ({ court: m.court, a: +m.teamA[0].slice(1), b: +m.teamB[0].slice(1) })), lastRound + 1);
+    meet.kingRestingBt = res.resting ? +res.resting[0].slice(1) : null;
+  } else {
+    // mexicano: rank by team standings; teams with most matches played rest if capacity is short
+    const st = bigTeamStandings(meet.bigTeams, meet.matches);
+    const benchN = T - 2 * C;
+    let pool = st.map(s => s.bt);
+    if (benchN > 0) {
+      const played = {};
+      st.forEach(s => played[s.bt] = s.played);
+      const bench = new Set(pool.slice().sort((a, b) => played[b] - played[a]).slice(0, benchN));
+      pool = pool.filter(bt => !bench.has(bt));
+    }
+    const pairs = [];
+    for (let i = 0; i + 1 < pool.length && pairs.length < C; i += 2)
+      pairs.push({ court: pairs.length + 1, a: pool[i], b: pool[i + 1] });
+    materializeTeamPairs(meet, pairs, lastRound + 1);
+  }
   renderDraft();
 }
 
