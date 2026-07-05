@@ -905,7 +905,20 @@ function initFirebase() {
   } catch (e) { console.error("Firebase init failed", e); FB = null; }
 }
 
+/* meets carry their own roster {id: name} so every device can show names
+   for custom players that only ever existed on the host's phone */
+function mergeRoster(roster) {
+  if (!roster) return;
+  Object.entries(roster).forEach(([id, name]) => {
+    if (!PLAYERS.find(p => p.id === id)) {
+      PLAYERS.push({ id, name });
+      if (RATINGS[id] == null) RATINGS[id] = CONFIG.eloStart;
+    }
+  });
+}
+
 function rebuildMeets() {
+  FBMEETS.forEach(m => mergeRoster(m.roster));
   // shared Firebase meets win over anything with the same id; local-only meets kept as fallback
   const byId = {};
   BASE_MEETS.forEach(m => byId[m.id] = m);
@@ -932,6 +945,7 @@ function fbSubscribeLive(id) {
       return;
     }
     v.matches = (v.matches || []).map(m => ({ scoreA: null, scoreB: null, ...m }));
+    mergeRoster(v.roster);
     draftMeet = v;
     if (currentView === "host" && !draftLive) renderDraft();
   };
@@ -951,6 +965,7 @@ function fbWriteMeet() {
 function joinLive(id) {
   const v = LIVELIST[id];
   if (!v) return;
+  mergeRoster(v.roster);
   draftMeet = { ...v, matches: (v.matches || []).map(m => ({ scoreA: null, scoreB: null, ...m })) };
   fbSubscribeLive(id);
   currentView = "host";
@@ -1722,6 +1737,9 @@ function startMeet() {
     const sched = generateRoundRobin(pairs, courts);
     sched.forEach((ms, i) => ms.forEach(m => meet.matches.push({ ...m, round: i + 1 })));
   }
+  // embed the roster so every device can display names (incl. custom players)
+  meet.roster = {};
+  sel.forEach(id => meet.roster[id] = nameOf(id));
   draftMeet = meet;
   if (FB) {
     meet.fbLive = true;
