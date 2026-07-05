@@ -470,18 +470,19 @@ function teamRRRounds(T) {
   return rounds;
 }
 
-/* parse the custom-players box: "Name" = single player, "Name & Name" = fixed pair,
+/* parse the custom-players box: "Name" = single player, "A & B" = a team of 2,
+   "A & B & C" = a team of 3 (any size — kept intact, never split up),
    commas separate multiple entries on one line */
 function parseCustomEntries(text) {
-  const names = [], pairs = [];
+  const names = [], groups = [];
   (text || "").split("\n").forEach(line => {
     line.split(",").forEach(item => {
-      const duo = item.split("&").map(s => s.trim()).filter(Boolean);
-      if (duo.length >= 2) { pairs.push([duo[0], duo[1]]); duo.slice(2).forEach(n => names.push(n)); }
-      else if (duo.length === 1) names.push(duo[0]);
+      const g = item.split("&").map(s => s.trim()).filter(Boolean);
+      if (g.length >= 2) groups.push(g);
+      else if (g.length === 1) names.push(g[0]);
     });
   });
-  return { names, pairs };
+  return { names, groups };
 }
 
 /* games played per player in this meet (for fair auto-rotation) */
@@ -1366,7 +1367,7 @@ function renderHost() {
       <div id="playersBlock">
         <label>Players from the selected Reclub meet (tap to include/exclude)</label>
         <div class="chips" id="hChips"><span class="muted">Pick a Reclub meet above — its players show up here. Or just type names below.</span></div>
-        <label>Custom / extra players — one name per line. Write <b>Name & Name</b> to set a fixed pair (used by Fixed pairs & King of Court)</label>
+        <label>Custom / extra players — one name per line. <b>Name & Name</b> = fixed pair (Fixed/King). Squads of 3+ (e.g. <b>A & B & C</b>)? Use the Team Match format.</label>
         <textarea id="hCustom" rows="4" placeholder="Ary & Budi&#10;Chandra & Dewi&#10;Eka&#10;Fani" style="width:100%;background:var(--panel2);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:10px;font-size:14px;font-family:inherit"></textarea>
       </div>
       <div id="teamBlock" style="display:none">
@@ -1560,26 +1561,50 @@ function startMeet() {
   // "Name & Name" lines become fixed pairs (used by Fixed pairs & King of Court)
   let sel = [...document.querySelectorAll("#hChips .chip.on")].map(c => c.dataset.id);
   const entries = parseCustomEntries($("#hCustom").value);
-  const customPairs = [];
-  entries.pairs.forEach(([a, b]) => {
-    const ia = resolveName(a), ib = resolveName(b);
-    customPairs.push([ia, ib]);
-    [ia, ib].forEach(id => { if (!sel.includes(id)) sel.push(id); });
+  const customPairs = [], customBig = [];
+  entries.groups.forEach(g => {
+    const ids = g.map(resolveName);
+    if (ids.length === 2) customPairs.push(ids);
+    else customBig.push({ names: g, ids });
+    ids.forEach(id => { if (!sel.includes(id)) sel.push(id); });
   });
   entries.names.forEach(n => {
     const id = resolveName(n);
     if (id && !sel.includes(id)) sel.push(id);
   });
+  // squads of 3+ are fine everywhere EXCEPT fixed partner (pairs of exactly 2)
+  if (customBig.length && (format === "fixed" || format === "match")) {
+    alert(`You entered squad(s) of 3+ players (${customBig.map(g => g.names.join(" & ")).join("; ")}).\n\n` +
+      `"${format}" needs pairs of exactly 2. Reduce each line to 2 names, or use King of Court / Team Match which support bigger squads.`);
+    return;
+  }
+  // King with 3+ squads runs on the Team engine: squad moves up/down courts,
+  // 2 players field per match, the rested one rotates back in (tap to swap)
+  let kingAsTeams = false, bigTeams = null;
+  if (format === "king" && customBig.length) {
+    kingAsTeams = true;
+    bigTeams = [];
+    const grouped = new Set([...customPairs.flat(), ...customBig.flatMap(g => g.ids)]);
+    customBig.forEach(g => bigTeams.push({ name: "Tim " + nameOf(g.ids[0]), players: g.ids.slice() }));
+    customPairs.forEach(p => bigTeams.push({ name: "Tim " + nameOf(p[0]), players: p.slice() }));
+    const singles = sel.filter(id => !grouped.has(id));
+    for (let i = 0; i + 1 < singles.length; i += 2)
+      bigTeams.push({ name: "Tim " + nameOf(singles[i]), players: [singles[i], singles[i + 1]] });
+    if (singles.length % 2 === 1) {
+      alert(`${nameOf(singles[singles.length - 1])} has no team — add them to a squad line (with &) or add one more single player.`);
+      return;
+    }
+  }
 
   // Team Match: teams come from the team textarea instead
-  let bigTeams = null;
   if (format === "team") {
     bigTeams = [];
     const lines = ($("#hTeams").value || "").split("\n").map(s => s.trim()).filter(Boolean);
     for (const line of lines) {
       const ci = line.indexOf(":");
       const tname = ci > -1 ? line.slice(0, ci).trim() : `Team ${bigTeams.length + 1}`;
-      const members = (ci > -1 ? line.slice(ci + 1) : line).split(",").map(s => s.trim()).filter(Boolean).map(resolveName);
+      // members separated by comma OR & — both work
+      const members = (ci > -1 ? line.slice(ci + 1) : line).split(/[,&]/).map(s => s.trim()).filter(Boolean).map(resolveName);
       if (members.length) bigTeams.push({ name: tname || `Team ${bigTeams.length + 1}`, players: members });
     }
     if (bigTeams.length < 2) { alert("Team Match needs at least 2 teams (one per line: Name: player, player, ...)."); return; }
@@ -1599,16 +1624,17 @@ function startMeet() {
   if (sel.length < 4) { alert("At least 4 players needed — tap Reclub chips or type names."); return; }
   if ((format === "fixed" || format === "shuffle") && sel.length % 2 === 1) { alert("Even number of players needed for pair formats."); return; }
   if (format === "match" && sel.length !== 4) { alert("Single match needs exactly 4 players (first two = team A)."); return; }
-  if (format === "king") {
+  if (format === "king" && !kingAsTeams) {
     const need1 = courts * 4, need2 = courts * 4 + 2;
     if (sel.length !== need1 && sel.length !== need2) {
-      alert(`King of Court with ${courts} court(s) needs exactly ${need1} players (${courts * 2} teams) or ${need2} players (${courts * 2 + 1} teams, one team resting per round). You selected ${sel.length}.`);
+      alert(`King of Court with ${courts} court(s) needs exactly ${need1} players (${courts * 2} teams) or ${need2} players (${courts * 2 + 1} teams, one team resting per round) — or use squads of 3+ via "A & B & C" lines. You selected ${sel.length}.`);
       return;
     }
-    if (scoring.mode === "total" && scoring.tie === "draw") {
-      alert("King of Court needs a winner every match — change 'If tied' to Golden point (draws are not allowed).");
-      return;
-    }
+  }
+  const kingish = format === "king" || (format === "team" && $("#hTeamMode").value === "king");
+  if (kingish && scoring.mode === "total" && scoring.tie === "draw") {
+    alert("King of Court needs a winner every match — change 'If tied' to Golden point (draws are not allowed).");
+    return;
   }
 
   const meet = {
@@ -1626,7 +1652,7 @@ function startMeet() {
   if (format === "match") {
     meet.teams = [[sel[0], sel[1]], [sel[2], sel[3]]];
     meet.matches.push({ round: 1, court: 1, teamA: [sel[0], sel[1]], teamB: [sel[2], sel[3]], scoreA: null, scoreB: null });
-  } else if (format === "king") {
+  } else if (format === "king" && !kingAsTeams) {
     // teams: explicit "Name & Name" pairs first, remaining players in order
     const pairs = customPairs.filter(t => t.every(id => sel.includes(id))).map(t => t.slice());
     const usedK = new Set(pairs.flat());
@@ -1642,9 +1668,10 @@ function startMeet() {
       });
     }
     meet.kingResting = pairs.length === courts * 2 + 1 ? pairs[courts * 2].slice() : null;
-  } else if (format === "team") {
+  } else if (format === "team" || kingAsTeams) {
+    meet.format = "team";
     meet.bigTeams = bigTeams;
-    meet.teamMode = $("#hTeamMode").value;
+    meet.teamMode = kingAsTeams ? "king" : $("#hTeamMode").value;
     const T = bigTeams.length;
     const C = Math.min(courts, Math.floor(T / 2));
     if (meet.teamMode === "king" && T !== 2 * C && T !== 2 * C + 1) {
