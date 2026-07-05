@@ -102,8 +102,7 @@
   <span class="src-badge" id="srcBadge">sample data</span>
 </header>
 <nav>
-  <button data-view="players" class="active">Players</button>
-  <button data-view="leaderboard">Leaderboard</button>
+  <button data-view="leaderboard" class="active">Leaderboard</button>
   <button data-view="meets">Meets</button>
   <button data-view="host">Host a Meet</button>
 </nav>
@@ -755,7 +754,7 @@ function playerOverallAnalytics(playerId, meets) {
 "use strict";
 
 let PLAYERS = [], MEETS = [], RATINGS = {}, UPCOMING = [];
-let currentView = "players";
+let currentView = "leaderboard";
 let draftMeet = null; // meet being hosted
 
 const $ = sel => document.querySelector(sel);
@@ -841,10 +840,10 @@ document.querySelectorAll("nav button").forEach(btn => {
 });
 
 function render() {
-  if (currentView === "players") renderPlayers();
-  else if (currentView === "leaderboard") renderLeaderboard();
+  if (currentView === "leaderboard") renderLeaderboard();
   else if (currentView === "meets") renderMeets();
   else if (currentView === "host") renderHost();
+  else renderLeaderboard();
 }
 
 /* ---------- players ---------- */
@@ -896,7 +895,7 @@ function showPlayer(id) {
       </tr>`);
     });
   });
-  main.innerHTML = `<span class="back" onclick="renderPlayers()">&larr; all players</span>
+  main.innerHTML = `<span class="back" onclick="renderLeaderboard()">&larr; leaderboard</span>
     <h2>${esc(p ? p.name : id)} <span class="pill accent">${Math.round(RATINGS[id] || 1000)}</span></h2>
     <div class="statrow" style="max-width:520px">
       <div class="stat"><b>${s.matches}</b><span>matches</span></div>
@@ -988,6 +987,11 @@ function renderLeaderboard() {
   const rows = PLAYERS.map(p => ({ p, s: computePlayerStats(p.id, MEETS), r: Math.round(RATINGS[p.id] || 1000) }))
     .filter(x => x.s.matches > 0)
     .sort((a, b) => b.r - a.r);
+  if (!rows.length) {
+    main.innerHTML = `<h2>Leaderboard</h2>
+      <div class="banner">No matches recorded yet. The leaderboard fills up automatically once the first meet is played and saved — host one from the <b>Host a Meet</b> tab. Tap a player's name anywhere to see their full stats.</div>`;
+    return;
+  }
   main.innerHTML = `<h2>Leaderboard</h2>
     <table>
       <tr><th>#</th><th>Player</th><th class="num">Rating</th><th class="num">Matches</th><th class="num">Win %</th><th class="num">Pt Diff</th></tr>
