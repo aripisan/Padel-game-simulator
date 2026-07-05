@@ -125,6 +125,12 @@ const CONFIG = {
   apiBaseUrl: "",          // live API, e.g. "http://localhost:8000/api"
   dataDir: "data",         // static JSON folder (works on GitHub Pages): data/players.json, data/meets.json, data/upcoming.json
   liveUpcomingUrl: "",     // Cloudflare Worker URL for real-time refresh, e.g. "https://npc-padel.YOURNAME.workers.dev/upcoming"
+  // Host "Update data" button without any server: a GitHub fine-grained PAT
+  // (Actions:write on this repo only) encrypted with the host password
+  // (PBKDF2-SHA256 310k iters + AES-256-GCM). Generated with scripts/encrypt_pat.js.
+  ghRepo: "aripisan/Padel-game-simulator",
+  ghWorkflow: "update-data.yml",
+  updateBlob: "1XihmHwQoP1FIWaK+cWiuS3CXbLEo+IrLbnOBXFhuBoplDpbGn8iSCKu5vePQIDoHsOcKh3JZNF888E6GQCDjRZU3yW84+GGjwSOIkdzeudDyfqBOhgEl1AK8hEiis4SE9AUJ3zmFMcB3A7ifYNP+7gNidL5s92BfB3MOr1MbFBB6RB9Ym5Klpw=",
   clubName: "Nonstop Padel Club",
   eloK: 32,
   eloStart: 1000
@@ -1094,8 +1100,8 @@ function renderHost() {
           <option value="">— pick day & time (or select players manually below) —</option>
           ${upOpts}
         </select>
-        ${CONFIG.liveUpcomingUrl ? `<button class="btn ghost small" onclick="refreshUpcoming(true)" title="Get the latest joiners straight from Reclub">&#8635; Refresh</button>
-        <button class="btn ghost small" onclick="hostUpdateData()" title="Host only: re-sync all Reclub data to the site (needs password)">&#128274; Update data</button>` : ""}
+        ${CONFIG.liveUpcomingUrl ? `<button class="btn ghost small" onclick="refreshUpcoming(true)" title="Get the latest joiners straight from Reclub">&#8635; Refresh</button>` : ""}
+        ${CONFIG.liveUpcomingUrl || CONFIG.updateBlob ? `<button class="btn ghost small" onclick="hostUpdateData()" title="Host only: re-sync all Reclub data to the site (needs password)">&#128274; Update data</button>` : ""}
       </div>
       <div class="muted" id="hUpInfo" style="margin-top:6px"></div>
       <div class="row">
@@ -1206,14 +1212,51 @@ async function refreshUpcoming(force) {
   }
 }
 
-/* host-only: trigger the GitHub Actions full data sync (password checked by the Worker) */
+/* host-only: trigger the GitHub Actions full data sync.
+   Serverless mode (CONFIG.updateBlob): the PAT is stored encrypted with the host
+   password; wrong password simply fails to decrypt. Nothing secret is readable
+   in the page source, and hosts don't need GitHub accounts. */
+async function decryptBlob(password, blobB64) {
+  const raw = Uint8Array.from(atob(blobB64), c => c.charCodeAt(0));
+  const salt = raw.slice(0, 16), iv = raw.slice(16, 28), ct = raw.slice(28);
+  const km = await crypto.subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveKey"]);
+  const key = await crypto.subtle.deriveKey(
+    { name: "PBKDF2", salt, iterations: 310000, hash: "SHA-256" },
+    km, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+  const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, key, ct);
+  return new TextDecoder().decode(pt);
+}
+
 async function hostUpdateData() {
-  if (!CONFIG.liveUpcomingUrl) return;
   const pw = prompt("Host password:");
   if (!pw) return;
-  const base = CONFIG.liveUpcomingUrl.replace(/\/upcoming\/?$/, "");
   const info = $("#hUpInfo");
   if (info) info.textContent = "Starting full data update…";
+
+  if (CONFIG.updateBlob) {
+    try {
+      const pat = await decryptBlob(pw, CONFIG.updateBlob);
+      const r = await fetch(`https://api.github.com/repos/${CONFIG.ghRepo}/actions/workflows/${CONFIG.ghWorkflow}/dispatches`, {
+        method: "POST",
+        headers: {
+          authorization: "Bearer " + pat,
+          accept: "application/vnd.github+json",
+          "content-type": "application/json"
+        },
+        body: JSON.stringify({ ref: "main" })
+      });
+      if (info) info.textContent = r.status === 204
+        ? "Update started ✓ — new Reclub data is live in ±3 minutes, then refresh this page."
+        : "GitHub refused (" + r.status + ") — token may have expired.";
+    } catch (e) {
+      if (info) info.textContent = "Wrong password.";
+    }
+    return;
+  }
+
+  // worker mode (if a Cloudflare Worker is configured instead)
+  if (!CONFIG.liveUpcomingUrl) return;
+  const base = CONFIG.liveUpcomingUrl.replace(/\/upcoming\/?$/, "");
   try {
     const r = await fetch(base + "/update", {
       method: "POST",
@@ -1221,11 +1264,9 @@ async function hostUpdateData() {
       body: JSON.stringify({ password: pw })
     });
     const d = await r.json().catch(() => ({}));
-    if (r.ok && d.ok) {
-      if (info) info.textContent = "Update started — site data refreshes in ±3 minutes. For instant joiners, use ↻ Refresh.";
-    } else {
-      if (info) info.textContent = d.error === "wrong password" ? "Wrong password." : "Update failed: " + (d.error || r.status);
-    }
+    if (info) info.textContent = (r.ok && d.ok)
+      ? "Update started — site data refreshes in ±3 minutes."
+      : (d.error === "wrong password" ? "Wrong password." : "Update failed: " + (d.error || r.status));
   } catch (e) {
     if (info) info.textContent = "Update failed — check connection.";
   }
