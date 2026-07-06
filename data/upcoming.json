@@ -1,120 +1,5 @@
 [
  {
-  "id": "rm4143073",
-  "name": "NPC COACHING CLASS - PADEL BEGINNER by Coach Nanda",
-  "date": "2026-07-06",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm3965685",
-  "name": "NPC STAY OR SLAY TRIO LADIES QOC WITH PRIZE",
-  "date": "2026-07-06",
-  "time": "10:00",
-  "venue": "LA FAMILIA PADEL BANDUNG",
-  "format": null,
-  "players": [
-   {
-    "id": "u1011271",
-    "name": "Octa"
-   },
-   {
-    "id": "u503607",
-    "name": "Nita Sofiani"
-   },
-   {
-    "id": "u575244",
-    "name": "Srie"
-   },
-   {
-    "id": "u543445",
-    "name": "Joco"
-   },
-   {
-    "id": "u632708",
-    "name": "Shelly"
-   },
-   {
-    "id": "u70485",
-    "name": "Inez"
-   },
-   {
-    "id": "u927192",
-    "name": "Novi"
-   },
-   {
-    "id": "u806578",
-    "name": "Leniparm"
-   },
-   {
-    "id": "u1115577",
-    "name": "Mute"
-   },
-   {
-    "id": "u331693",
-    "name": "Estie"
-   },
-   {
-    "id": "u517654",
-    "name": "Oline21"
-   },
-   {
-    "id": "u517746",
-    "name": "Fris"
-   },
-   {
-    "id": "u463197",
-    "name": "Cindy Cimon"
-   },
-   {
-    "id": "u664930",
-    "name": "Priscilla"
-   },
-   {
-    "id": "u672838",
-    "name": "Feiliana"
-   },
-   {
-    "id": "u756518",
-    "name": "Rose"
-   },
-   {
-    "id": "u424912",
-    "name": "Laurin Olin"
-   },
-   {
-    "id": "u385433",
-    "name": "Pijeh"
-   },
-   {
-    "id": "u942928",
-    "name": "iphoned"
-   },
-   {
-    "id": "u624794",
-    "name": "Sieny"
-   },
-   {
-    "id": "u880897",
-    "name": "Eviiiiiiii"
-   },
-   {
-    "id": "u574545",
-    "name": "Janice"
-   },
-   {
-    "id": "u1076718",
-    "name": "Shinshin"
-   },
-   {
-    "id": "u1127630",
-    "name": "Mila"
-   }
-  ]
- },
- {
   "id": "rm4077429",
   "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
   "date": "2026-07-06",
@@ -381,6 +266,14 @@
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
   "players": [
+   {
+    "id": "u471957",
+    "name": "ELVINA"
+   },
+   {
+    "id": "u499335",
+    "name": "Stefani H"
+   },
    {
     "id": "u385433",
     "name": "Pijeh"
