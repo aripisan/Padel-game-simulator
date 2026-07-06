@@ -1195,17 +1195,82 @@ function perfChart(perMeet) {
   </svg>`;
 }
 
-/* ---------- leaderboard ---------- */
+/* ---------- leaderboard (filterable: all / recurring series / custom pick) ---------- */
+let lbSel = { mode: "all", ids: null };
+
+function normTitle(s) {
+  return (s || "").toLowerCase().replace(/[^\w\s]/gu, "").replace(/\s+/g, " ").trim().slice(0, 40);
+}
+
+function lbSetMode(v) {
+  lbSel.mode = v;
+  if (v === "custom" && !lbSel.ids) {
+    try { lbSel.ids = JSON.parse(localStorage.getItem("npc_lb_custom") || "[]"); } catch (e) { lbSel.ids = []; }
+  }
+  renderLeaderboard();
+}
+function lbToggleMeet(id) {
+  const i = lbSel.ids.indexOf(id);
+  if (i > -1) lbSel.ids.splice(i, 1); else lbSel.ids.push(id);
+  try { localStorage.setItem("npc_lb_custom", JSON.stringify(lbSel.ids)); } catch (e) {}
+  renderLeaderboard();
+}
+
 function renderLeaderboard() {
-  const rows = PLAYERS.map(p => ({ p, s: computePlayerStats(p.id, MEETS), r: Math.round(RATINGS[p.id] || 1000) }))
+  // group recurring meets into series by normalized title
+  const seriesMap = {};
+  MEETS.forEach(m => { const k = normTitle(m.name); if (k) (seriesMap[k] = seriesMap[k] || []).push(m); });
+  const seriesKeys = Object.keys(seriesMap).sort((a, b) => seriesMap[b].length - seriesMap[a].length);
+
+  let subset;
+  if (lbSel.mode === "all") subset = MEETS;
+  else if (lbSel.mode === "custom") subset = MEETS.filter(m => (lbSel.ids || []).includes(m.id));
+  else subset = seriesMap[lbSel.mode] || [];
+
+  const filterHtml = `
+    <label>Which meets count toward this leaderboard?</label>
+    <select onchange="lbSetMode(this.value)" style="max-width:520px">
+      <option value="all" ${lbSel.mode === "all" ? "selected" : ""}>All meets (${MEETS.length})</option>
+      ${seriesKeys.map(k => `<option value="${esc(k)}" ${lbSel.mode === k ? "selected" : ""}>${esc(seriesMap[k][0].name.slice(0, 52))} — ${seriesMap[k].length} meet${seriesMap[k].length > 1 ? "s" : ""}</option>`).join("")}
+      <option value="custom" ${lbSel.mode === "custom" ? "selected" : ""}>Custom — pick meets to combine…</option>
+    </select>
+    ${lbSel.mode === "custom" ? `<div class="chips" style="margin-top:10px">
+      ${MEETS.slice().sort((a, b) => b.date.localeCompare(a.date)).map(m =>
+        `<div class="chip ${(lbSel.ids || []).includes(m.id) ? "on" : ""}" onclick="lbToggleMeet('${m.id}')">${esc(m.name.slice(0, 34))} · ${m.date.slice(5)}</div>`).join("")}
+      </div>` : ""}`;
+
+  // Team Match meets: teams only (aggregated across meets by team name) — never per player
+  const teamMeets = subset.filter(m => m.bigTeams);
+  const indMeets = subset.filter(m => !m.bigTeams);
+
+  let teamHtml = "";
+  if (teamMeets.length) {
+    const agg = {};
+    teamMeets.forEach(m => {
+      bigTeamStandings(m.bigTeams, m.matches).forEach(s => {
+        const k = s.name.trim().toLowerCase();
+        const a = agg[k] = agg[k] || { name: s.name, meets: 0, played: 0, wins: 0, diff: 0 };
+        a.meets++; a.played += s.played; a.wins += s.wins; a.diff += s.ptsFor - s.ptsAgainst;
+      });
+    });
+    const trows = Object.values(agg).sort((a, b) => b.wins - a.wins || b.diff - a.diff);
+    teamHtml = `<h3>Team leaderboard — ${teamMeets.length} team meet(s)</h3>
+      <table><tr><th>#</th><th>Team</th><th class="num">Meets</th><th class="num">Played</th><th class="num">Wins</th><th class="num">Diff</th></tr>
+      ${trows.map((t, i) => `<tr><td class="${i === 0 ? "rank1" : ""}">${i + 1}</td><td class="${i === 0 ? "rank1" : ""}">${esc(t.name)}</td><td class="num">${t.meets}</td><td class="num">${t.played}</td><td class="num">${t.wins}</td><td class="num">${t.diff > 0 ? "+" : ""}${t.diff}</td></tr>`).join("")}
+      </table>`;
+  }
+
+  const R = computeRatings(PLAYERS, indMeets);
+  const rows = PLAYERS.map(p => ({ p, s: computePlayerStats(p.id, indMeets), r: Math.round(R[p.id] || 1000) }))
     .filter(x => x.s.matches > 0)
     .sort((a, b) => b.r - a.r);
-  if (!rows.length) {
-    main.innerHTML = `<h2>Leaderboard</h2>
-      <div class="banner">No matches recorded yet. The leaderboard fills up automatically once the first meet is played and saved — host one from the <b>Host a Meet</b> tab. Tap a player's name anywhere to see their full stats.</div>`;
+
+  if (!rows.length && !teamHtml) {
+    main.innerHTML = `<h2>Leaderboard</h2>${filterHtml}
+      <div class="banner" style="margin-top:14px">No scored matches in this selection yet. ${lbSel.mode === "custom" ? "Tap meets above to include them." : "Host a meet from the <b>Host a Meet</b> tab."}</div>`;
     return;
   }
-  main.innerHTML = `<h2>Leaderboard</h2>
+  const playerHtml = rows.length ? `${teamHtml ? "<h3>Player leaderboard</h3>" : ""}
     <table>
       <tr><th>#</th><th>Player</th><th class="num">Rating</th><th class="num">Matches</th><th class="num">Win %</th><th class="num">Pt Diff</th></tr>
       ${rows.map((x, i) => `<tr>
@@ -1216,7 +1281,10 @@ function renderLeaderboard() {
         <td class="num">${x.s.winRate}%</td>
         <td class="num">${x.s.diff > 0 ? "+" : ""}${x.s.diff}</td>
       </tr>`).join("")}
-    </table>`;
+    </table>` : "";
+  main.innerHTML = `<h2>Leaderboard</h2>${filterHtml}
+    <div class="muted" style="margin:8px 0 12px">${subset.length} meet(s) selected — rating & stats computed from this selection only</div>
+    ${playerHtml}${teamHtml}`;
 }
 
 /* ---------- meets ---------- */
@@ -1307,16 +1375,33 @@ function showMeet(id) {
     <table><tr><th>#</th><th>Team</th><th class="num">Played</th><th class="num">Wins</th><th class="num">Diff</th></tr>
     ${bigTeamStandings(meet.bigTeams, meet.matches).map((s, i) =>
       `<tr><td class="${i === 0 ? "rank1" : ""}">${i + 1}</td><td class="${i === 0 ? "rank1" : ""}">${esc(s.name)}</td><td class="num">${s.played}</td><td class="num">${s.wins}</td><td class="num">${s.ptsFor - s.ptsAgainst > 0 ? "+" : ""}${s.ptsFor - s.ptsAgainst}</td></tr>`).join("")}</table>` : "";
+  const deletable = meet.source === "local" || meet.fbLive || FBMEETS.some(x => x.id === meet.id);
   main.innerHTML = `<span class="back" onclick="renderMeets()">&larr; all meets</span>
-    <h2>${esc(meet.name)}</h2>
+    <h2 style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">${esc(meet.name)}
+      ${deletable ? `<button class="btn ghost small" style="color:var(--red);border-color:var(--red)" onclick="deleteMeet('${meet.id}')">Delete meet</button>` : ""}</h2>
     <div class="muted">${meet.date} · ${esc(meet.venue || "")} · ${esc(meet.format)}</div>
     ${analyticsHtml}
     ${bigStMeet}
-    <h3>Final standings</h3>
+    ${meet.bigTeams ? "" : `<h3>Final standings</h3>
     <table><tr><th>#</th><th>Player</th><th class="num">Points</th><th class="num">Wins</th><th class="num">Played</th></tr>
     ${standings.map((s, i) => `<tr><td class="${i === 0 ? "rank1" : ""}">${i + 1}</td><td class="${i === 0 ? "rank1" : ""}">${esc(nameOf(s.id))}</td><td class="num">${s.points}</td><td class="num">${s.wins}</td><td class="num">${s.played}</td></tr>`).join("")}
-    </table>
+    </table>`}
     ${roundsHtml}`;
+}
+
+function deleteMeet(id) {
+  const meet = MEETS.find(m => m.id === id);
+  if (!meet) return;
+  if (!confirm(`Delete "${meet.name}" permanently?\n\nAll its results disappear from the leaderboard and player stats — for everyone. This cannot be undone.`)) return;
+  if (FB) FB.ref("meets/" + id).remove();
+  try {
+    localStorage.setItem("npc_local_meets", JSON.stringify(loadLocalMeets().filter(m => m.id !== id)));
+  } catch (e) {}
+  FBMEETS = FBMEETS.filter(m => m.id !== id);
+  BASE_MEETS = BASE_MEETS.filter(m => m.id !== id);
+  rebuildMeets();
+  currentView = "meets";
+  renderMeets();
 }
 
 /* ---------- host a meet ---------- */
