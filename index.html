@@ -1345,13 +1345,15 @@ function showMeet(id) {
           <table style="max-width:560px;margin-top:8px"><tr><th>Player</th><th class="num">Winners</th><th class="num">Errors</th><th class="num">DF</th><th class="num">Serve pts</th><th class="num">1st in</th></tr>${statRows}</table>
           <table style="margin-top:8px"><tr><th>#</th><th>Pos</th><th>Server</th><th>Outcome</th><th>Score after</th></tr>${logRows}</table></details>`;
       }
+      const sideName = (ids, bt) => bt != null && meet.bigTeams
+        ? `<b>${esc(meet.bigTeams[bt].name)}</b>` : ids.map(nameOf).map(esc).join(" & ");
       return `<div class="match">
         <span class="court">Court ${m.court}</span>
-        <span class="team">${m.teamA.map(nameOf).map(esc).join(" & ")}</span>
+        <span class="team">${sideName(m.teamA, m.btA)}</span>
         <span class="pill ${m.scoreA > m.scoreB ? "accent" : ""}">${m.scoreA}</span>
         <span class="vs">vs</span>
         <span class="pill ${m.scoreB > m.scoreA ? "accent" : ""}">${m.scoreB}</span>
-        <span class="team">${m.teamB.map(nameOf).map(esc).join(" & ")}</span>
+        <span class="team">${sideName(m.teamB, m.btB)}</span>
         ${setsPill}
       </div>${recap}`;
     }).join("")).join("");
@@ -1862,11 +1864,9 @@ function renderDraft() {
             onchange="setScore(${gi},'B',this.value)" ${bad ? 'style="border-color:var(--red)"' : ""}>`;
       }
       const teamHtml = (ids, side, bt) => {
-        const names = meet.format === "team" && m.scoreA == null && m.scoreB == null
-          ? ids.map((id, slot) => `<span style="text-decoration:underline dotted;cursor:pointer" title="Tap to swap with a teammate" onclick="cycleTeamPlayer(${gi},'${side}',${slot})">${esc(nameOf(id))}</span>`).join(" & ")
-          : ids.map(nameOf).map(esc).join(" & ");
-        const label = bt != null ? `<span class="muted" style="font-size:10px;text-transform:uppercase;letter-spacing:.5px">${esc(meet.bigTeams[bt].name)}</span><br>` : "";
-        return label + names;
+        // team meets: just "Tim Ivan vs Tim Ary" — which players step on court is the team's business
+        if (bt != null && meet.bigTeams) return `<b>${esc(meet.bigTeams[bt].name)}</b>`;
+        return ids.map(nameOf).map(esc).join(" & ");
       };
       return `<div class="match">
         <span class="court">Court ${m.court}</span>
