@@ -540,6 +540,13 @@ function balancedPairs(playerIds, ratings) {
 function validScore(scoring, a, b) {
   if (a == null || b == null || a < 0 || b < 0) return false;
   const t = scoring.target;
+  if (scoring.early) {
+    // King of Court: the round ends when the FIRST court finishes; other courts
+    // record their score as-is — any score is fine except a draw (play a
+    // deciding point if tied). Caps: race -> winner <= target; total -> sum <= target+1 (golden).
+    if (a === b) return false;
+    return scoring.mode === "race" ? Math.max(a, b) <= t : a + b <= t + 1;
+  }
   if (scoring.mode === "total") {
     if (a + b === t && (a !== b || scoring.tie === "draw")) return true;
     if (scoring.tie === "golden" && a + b === t + 1 && Math.abs(a - b) === 1
@@ -554,6 +561,10 @@ function validScore(scoring, a, b) {
 
 function scoringLabel(sc) {
   if (!sc) return "";
+  if (sc.early) {
+    const base = sc.mode === "total" ? `total ${sc.target} points` : `race to ${sc.target}`;
+    return `${base} — round ends when the first court finishes; others record their score (no draws)`;
+  }
   if (sc.mode === "total") {
     const tie = sc.tie === "draw" ? "draw allowed" : sc.tie === "golden" ? "golden point if tied" : "no draw possible";
     return `total ${sc.target} points, ${tie}`;
@@ -1738,6 +1749,8 @@ function startMeet() {
     alert("King of Court needs a winner every match — change 'If tied' to Golden point (draws are not allowed).");
     return;
   }
+  // King: rounds end when the first court finishes — partial scores are valid, draws never are
+  if (kingish) scoring.early = true;
 
   const meet = {
     id: "local" + Date.now(),
@@ -1850,7 +1863,7 @@ function renderDraft() {
         : setsPill;
       const sc = meet.scoring;
       let entry;
-      if (meet.format !== "match" && sc && sc.mode === "total" && sc.target <= 8) {
+      if (meet.format !== "match" && sc && sc.mode === "total" && sc.target <= 8 && !sc.early) {
         // quick-pick: all valid finals as tappable pills
         entry = `<span style="display:flex;gap:4px;flex-wrap:wrap">` + scoreOptions(sc).map(([a, b]) =>
           `<span class="chip ${m.scoreA === a && m.scoreB === b ? "on" : ""}" style="padding:4px 9px;font-size:12px"
@@ -1964,6 +1977,21 @@ function liveDo(action, player) {
   renderLive();
 }
 
+/* King early stop: freeze the match at the current games score (must not be a draw) */
+function endLiveEarly() {
+  const st = draftLive.state;
+  if (st.games.A === st.games.B) {
+    alert("Score is tied — play one deciding point/game first, then stop.");
+    return;
+  }
+  draftLive.snaps.push(JSON.stringify(st));
+  st.finished = true;
+  st.winner = st.games.A > st.games.B ? "A" : "B";
+  st.pts = { A: 0, B: 0 };
+  st.phase = "serve";
+  renderLive();
+}
+
 function liveUndo() {
   if (!draftLive.snaps.length) return;
   draftLive.state = JSON.parse(draftLive.snaps.pop());
@@ -2024,6 +2052,10 @@ function renderLive() {
       <td>${how}</td><td class="muted">${esc(e.score || "")}</td></tr>`;
   }).join("");
 
+  // King: another court finished first -> stop here and record the score as-is
+  const earlyBtn = !st.finished && st.matchMode === "games" && draftMeet && draftMeet.scoring && draftMeet.scoring.early
+    ? `<button class="btn ghost small" style="margin-left:8px" onclick="endLiveEarly()">&#9209; Stop — another court finished</button>` : "";
+
   const stats = liveStatsFromLog(st.log);
   const statRows = Object.entries(stats).map(([id, s]) =>
     `<tr><td>${esc(nameOf(id))}</td><td class="num">${s.winners}</td><td class="num">${s.errors}</td><td class="num">${s.doubles}</td>
@@ -2034,7 +2066,7 @@ function renderLive() {
     <table style="max-width:560px"><tr><th>Team</th>${st.sets.map((_, i) => `<th class="num">S${i + 1}</th>`).join("")}<th class="num">Games</th><th class="num">Pts</th></tr>
       ${teamRow("A", st.teamA)}${teamRow("B", st.teamB)}</table>
     <div style="margin:16px 0">${controls}</div>
-    <button class="btn ghost small" onclick="liveUndo()" ${draftLive.snaps.length ? "" : "disabled"}>&#8630; Undo last action</button>
+    <button class="btn ghost small" onclick="liveUndo()" ${draftLive.snaps.length ? "" : "disabled"}>&#8630; Undo last action</button>${earlyBtn}
     ${statRows ? `<h3>Player stats</h3><table style="max-width:560px"><tr><th>Player</th><th class="num">Winners</th><th class="num">Errors</th><th class="num">DF</th><th class="num">Serve pts</th><th class="num">1st in</th></tr>${statRows}</table>` : ""}
     ${logRows ? `<h3>Point log (latest first)</h3><table><tr><th>#</th><th>Pos</th><th>Server</th><th>Outcome</th><th>Score after</th></tr>${logRows}</table>` : ""}`;
 }
