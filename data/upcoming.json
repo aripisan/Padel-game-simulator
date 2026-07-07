@@ -1,39 +1,5 @@
 [
  {
-  "id": "rm3965702",
-  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
-  "date": "2026-07-07",
-  "time": "19:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u890237",
-    "name": "Riela"
-   },
-   {
-    "id": "u657253",
-    "name": "Arkie Tirtosudiro"
-   },
-   {
-    "id": "u829122",
-    "name": "Saskia"
-   },
-   {
-    "id": "u747149",
-    "name": "Abuw"
-   },
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   },
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   }
-  ]
- },
- {
   "id": "rm4143062",
   "name": "NPC COACHING CLASS - BACKWALL & SIDEWALL by Coach Nanda",
   "date": "2026-07-08",
@@ -227,6 +193,10 @@
    {
     "id": "u385433",
     "name": "Pijeh"
+   },
+   {
+    "id": "u517654",
+    "name": "Oline21"
    }
   ]
  },
@@ -343,6 +313,18 @@
    {
     "id": "u517277",
     "name": "Jessica"
+   },
+   {
+    "id": "u478715",
+    "name": "Lisa Ju"
+   },
+   {
+    "id": "u627434",
+    "name": "Sherly"
+   },
+   {
+    "id": "u696662",
+    "name": "Gita Dandel"
    }
   ]
  },
@@ -499,10 +481,6 @@
     "name": "Sherlyta"
    },
    {
-    "id": "u517654",
-    "name": "Oline21"
-   },
-   {
     "id": "u385433",
     "name": "Pijeh"
    },
@@ -566,10 +544,6 @@
    {
     "id": "u597755",
     "name": "Jilly"
-   },
-   {
-    "id": "u517654",
-    "name": "Oline21"
    },
    {
     "id": "u543817",
