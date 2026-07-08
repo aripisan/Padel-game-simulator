@@ -155,10 +155,6 @@
     "name": "Stefani H"
    },
    {
-    "id": "u341047",
-    "name": "Sherlyta"
-   },
-   {
     "id": "u385433",
     "name": "Pijeh"
    },
@@ -184,7 +180,12 @@
   "time": "14:00",
   "venue": "H2O Padel Club Bandung",
   "format": "mexicano",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm3891210",
@@ -224,12 +225,17 @@
  },
  {
   "id": "rm4213303",
-  "name": "NPC SLAY LADIES FIXED PARTNER UPPER BEGINNER - INTERMEDIATE",
+  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
   "date": "2026-07-15",
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": []
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4209172",
@@ -442,12 +448,17 @@
  },
  {
   "id": "rm4213319",
-  "name": "NPC SLAY LADIES FIXED PARTNER UPPER BEGINNER - INTERMEDIATE",
+  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
   "date": "2026-07-22",
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": []
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4209512",
