@@ -1,50 +1,5 @@
 [
  {
-  "id": "rm4143062",
-  "name": "NPC COACHING CLASS - BACKWALL & SIDEWALL by Coach Nanda",
-  "date": "2026-07-08",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm4001072",
-  "name": "NPC SLAY LADIES FIXED PARTNER UPPER BEGINNER - INTERMEDIATE",
-  "date": "2026-07-08",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": []
- },
- {
-  "id": "rm3965724",
-  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
-  "date": "2026-07-08",
-  "time": "12:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm4141213",
-  "name": "PC SUBHAN",
-  "date": "2026-07-08",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u268490",
-    "name": "MIKE"
-   }
-  ]
- },
- {
   "id": "rm4143058",
   "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
   "date": "2026-07-09",
@@ -122,12 +77,17 @@
  },
  {
   "id": "rm3965697",
-  "name": "NPC SLAY LADIES fixed partner Upper beginner++",
+  "name": "NPC SLAY LADIES AMERICANO 1C2H6P Upper beginner++",
   "date": "2026-07-10",
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": []
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4122714",
@@ -255,6 +215,42 @@
   ]
  },
  {
+  "id": "rm4213303",
+  "name": "NPC SLAY LADIES FIXED PARTNER UPPER BEGINNER - INTERMEDIATE",
+  "date": "2026-07-15",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": []
+ },
+ {
+  "id": "rm4209172",
+  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
+  "date": "2026-07-15",
+  "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4141213",
+  "name": "PC SUBHAN",
+  "date": "2026-07-15",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": [
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   },
+   {
+    "id": "u268490",
+    "name": "MIKE"
+   }
+  ]
+ },
+ {
   "id": "rm4177632",
   "name": "TRIAL COURT 1977 STAY OR SLAY TRIO LADIES QOC",
   "date": "2026-07-17",
@@ -262,6 +258,14 @@
   "venue": "Court 1977",
   "format": null,
   "players": [
+   {
+    "id": "u557546",
+    "name": "jannice doreen"
+   },
+   {
+    "id": "u824701",
+    "name": "Meirissa"
+   },
    {
     "id": "u385433",
     "name": "Pijeh"
@@ -429,6 +433,24 @@
   ]
  },
  {
+  "id": "rm4213319",
+  "name": "NPC SLAY LADIES FIXED PARTNER UPPER BEGINNER - INTERMEDIATE",
+  "date": "2026-07-22",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": []
+ },
+ {
+  "id": "rm4209512",
+  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
+  "date": "2026-07-22",
+  "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm3965699",
   "name": "NPC SLAY LADIES fixed partner Upper beginner++",
   "date": "2026-07-24",
@@ -564,6 +586,10 @@
    {
     "id": "u521237",
     "name": "Caroline"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
    }
   ]
  },
