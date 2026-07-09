@@ -1,72 +1,5 @@
 [
  {
-  "id": "rm4143058",
-  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
-  "date": "2026-07-09",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm4103122",
-  "name": "DEAREST AND NEAREST SLAY LADIES GOES TO DR PADELLS",
-  "date": "2026-07-09",
-  "time": "14:00",
-  "venue": "Dr Padells Social Club",
-  "format": null,
-  "players": [
-   {
-    "id": "u527967",
-    "name": "Martha Aurelia"
-   },
-   {
-    "id": "u798203",
-    "name": "sarahhestyn"
-   },
-   {
-    "id": "u510364",
-    "name": "CindyS"
-   },
-   {
-    "id": "u909057",
-    "name": "Sianna"
-   },
-   {
-    "id": "u756029",
-    "name": "Gabby k"
-   },
-   {
-    "id": "u728662",
-    "name": "Didi"
-   },
-   {
-    "id": "u808817",
-    "name": "BUBUN"
-   },
-   {
-    "id": "u385433",
-    "name": "Pijeh"
-   },
-   {
-    "id": "u517654",
-    "name": "Oline21"
-   },
-   {
-    "id": "u893638",
-    "name": "Hilda Noviana"
-   },
-   {
-    "id": "u478715",
-    "name": "Lisa Ju"
-   },
-   {
-    "id": "u894407",
-    "name": "'ia"
-   }
-  ]
- },
- {
   "id": "rm4143050",
   "name": "NPC COACHING CLASS - DEFENSE & ATTACK by Coach Nanda",
   "date": "2026-07-10",
@@ -182,6 +115,22 @@
   "format": "mexicano",
   "players": [
    {
+    "id": "u530978",
+    "name": "Dudu"
+   },
+   {
+    "id": "u548887",
+    "name": "Adhel"
+   },
+   {
+    "id": "u531025",
+    "name": "Andin"
+   },
+   {
+    "id": "u548905",
+    "name": "Wine Adimihardja"
+   },
+   {
     "id": "u341047",
     "name": "Sherlyta"
    }
@@ -265,6 +214,20 @@
   ]
  },
  {
+  "id": "rm3965698",
+  "name": "NPC SLAY LADIES fixed partner Upper beginner++",
+  "date": "2026-07-17",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
   "id": "rm4177632",
   "name": "TRIAL COURT 1977 STAY OR SLAY TRIO LADIES QOC",
   "date": "2026-07-17",
@@ -343,20 +306,6 @@
    {
     "id": "u696662",
     "name": "Gita Dandel"
-   }
-  ]
- },
- {
-  "id": "rm3965698",
-  "name": "NPC SLAY LADIES fixed partner Upper beginner++",
-  "date": "2026-07-17",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
    }
   ]
  },
