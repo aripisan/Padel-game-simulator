@@ -98,15 +98,6 @@
   ]
  },
  {
-  "id": "rm4077439",
-  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
-  "date": "2026-07-13",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": []
- },
- {
   "id": "rm4178804",
   "name": "NPC GOES TO KBP SLAY LADIES Mexicano 1C2H6P upper beginner++",
   "date": "2026-07-13",
@@ -135,6 +126,15 @@
     "name": "Sherlyta"
    }
   ]
+ },
+ {
+  "id": "rm4077439",
+  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
+  "date": "2026-07-13",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": []
  },
  {
   "id": "rm3891210",
@@ -210,20 +210,6 @@
    {
     "id": "u268490",
     "name": "MIKE"
-   }
-  ]
- },
- {
-  "id": "rm3965698",
-  "name": "NPC SLAY LADIES fixed partner Upper beginner++",
-  "date": "2026-07-17",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
    }
   ]
  },
@@ -310,6 +296,20 @@
   ]
  },
  {
+  "id": "rm3965698",
+  "name": "NPC SLAY LADIES fixed partner Upper beginner++",
+  "date": "2026-07-17",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
   "id": "rm4148985",
   "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
   "date": "2026-07-17",
@@ -335,6 +335,24 @@
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
+ },
+ {
+  "id": "rm4238394",
+  "name": "PC NANDA",
+  "date": "2026-07-19",
+  "time": "08:00",
+  "venue": "Vivaldi Padel",
+  "format": null,
+  "players": [
+   {
+    "id": "u406311",
+    "name": "Ananda Ari R"
+   },
+   {
+    "id": "u1254569",
+    "name": "Fransisca inne"
+   }
+  ]
  },
  {
   "id": "rm3965687",
