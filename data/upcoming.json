@@ -1,42 +1,5 @@
 [
  {
-  "id": "rm4143050",
-  "name": "NPC COACHING CLASS - DEFENSE & ATTACK by Coach Nanda",
-  "date": "2026-07-10",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm3965697",
-  "name": "NPC SLAY LADIES AMERICANO 1C2H6P Upper beginner++",
-  "date": "2026-07-10",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
-  "id": "rm4122714",
-  "name": "NPC MABAR WITH COACH SUBHAN beginner friendly",
-  "date": "2026-07-10",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u634897",
-    "name": "Subhan"
-   }
-  ]
- },
- {
   "id": "rm4148984",
   "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
   "date": "2026-07-10",
@@ -51,6 +14,24 @@
    {
     "id": "u385415",
     "name": "Alvin Tojid"
+   }
+  ]
+ },
+ {
+  "id": "rm4241186",
+  "name": "PC NANDA",
+  "date": "2026-07-11",
+  "time": "06:00",
+  "venue": "LA FAMILIA PADEL BANDUNG",
+  "format": null,
+  "players": [
+   {
+    "id": "u406311",
+    "name": "Ananda Ari R"
+   },
+   {
+    "id": "u537145",
+    "name": "Fifi"
    }
   ]
  },
@@ -94,8 +75,25 @@
    {
     "id": "u517654",
     "name": "Oline21"
+   },
+   {
+    "id": "u618929",
+    "name": "Roselina"
+   },
+   {
+    "id": "u551294",
+    "name": "Lazeta🌸"
    }
   ]
+ },
+ {
+  "id": "rm4077439",
+  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
+  "date": "2026-07-13",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": []
  },
  {
   "id": "rm4178804",
@@ -114,6 +112,10 @@
     "name": "Adhel"
    },
    {
+    "id": "u876983",
+    "name": "Ria"
+   },
+   {
     "id": "u531025",
     "name": "Andin"
    },
@@ -126,15 +128,6 @@
     "name": "Sherlyta"
    }
   ]
- },
- {
-  "id": "rm4077439",
-  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
-  "date": "2026-07-13",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": []
  },
  {
   "id": "rm3891210",
@@ -296,16 +289,16 @@
   ]
  },
  {
-  "id": "rm3965698",
-  "name": "NPC SLAY LADIES fixed partner Upper beginner++",
+  "id": "rm4246600",
+  "name": "NPC MABAR WITH COACH SUBHAN beginner friendly",
   "date": "2026-07-17",
-  "time": "10:00",
+  "time": "14:00",
   "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
+  "format": null,
   "players": [
    {
-    "id": "u341047",
-    "name": "Sherlyta"
+    "id": "u634897",
+    "name": "Subhan"
    }
   ]
  },
@@ -318,12 +311,38 @@
   "format": "fixed",
   "players": [
    {
+    "id": "u388145",
+    "name": "Shaun"
+   },
+   {
     "id": "u385415",
     "name": "Alvin Tojid"
    },
    {
     "id": "u341047",
     "name": "Sherlyta"
+   },
+   {
+    "id": "u271154",
+    "name": "Via"
+   }
+  ]
+ },
+ {
+  "id": "rm4242830",
+  "name": "PC NANDA",
+  "date": "2026-07-18",
+  "time": "17:00",
+  "venue": "Papadelulu padel club",
+  "format": null,
+  "players": [
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   },
+   {
+    "id": "u406311",
+    "name": "Ananda Ari R"
    }
   ]
  },
@@ -446,6 +465,20 @@
   "players": []
  },
  {
+  "id": "rm4246467",
+  "name": "NPC MABAR WITH COACH SUBHAN beginner friendly",
+  "date": "2026-07-24",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   }
+  ]
+ },
+ {
   "id": "rm4148986",
   "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
   "date": "2026-07-24",
@@ -460,6 +493,24 @@
    {
     "id": "u341047",
     "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4242835",
+  "name": "PC NANDA",
+  "date": "2026-07-25",
+  "time": "17:00",
+  "venue": "Papadelulu padel club",
+  "format": null,
+  "players": [
+   {
+    "id": "u406311",
+    "name": "Ananda Ari R"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
    }
   ]
  },
