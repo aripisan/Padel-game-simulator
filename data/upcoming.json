@@ -1,27 +1,18 @@
 [
  {
-  "id": "rm4241186",
-  "name": "PC NANDA",
-  "date": "2026-07-11",
-  "time": "06:00",
-  "venue": "LA FAMILIA PADEL BANDUNG",
-  "format": null,
-  "players": [
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   },
-   {
-    "id": "u537145",
-    "name": "Fifi"
-   }
-  ]
- },
- {
   "id": "rm4136451",
   "name": "NPC PADEL NEON Glow in the dark. (All level. No first timers & no newb",
   "date": "2026-07-11",
   "time": "19:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4257502",
+  "name": "NPC COACHING CLASS - PADEL BEGINNER by Coach Nanda",
+  "date": "2026-07-13",
+  "time": "07:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
@@ -69,15 +60,6 @@
   ]
  },
  {
-  "id": "rm4077439",
-  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
-  "date": "2026-07-13",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": []
- },
- {
   "id": "rm4178804",
   "name": "NPC GOES TO KBP SLAY LADIES Mexicano 1C2H6P upper beginner++",
   "date": "2026-07-13",
@@ -112,6 +94,15 @@
   ]
  },
  {
+  "id": "rm4077439",
+  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
+  "date": "2026-07-13",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": []
+ },
+ {
   "id": "rm3891210",
   "name": "PC SUBHAN",
   "date": "2026-07-13",
@@ -130,6 +121,15 @@
   ]
  },
  {
+  "id": "rm4257507",
+  "name": "NPC COACHING CLASS - CONTROL & RALLY by Coach Nanda",
+  "date": "2026-07-14",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm3965703",
   "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
   "date": "2026-07-14",
@@ -146,6 +146,15 @@
     "name": "Alvin Tojid"
    }
   ]
+ },
+ {
+  "id": "rm4257517",
+  "name": "NPC COACHING CLASS - BACKWALL & SIDEWALL by Coach Nanda",
+  "date": "2026-07-15",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
  },
  {
   "id": "rm4213303",
@@ -187,6 +196,24 @@
     "name": "MIKE"
    }
   ]
+ },
+ {
+  "id": "rm4257521",
+  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
+  "date": "2026-07-16",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4257528",
+  "name": "NPC COACHING CLASS - DEFENSE & ATTACK by Coach Nanda",
+  "date": "2026-07-17",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
  },
  {
   "id": "rm4177632",
