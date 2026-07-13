@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm3891210",
-  "name": "PC SUBHAN",
-  "date": "2026-07-13",
-  "time": "19:00",
-  "venue": "Padel Up",
-  "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u489358",
-    "name": "FanFan"
-   }
-  ]
- },
- {
   "id": "rm4257507",
   "name": "NPC COACHING CLASS - CONTROL & RALLY by Coach Nanda",
   "date": "2026-07-14",
@@ -217,6 +199,14 @@
   "format": "fixed",
   "players": [
    {
+    "id": "u513254",
+    "name": "Angelia Stephanie"
+   },
+   {
+    "id": "u516198",
+    "name": "Johans"
+   },
+   {
     "id": "u388145",
     "name": "Shaun"
    },
@@ -294,21 +284,21 @@
   ]
  },
  {
+  "id": "rm4178803",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-07-20",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": []
+ },
+ {
   "id": "rm4292410",
   "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
   "date": "2026-07-20",
   "time": "14:00",
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
-  "players": []
- },
- {
-  "id": "rm4178803",
-  "name": "NPC GOES TO KBP SLAY LADIES Mexicano 1C2H6P upper beginner++",
-  "date": "2026-07-20",
-  "time": "14:00",
-  "venue": "H2O Padel Club Bandung",
-  "format": "mexicano",
   "players": []
  },
  {
@@ -447,6 +437,10 @@
   "format": null,
   "players": [
    {
+    "id": "u715372",
+    "name": "Putri"
+   },
+   {
     "id": "u885603",
     "name": "Isty Mustika"
    },
@@ -459,12 +453,20 @@
     "name": "Sherlyta"
    },
    {
+    "id": "u499335",
+    "name": "Stefani H"
+   },
+   {
     "id": "u385433",
     "name": "Pijeh"
    },
    {
     "id": "u569735",
     "name": "Novia"
+   },
+   {
+    "id": "u635458",
+    "name": "Diara"
    },
    {
     "id": "u747788",
@@ -483,11 +485,11 @@
  },
  {
   "id": "rm4191387",
-  "name": "NPC GOES TO KBP SLAY LADIES Mexicano 1C2H6P upper beginner++",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
   "date": "2026-07-27",
   "time": "14:00",
   "venue": "H2O Padel Club Bandung",
-  "format": "mexicano",
+  "format": "americano",
   "players": []
  },
  {
@@ -589,6 +591,29 @@
   ]
  },
  {
+  "id": "rm4298533",
+  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
+  "date": "2026-07-29",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4298576",
+  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
+  "date": "2026-07-29",
+  "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm3965701",
   "name": "NPC SLAY LADIES fixed partner Upper beginner++",
   "date": "2026-07-31",
@@ -596,6 +621,20 @@
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
   "players": []
+ },
+ {
+  "id": "rm4298562",
+  "name": "NPC MABAR WITH COACH SUBHAN beginner friendly",
+  "date": "2026-07-31",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   }
+  ]
  },
  {
   "id": "rm4148987",
@@ -614,5 +653,384 @@
     "name": "Sherlyta"
    }
   ]
+ },
+ {
+  "id": "rm4298521",
+  "name": "NPC SLAY LADIES fixed partner min. upper beginner",
+  "date": "2026-08-03",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   }
+  ]
+ },
+ {
+  "id": "rm4298479",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-08-03",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4298571",
+  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
+  "date": "2026-08-04",
+  "time": "19:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   }
+  ]
+ },
+ {
+  "id": "rm4298534",
+  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
+  "date": "2026-08-05",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4298578",
+  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
+  "date": "2026-08-05",
+  "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4298543",
+  "name": "NPC SLAY LADIES fixed partner min. Upper beginner",
+  "date": "2026-08-07",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": []
+ },
+ {
+  "id": "rm4298563",
+  "name": "NPC MABAR WITH COACH SUBHAN beginner friendly",
+  "date": "2026-08-07",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   }
+  ]
+ },
+ {
+  "id": "rm4298551",
+  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
+  "date": "2026-08-07",
+  "time": "19:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   }
+  ]
+ },
+ {
+  "id": "rm4298526",
+  "name": "NPC SLAY LADIES fixed partner min. upper beginner",
+  "date": "2026-08-10",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   }
+  ]
+ },
+ {
+  "id": "rm4298480",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-08-10",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4298572",
+  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
+  "date": "2026-08-11",
+  "time": "19:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4298535",
+  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
+  "date": "2026-08-12",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4298580",
+  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
+  "date": "2026-08-12",
+  "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4298546",
+  "name": "NPC SLAY LADIES fixed partner min. Upper beginner",
+  "date": "2026-08-14",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": []
+ },
+ {
+  "id": "rm4298564",
+  "name": "NPC MABAR WITH COACH SUBHAN beginner friendly",
+  "date": "2026-08-14",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   }
+  ]
+ },
+ {
+  "id": "rm4298552",
+  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
+  "date": "2026-08-14",
+  "time": "19:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4298528",
+  "name": "NPC SLAY LADIES fixed partner min. upper beginner",
+  "date": "2026-08-17",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   }
+  ]
+ },
+ {
+  "id": "rm4298482",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-08-17",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4298573",
+  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
+  "date": "2026-08-18",
+  "time": "19:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4298537",
+  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
+  "date": "2026-08-19",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4298581",
+  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
+  "date": "2026-08-19",
+  "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4298548",
+  "name": "NPC SLAY LADIES fixed partner min. Upper beginner",
+  "date": "2026-08-21",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": []
+ },
+ {
+  "id": "rm4298565",
+  "name": "NPC MABAR WITH COACH SUBHAN beginner friendly",
+  "date": "2026-08-21",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   }
+  ]
+ },
+ {
+  "id": "rm4298554",
+  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
+  "date": "2026-08-21",
+  "time": "19:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   }
+  ]
+ },
+ {
+  "id": "rm4298529",
+  "name": "NPC SLAY LADIES fixed partner min. upper beginner",
+  "date": "2026-08-24",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   }
+  ]
+ },
+ {
+  "id": "rm4298483",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-08-24",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4298575",
+  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
+  "date": "2026-08-25",
+  "time": "19:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   }
+  ]
+ },
+ {
+  "id": "rm4298538",
+  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
+  "date": "2026-08-26",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4298584",
+  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
+  "date": "2026-08-26",
+  "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
  }
 ]
