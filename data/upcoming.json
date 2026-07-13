@@ -1,120 +1,5 @@
 [
  {
-  "id": "rm4257502",
-  "name": "NPC COACHING CLASS - PADEL BEGINNER by Coach Nanda",
-  "date": "2026-07-13",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u775104",
-    "name": "Santi Su"
-   },
-   {
-    "id": "u932212",
-    "name": "Onie"
-   }
-  ]
- },
- {
-  "id": "rm3965686",
-  "name": "NPC SLAY LADIES fixed partner Upper beginner++",
-  "date": "2026-07-13",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u473346",
-    "name": "Sannytj"
-   },
-   {
-    "id": "u483045",
-    "name": "Yulll"
-   },
-   {
-    "id": "u379407",
-    "name": "Cindy S"
-   },
-   {
-    "id": "u516074",
-    "name": "Marchela"
-   },
-   {
-    "id": "u935577",
-    "name": "Anty wyman"
-   },
-   {
-    "id": "u499335",
-    "name": "Stefani H"
-   },
-   {
-    "id": "u385433",
-    "name": "Pijeh"
-   },
-   {
-    "id": "u517654",
-    "name": "Oline21"
-   },
-   {
-    "id": "u618929",
-    "name": "Roselina"
-   },
-   {
-    "id": "u551294",
-    "name": "Lazeta🌸"
-   },
-   {
-    "id": "u453552",
-    "name": "kezia"
-   },
-   {
-    "id": "u559442",
-    "name": "Mischa Widjaja"
-   }
-  ]
- },
- {
-  "id": "rm4077439",
-  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
-  "date": "2026-07-13",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": []
- },
- {
-  "id": "rm4178804",
-  "name": "NPC GOES TO KBP SLAY LADIES Mexicano 1C2H6P upper beginner++",
-  "date": "2026-07-13",
-  "time": "14:00",
-  "venue": "H2O Padel Club Bandung",
-  "format": "mexicano",
-  "players": [
-   {
-    "id": "u530978",
-    "name": "Dudu"
-   },
-   {
-    "id": "u548887",
-    "name": "Adhel"
-   },
-   {
-    "id": "u876983",
-    "name": "Ria"
-   },
-   {
-    "id": "u531025",
-    "name": "Andin"
-   },
-   {
-    "id": "u896226",
-    "name": "Esa"
-   }
-  ]
- },
- {
   "id": "rm3891210",
   "name": "PC SUBHAN",
   "date": "2026-07-13",
@@ -242,10 +127,6 @@
    {
     "id": "u557546",
     "name": "jannice doreen"
-   },
-   {
-    "id": "u824701",
-    "name": "Meirissa"
    },
    {
     "id": "u385433",
@@ -411,6 +292,15 @@
     "name": "Pijeh"
    }
   ]
+ },
+ {
+  "id": "rm4292410",
+  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
+  "date": "2026-07-20",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": []
  },
  {
   "id": "rm4178803",
@@ -583,6 +473,15 @@
   ]
  },
  {
+  "id": "rm4292419",
+  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
+  "date": "2026-07-27",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": []
+ },
+ {
   "id": "rm4191387",
   "name": "NPC GOES TO KBP SLAY LADIES Mexicano 1C2H6P upper beginner++",
   "date": "2026-07-27",
@@ -617,6 +516,14 @@
   "venue": "Nonstop Padel Club",
   "format": null,
   "players": [
+   {
+    "id": "u449900",
+    "name": "Talia"
+   },
+   {
+    "id": "u357172",
+    "name": "Vivi"
+   },
    {
     "id": "u515035",
     "name": "Henni"
