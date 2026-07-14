@@ -1,32 +1,5 @@
 [
  {
-  "id": "rm4257507",
-  "name": "NPC COACHING CLASS - CONTROL & RALLY by Coach Nanda",
-  "date": "2026-07-14",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm3965703",
-  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
-  "date": "2026-07-14",
-  "time": "19:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   },
-   {
-    "id": "u385415",
-    "name": "Alvin Tojid"
-   }
-  ]
- },
- {
   "id": "rm4257517",
   "name": "NPC COACHING CLASS - BACKWALL & SIDEWALL by Coach Nanda",
   "date": "2026-07-15",
@@ -43,10 +16,6 @@
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
   "players": [
-   {
-    "id": "u1372073",
-    "name": "Tere"
-   },
    {
     "id": "u341047",
     "name": "Sherlyta"
@@ -109,6 +78,10 @@
    {
     "id": "u557546",
     "name": "jannice doreen"
+   },
+   {
+    "id": "u391176",
+    "name": "Nataya Amandari"
    },
    {
     "id": "u385433",
@@ -475,20 +448,20 @@
   ]
  },
  {
-  "id": "rm4292419",
-  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
-  "date": "2026-07-27",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": []
- },
- {
   "id": "rm4191387",
   "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
   "date": "2026-07-27",
   "time": "14:00",
   "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4292419",
+  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
+  "date": "2026-07-27",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
   "format": "americano",
   "players": []
  },
@@ -1031,6 +1004,15 @@
   "time": "12:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4298549",
+  "name": "NPC SLAY LADIES fixed partner min. Upper beginner",
+  "date": "2026-08-28",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
   "players": []
  }
 ]
