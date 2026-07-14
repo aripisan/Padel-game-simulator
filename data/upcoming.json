@@ -257,20 +257,20 @@
   ]
  },
  {
-  "id": "rm4178803",
-  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
-  "date": "2026-07-20",
-  "time": "14:00",
-  "venue": "H2O Padel Club Bandung",
-  "format": "americano",
-  "players": []
- },
- {
   "id": "rm4292410",
   "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
   "date": "2026-07-20",
   "time": "14:00",
   "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4178803",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-07-20",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
   "format": "americano",
   "players": []
  },
@@ -448,20 +448,20 @@
   ]
  },
  {
-  "id": "rm4191387",
-  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
-  "date": "2026-07-27",
-  "time": "14:00",
-  "venue": "H2O Padel Club Bandung",
-  "format": "americano",
-  "players": []
- },
- {
   "id": "rm4292419",
   "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
   "date": "2026-07-27",
   "time": "14:00",
   "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4191387",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-07-27",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
   "format": "americano",
   "players": []
  },
@@ -1014,5 +1014,19 @@
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
   "players": []
+ },
+ {
+  "id": "rm4298568",
+  "name": "NPC MABAR WITH COACH SUBHAN beginner friendly",
+  "date": "2026-08-28",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   }
+  ]
  }
 ]
