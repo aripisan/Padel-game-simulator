@@ -1,55 +1,5 @@
 [
  {
-  "id": "rm4257517",
-  "name": "NPC COACHING CLASS - BACKWALL & SIDEWALL by Coach Nanda",
-  "date": "2026-07-15",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm4213303",
-  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
-  "date": "2026-07-15",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
-  "id": "rm4209172",
-  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
-  "date": "2026-07-15",
-  "time": "12:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm4141213",
-  "name": "PC SUBHAN",
-  "date": "2026-07-15",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u268490",
-    "name": "MIKE"
-   }
-  ]
- },
- {
   "id": "rm4257521",
   "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
   "date": "2026-07-16",
@@ -59,8 +9,35 @@
   "players": []
  },
  {
+  "id": "rm4320561",
+  "name": "PC SUBHAN",
+  "date": "2026-07-17",
+  "time": "06:00",
+  "venue": "Padel talks",
+  "format": null,
+  "players": [
+   {
+    "id": "u717833",
+    "name": "Lelaa"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   }
+  ]
+ },
+ {
   "id": "rm4257528",
   "name": "NPC COACHING CLASS - DEFENSE & ATTACK by Coach Nanda",
+  "date": "2026-07-17",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4322062",
+  "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
   "date": "2026-07-17",
   "time": "07:00",
   "venue": "Tambuhak Padel Garden",
@@ -94,10 +71,6 @@
    {
     "id": "u528191",
     "name": "Tikus"
-   },
-   {
-    "id": "u584079",
-    "name": "kezia lizina"
    },
    {
     "id": "u517654",
@@ -202,8 +175,8 @@
     "name": "Nonstop Padel Club"
    },
    {
-    "id": "u406311",
-    "name": "Ananda Ari R"
+    "id": "u1577870",
+    "name": "fera"
    }
   ]
  },
@@ -215,6 +188,24 @@
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
+ },
+ {
+  "id": "rm4320704",
+  "name": "PC NANDA",
+  "date": "2026-07-19",
+  "time": "07:00",
+  "venue": "Vivaldi Padel",
+  "format": null,
+  "players": [
+   {
+    "id": "u406311",
+    "name": "Ananda Ari R"
+   },
+   {
+    "id": "u1319189",
+    "name": "Vicky Marline"
+   }
+  ]
  },
  {
   "id": "rm4238394",
@@ -303,6 +294,15 @@
   ]
  },
  {
+  "id": "rm4322212",
+  "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
+  "date": "2026-07-22",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm4213319",
   "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
   "date": "2026-07-22",
@@ -321,6 +321,42 @@
   "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
   "date": "2026-07-22",
   "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4321961",
+  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
+  "date": "2026-07-23",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4320570",
+  "name": "PC SUBHAN",
+  "date": "2026-07-24",
+  "time": "06:00",
+  "venue": "Padel talks",
+  "format": null,
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   }
+  ]
+ },
+ {
+  "id": "rm4322036",
+  "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
+  "date": "2026-07-24",
+  "time": "07:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
@@ -556,6 +592,15 @@
   ]
  },
  {
+  "id": "rm4322211",
+  "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
+  "date": "2026-07-29",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm4298533",
   "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
   "date": "2026-07-29",
@@ -574,6 +619,33 @@
   "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
   "date": "2026-07-29",
   "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4320573",
+  "name": "PC SUBHAN",
+  "date": "2026-07-31",
+  "time": "06:00",
+  "venue": "Padel talks",
+  "format": null,
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   }
+  ]
+ },
+ {
+  "id": "rm4322039",
+  "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
+  "date": "2026-07-31",
+  "time": "07:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
@@ -682,6 +754,24 @@
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
+ },
+ {
+  "id": "rm4320577",
+  "name": "PC SUBHAN",
+  "date": "2026-08-07",
+  "time": "06:00",
+  "venue": "Padel talks",
+  "format": null,
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   }
+  ]
  },
  {
   "id": "rm4298543",
