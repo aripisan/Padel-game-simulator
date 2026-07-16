@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm4328308",
-  "name": "PC SUBHAN",
-  "date": "2026-07-16",
-  "time": "11:00",
-  "venue": "Tropical padel",
-  "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u634897",
-    "name": "Subhan"
-   }
-  ]
- },
- {
   "id": "rm4320561",
   "name": "PC SUBHAN",
   "date": "2026-07-17",
@@ -61,6 +43,10 @@
   "venue": "Court 1977",
   "format": null,
   "players": [
+   {
+    "id": "u476909",
+    "name": "Salma"
+   },
    {
     "id": "u385433",
     "name": "Pijeh"
@@ -116,20 +102,6 @@
    {
     "id": "u696662",
     "name": "Gita Dandel"
-   }
-  ]
- },
- {
-  "id": "rm4246600",
-  "name": "NPC MABAR WITH COACH SUBHAN beginner friendly",
-  "date": "2026-07-17",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u634897",
-    "name": "Subhan"
    }
   ]
  },
