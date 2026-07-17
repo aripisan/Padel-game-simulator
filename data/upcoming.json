@@ -1,63 +1,5 @@
 [
  {
-  "id": "rm4148985",
-  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER",
-  "date": "2026-07-17",
-  "time": "19:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u516074",
-    "name": "Marchela"
-   },
-   {
-    "id": "u673589",
-    "name": "Dissa K"
-   },
-   {
-    "id": "u513254",
-    "name": "Angelia Stephanie"
-   },
-   {
-    "id": "u406397",
-    "name": "Ary"
-   },
-   {
-    "id": "u385433",
-    "name": "Pijeh"
-   },
-   {
-    "id": "u516198",
-    "name": "Johans"
-   },
-   {
-    "id": "u383258",
-    "name": "Sha"
-   },
-   {
-    "id": "u388145",
-    "name": "Shaun"
-   },
-   {
-    "id": "u385415",
-    "name": "Alvin Tojid"
-   },
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   },
-   {
-    "id": "u271154",
-    "name": "Via"
-   },
-   {
-    "id": "u552839",
-    "name": "Hans Marvin T."
-   }
-  ]
- },
- {
   "id": "rm4242830",
   "name": "PC NANDA",
   "date": "2026-07-18",
@@ -144,20 +86,20 @@
   "players": []
  },
  {
-  "id": "rm4178803",
-  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
-  "date": "2026-07-20",
-  "time": "14:00",
-  "venue": "H2O Padel Club Bandung",
-  "format": "americano",
-  "players": []
- },
- {
   "id": "rm4292410",
   "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
   "date": "2026-07-20",
   "time": "14:00",
   "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4178803",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-07-20",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
   "format": "americano",
   "players": []
  },
