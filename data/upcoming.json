@@ -1,96 +1,5 @@
 [
  {
-  "id": "rm4322062",
-  "name": "NPC CLASS by NANDA - DEFENSE AND ATTACK",
-  "date": "2026-07-17",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm4177632",
-  "name": "TRIAL COURT 1977 STAY OR SLAY TRIO LADIES QOC",
-  "date": "2026-07-17",
-  "time": "10:00",
-  "venue": "Court 1977",
-  "format": null,
-  "players": [
-   {
-    "id": "u476909",
-    "name": "Salma"
-   },
-   {
-    "id": "u175992",
-    "name": "Danindra"
-   },
-   {
-    "id": "u472543",
-    "name": "Winda Cahyadi"
-   },
-   {
-    "id": "u720150",
-    "name": "Meriska Wen"
-   },
-   {
-    "id": "u385433",
-    "name": "Pijeh"
-   },
-   {
-    "id": "u503607",
-    "name": "Nita Sofiani"
-   },
-   {
-    "id": "u70485",
-    "name": "Inez"
-   },
-   {
-    "id": "u517746",
-    "name": "Fris"
-   },
-   {
-    "id": "u528191",
-    "name": "Tikus"
-   },
-   {
-    "id": "u517654",
-    "name": "Oline21"
-   },
-   {
-    "id": "u517413",
-    "name": "Caroline Cing"
-   },
-   {
-    "id": "u632708",
-    "name": "Shelly"
-   },
-   {
-    "id": "u515035",
-    "name": "Henni"
-   },
-   {
-    "id": "u607335",
-    "name": "🐻ྀིpau"
-   },
-   {
-    "id": "u517277",
-    "name": "Jessica"
-   },
-   {
-    "id": "u478715",
-    "name": "Lisa Ju"
-   },
-   {
-    "id": "u627434",
-    "name": "Sherly"
-   },
-   {
-    "id": "u696662",
-    "name": "Gita Dandel"
-   }
-  ]
- },
- {
   "id": "rm4148985",
   "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER",
   "date": "2026-07-17",
@@ -98,6 +7,14 @@
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
   "players": [
+   {
+    "id": "u516074",
+    "name": "Marchela"
+   },
+   {
+    "id": "u673589",
+    "name": "Dissa K"
+   },
    {
     "id": "u513254",
     "name": "Angelia Stephanie"
@@ -113,6 +30,10 @@
    {
     "id": "u516198",
     "name": "Johans"
+   },
+   {
+    "id": "u383258",
+    "name": "Sha"
    },
    {
     "id": "u388145",
@@ -223,20 +144,20 @@
   "players": []
  },
  {
-  "id": "rm4292410",
-  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
-  "date": "2026-07-20",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": []
- },
- {
   "id": "rm4178803",
   "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
   "date": "2026-07-20",
   "time": "14:00",
   "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4292410",
+  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
+  "date": "2026-07-20",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
   "format": "americano",
   "players": []
  },
@@ -396,7 +317,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   }
+  ]
  },
  {
   "id": "rm4345753",
@@ -475,6 +401,10 @@
   "format": null,
   "players": [
    {
+    "id": "u942928",
+    "name": "iphoned"
+   },
+   {
     "id": "u715372",
     "name": "Putri"
    },
@@ -485,6 +415,10 @@
    {
     "id": "u885603",
     "name": "Isty Mustika"
+   },
+   {
+    "id": "u728662",
+    "name": "Didi"
    },
    {
     "id": "u355366",
@@ -517,20 +451,20 @@
   ]
  },
  {
-  "id": "rm4292419",
-  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
-  "date": "2026-07-27",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": []
- },
- {
   "id": "rm4191387",
   "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
   "date": "2026-07-27",
   "time": "14:00",
   "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4292419",
+  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
+  "date": "2026-07-27",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
   "format": "americano",
   "players": []
  },
@@ -1167,6 +1101,20 @@
    {
     "id": "u341047",
     "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4298531",
+  "name": "NPC SLAY LADIES fixed partner min. upper beginner",
+  "date": "2026-08-31",
+  "time": "10:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
    }
   ]
  }
