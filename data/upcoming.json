@@ -86,15 +86,6 @@
   "players": []
  },
  {
-  "id": "rm4178803",
-  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
-  "date": "2026-07-20",
-  "time": "14:00",
-  "venue": "H2O Padel Club Bandung",
-  "format": "americano",
-  "players": []
- },
- {
   "id": "rm4292410",
   "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
   "date": "2026-07-20",
@@ -102,6 +93,20 @@
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
   "players": []
+ },
+ {
+  "id": "rm4178803",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-07-20",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": [
+   {
+    "id": "u902833",
+    "name": "Anggi"
+   }
+  ]
  },
  {
   "id": "rm3891215",
