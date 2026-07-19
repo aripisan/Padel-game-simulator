@@ -1,41 +1,5 @@
 [
  {
-  "id": "rm4320704",
-  "name": "PC NANDA",
-  "date": "2026-07-19",
-  "time": "07:00",
-  "venue": "Vivaldi Padel",
-  "format": null,
-  "players": [
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   },
-   {
-    "id": "u1319189",
-    "name": "Vicky Marline"
-   }
-  ]
- },
- {
-  "id": "rm4238394",
-  "name": "PC NANDA",
-  "date": "2026-07-19",
-  "time": "08:00",
-  "venue": "Vivaldi Padel",
-  "format": null,
-  "players": [
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   },
-   {
-    "id": "u1254569",
-    "name": "Fransisca inne"
-   }
-  ]
- },
- {
   "id": "rm3965687",
   "name": "NPC SLAY LADIES fixed partner Upper beginner++",
   "date": "2026-07-20",
@@ -98,6 +62,15 @@
     "name": "FanFan"
    }
   ]
+ },
+ {
+  "id": "rm4380067",
+  "name": "NPC COACHING CLASS - CONTROL & RALLY by Coach Nanda",
+  "date": "2026-07-21",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
  },
  {
   "id": "rm4345710",
@@ -313,6 +286,20 @@
   "players": []
  },
  {
+  "id": "rm4383702",
+  "name": "PC NANDA",
+  "date": "2026-07-26",
+  "time": "08:00",
+  "venue": "Vivaldi Padel",
+  "format": null,
+  "players": [
+   {
+    "id": "u406311",
+    "name": "Ananda Ari R"
+   }
+  ]
+ },
+ {
   "id": "rm3965688",
   "name": "NPC SLAY with CHA2 Upper beginner++",
   "date": "2026-07-27",
@@ -371,20 +358,20 @@
   ]
  },
  {
-  "id": "rm4191387",
-  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
-  "date": "2026-07-27",
-  "time": "14:00",
-  "venue": "H2O Padel Club Bandung",
-  "format": "americano",
-  "players": []
- },
- {
   "id": "rm4292419",
   "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
   "date": "2026-07-27",
   "time": "14:00",
   "venue": "Tambuhak Padel Garden",
+  "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4191387",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-07-27",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
   "format": "americano",
   "players": []
  },
