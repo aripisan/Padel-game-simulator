@@ -1,51 +1,5 @@
 [
  {
-  "id": "rm3965687",
-  "name": "NPC SLAY LADIES fixed partner Upper beginner++",
-  "date": "2026-07-20",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u385433",
-    "name": "Pijeh"
-   }
-  ]
- },
- {
-  "id": "rm4345696",
-  "name": "NPC CLASS by SUBHAN - PADEL BEGINNER",
-  "date": "2026-07-20",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm4292410",
-  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
-  "date": "2026-07-20",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": []
- },
- {
-  "id": "rm4178803",
-  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
-  "date": "2026-07-20",
-  "time": "14:00",
-  "venue": "H2O Padel Club Bandung",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u902833",
-    "name": "Anggi"
-   }
-  ]
- },
- {
   "id": "rm3891215",
   "name": "PC SUBHAN",
   "date": "2026-07-20",
@@ -294,6 +248,10 @@
   "format": null,
   "players": [
    {
+    "id": "u1254569",
+    "name": "Fransisca inne"
+   },
+   {
     "id": "u406311",
     "name": "Ananda Ari R"
    }
@@ -328,6 +286,10 @@
     "name": "Didi"
    },
    {
+    "id": "u1005244",
+    "name": "jj"
+   },
+   {
     "id": "u355366",
     "name": "chacha vanesa"
    },
@@ -354,20 +316,20 @@
   ]
  },
  {
-  "id": "rm4292419",
-  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
-  "date": "2026-07-27",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": []
- },
- {
   "id": "rm4191387",
   "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
   "date": "2026-07-27",
   "time": "14:00",
   "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4292419",
+  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
+  "date": "2026-07-27",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
   "format": "americano",
   "players": []
  },
