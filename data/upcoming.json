@@ -1,41 +1,18 @@
 [
  {
-  "id": "rm4213319",
-  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
-  "date": "2026-07-22",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
-  "id": "rm4209512",
-  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
-  "date": "2026-07-22",
-  "time": "12:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm4345724",
-  "name": "NPC CLASS by SUBHAN - BACKWALL & SIDEWALL",
-  "date": "2026-07-22",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm4321961",
   "name": "NPC CLASS by NANDA - VOLLEY & OVERHEAD",
   "date": "2026-07-23",
   "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4345745",
+  "name": "NPC CLASS by SUBHAN - VOLLEY & OVERHEAD",
+  "date": "2026-07-23",
+  "time": "13:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
@@ -57,15 +34,6 @@
     "name": "Subhan"
    }
   ]
- },
- {
-  "id": "rm4345745",
-  "name": "NPC CLASS by SUBHAN - VOLLEY & OVERHEAD",
-  "date": "2026-07-23",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
  },
  {
   "id": "rm4343692",
@@ -102,15 +70,6 @@
     "name": "Nonstop Padel Club"
    }
   ]
- },
- {
-  "id": "rm4322036",
-  "name": "NPC CLASS by NANDA - DEFENSE AND ATTACK",
-  "date": "2026-07-24",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
  },
  {
   "id": "rm3965699",
@@ -275,20 +234,20 @@
   ]
  },
  {
-  "id": "rm4292419",
-  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
-  "date": "2026-07-27",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": []
- },
- {
   "id": "rm4191387",
   "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
   "date": "2026-07-27",
   "time": "14:00",
   "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4292419",
+  "name": "NPC AMERICANO 1C2H6P mix gender upper beginner ++",
+  "date": "2026-07-27",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
   "format": "americano",
   "players": []
  },
@@ -377,6 +336,14 @@
    {
     "id": "u503607",
     "name": "Nita Sofiani"
+   },
+   {
+    "id": "u448426",
+    "name": "Cathy"
+   },
+   {
+    "id": "u824701",
+    "name": "Meirissa"
    }
   ]
  },
