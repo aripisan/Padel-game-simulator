@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm4322212",
-  "name": "NPC CLASS by NANDA - PADEL BACKWALL & SIDEWALL",
-  "date": "2026-07-22",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u932212",
-    "name": "Onie"
-   },
-   {
-    "id": "u775104",
-    "name": "Santi Su"
-   }
-  ]
- },
- {
   "id": "rm4213319",
   "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
   "date": "2026-07-22",
@@ -141,6 +123,10 @@
    {
     "id": "u385433",
     "name": "Pijeh"
+   },
+   {
+    "id": "u517654",
+    "name": "Oline21"
    }
   ]
  },
