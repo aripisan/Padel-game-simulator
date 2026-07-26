@@ -1,37 +1,5 @@
 [
  {
-  "id": "rm4383702",
-  "name": "PC NANDA",
-  "date": "2026-07-26",
-  "time": "08:00",
-  "venue": "Vivaldi Padel",
-  "format": null,
-  "players": [
-   {
-    "id": "u1254569",
-    "name": "Fransisca inne"
-   },
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   }
-  ]
- },
- {
-  "id": "rm4477346",
-  "name": "PC NANDA",
-  "date": "2026-07-26",
-  "time": "10:00",
-  "venue": "Vivaldi Padel",
-  "format": null,
-  "players": [
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   }
-  ]
- },
- {
   "id": "rm3965688",
   "name": "NPC SLAY with CHA2 Upper beginner++",
   "date": "2026-07-27",
