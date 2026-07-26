@@ -6,7 +6,56 @@
   "time": "09:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u942928",
+    "name": "iphoned"
+   },
+   {
+    "id": "u715372",
+    "name": "Putri"
+   },
+   {
+    "id": "u470205",
+    "name": "Astryd"
+   },
+   {
+    "id": "u885603",
+    "name": "Isty Mustika"
+   },
+   {
+    "id": "u728662",
+    "name": "Didi"
+   },
+   {
+    "id": "u1005244",
+    "name": "jj"
+   },
+   {
+    "id": "u355366",
+    "name": "chacha vanesa"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u499335",
+    "name": "Stefani H"
+   },
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   },
+   {
+    "id": "u747788",
+    "name": "Sari"
+   },
+   {
+    "id": "u516074",
+    "name": "Marchela"
+   }
+  ]
  },
  {
   "id": "rm4472446",
@@ -15,7 +64,16 @@
   "time": "12:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u1029427",
+    "name": "Sam"
+   },
+   {
+    "id": "u1051821",
+    "name": "Nisa F"
+   }
+  ]
  },
  {
   "id": "rm4191387",
@@ -33,6 +91,24 @@
   "time": "19:00",
   "venue": "Padel Up",
   "format": null,
+  "players": [
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   },
+   {
+    "id": "u489358",
+    "name": "FanFan"
+   }
+  ]
+ },
+ {
+  "id": "rm4501240",
+  "name": "NPC COACHING CLASS - CONTROL & RALLY by Coach Nanda",
+  "date": "2026-07-28",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
   "players": []
  },
  {
@@ -40,6 +116,24 @@
   "name": "PC SUBHAN",
   "date": "2026-07-28",
   "time": "11:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   }
+  ]
+ },
+ {
+  "id": "rm4502932",
+  "name": "NPC CLASS by SUBHAN - CONTROL & RALLY",
+  "date": "2026-07-28",
+  "time": "13:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
@@ -51,7 +145,72 @@
   "time": "16:00",
   "venue": "LA FAMILIA PADEL BANDUNG",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u449900",
+    "name": "Talia"
+   },
+   {
+    "id": "u357172",
+    "name": "Vivi"
+   },
+   {
+    "id": "u515035",
+    "name": "Henni"
+   },
+   {
+    "id": "u70485",
+    "name": "Inez"
+   },
+   {
+    "id": "u517277",
+    "name": "Jessica"
+   },
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   },
+   {
+    "id": "u471675",
+    "name": "Lina wang"
+   },
+   {
+    "id": "u597755",
+    "name": "Jilly"
+   },
+   {
+    "id": "u543817",
+    "name": "melissa cha2"
+   },
+   {
+    "id": "u499335",
+    "name": "Stefani H"
+   },
+   {
+    "id": "u584079",
+    "name": "kezia lizina"
+   },
+   {
+    "id": "u371828",
+    "name": "Heidi"
+   },
+   {
+    "id": "u521237",
+    "name": "Caroline"
+   },
+   {
+    "id": "u503607",
+    "name": "Nita Sofiani"
+   },
+   {
+    "id": "u448426",
+    "name": "Cathy"
+   },
+   {
+    "id": "u824701",
+    "name": "Meirissa"
+   }
+  ]
  },
  {
   "id": "rm3965706",
@@ -60,7 +219,16 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   }
+  ]
  },
  {
   "id": "rm4322211",
@@ -78,13 +246,27 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4298576",
   "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
   "date": "2026-07-29",
   "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4502943",
+  "name": "NPC CLASS by SUBHAN - BACKWALL & SIDEWALL",
+  "date": "2026-07-29",
+  "time": "13:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
@@ -99,13 +281,31 @@
   "players": []
  },
  {
+  "id": "rm4502964",
+  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Subhan",
+  "date": "2026-07-30",
+  "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm4320573",
   "name": "PC SUBHAN",
   "date": "2026-07-31",
   "time": "06:00",
   "venue": "Padel talks",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   }
+  ]
  },
  {
   "id": "rm4322039",
@@ -126,13 +326,27 @@
   "players": []
  },
  {
+  "id": "rm4502953",
+  "name": "NPC CLASS by SUBHAN - DEFENSE & ATTACK",
+  "date": "2026-07-31",
+  "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm4298562",
   "name": "NPC MABAR WITH COACH SUBHAN beginner friendly",
   "date": "2026-07-31",
   "time": "14:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   }
+  ]
  },
  {
   "id": "rm4148987",
@@ -141,16 +355,39 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
+  "players": [
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4502009",
+  "name": "NPC COACHING CLASS - PADEL BASIC STROKES by Coach Nanda",
+  "date": "2026-08-03",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
   "players": []
  },
  {
   "id": "rm4298521",
-  "name": "NPC SLAY LADIES fixed partner min. upper beginner",
+  "name": "NPC SLAY LADIES MEXICANO UPPER BEG-INTERMEDIATE",
   "date": "2026-08-03",
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": []
+  "format": "mexicano",
+  "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   }
+  ]
  },
  {
   "id": "rm4298479",
@@ -168,7 +405,16 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   }
+  ]
  },
  {
   "id": "rm4472367",
@@ -186,7 +432,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4298578",
@@ -213,7 +464,16 @@
   "time": "06:00",
   "venue": "Padel talks",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   }
+  ]
  },
  {
   "id": "rm4472368",
@@ -240,7 +500,12 @@
   "time": "14:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   }
+  ]
  },
  {
   "id": "rm4298551",
@@ -249,7 +514,16 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   }
+  ]
  },
  {
   "id": "rm4298526",
@@ -258,7 +532,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   }
+  ]
  },
  {
   "id": "rm4298480",
@@ -276,6 +555,24 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
+  "players": [
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4500837",
+  "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
+  "date": "2026-08-12",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
   "players": []
  },
  {
@@ -285,7 +582,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4298580",
@@ -312,7 +614,12 @@
   "time": "14:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   }
+  ]
  },
  {
   "id": "rm4298552",
@@ -321,7 +628,16 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4298528",
@@ -330,7 +646,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   }
+  ]
  },
  {
   "id": "rm4298482",
@@ -348,7 +669,16 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4298537",
@@ -357,7 +687,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4298581",
@@ -384,7 +719,12 @@
   "time": "14:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   }
+  ]
  },
  {
   "id": "rm4298554",
@@ -393,7 +733,16 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   }
+  ]
  },
  {
   "id": "rm4298529",
@@ -402,7 +751,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   }
+  ]
  },
  {
   "id": "rm4298483",
@@ -420,7 +774,16 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   }
+  ]
  },
  {
   "id": "rm4298538",
@@ -429,7 +792,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4298584",
@@ -456,7 +824,12 @@
   "time": "14:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   }
+  ]
  },
  {
   "id": "rm4298556",
@@ -465,7 +838,16 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4298531",
@@ -474,6 +856,11 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   }
+  ]
  }
 ]
