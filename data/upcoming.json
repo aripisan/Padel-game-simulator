@@ -1,108 +1,5 @@
 [
  {
-  "id": "rm3965688",
-  "name": "NPC SLAY with CHA2 Upper beginner++",
-  "date": "2026-07-27",
-  "time": "09:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u942928",
-    "name": "iphoned"
-   },
-   {
-    "id": "u715372",
-    "name": "Putri"
-   },
-   {
-    "id": "u470205",
-    "name": "Astryd"
-   },
-   {
-    "id": "u885603",
-    "name": "Isty Mustika"
-   },
-   {
-    "id": "u728662",
-    "name": "Didi"
-   },
-   {
-    "id": "u1005244",
-    "name": "jj"
-   },
-   {
-    "id": "u355366",
-    "name": "chacha vanesa"
-   },
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   },
-   {
-    "id": "u499335",
-    "name": "Stefani H"
-   },
-   {
-    "id": "u385433",
-    "name": "Pijeh"
-   },
-   {
-    "id": "u747788",
-    "name": "Sari"
-   },
-   {
-    "id": "u516074",
-    "name": "Marchela"
-   }
-  ]
- },
- {
-  "id": "rm4472446",
-  "name": "PC SUBHAN",
-  "date": "2026-07-27",
-  "time": "12:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u1029427",
-    "name": "Sam"
-   },
-   {
-    "id": "u1051821",
-    "name": "Nisa F"
-   }
-  ]
- },
- {
-  "id": "rm4191387",
-  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
-  "date": "2026-07-27",
-  "time": "14:00",
-  "venue": "H2O Padel Club Bandung",
-  "format": "americano",
-  "players": []
- },
- {
-  "id": "rm3891237",
-  "name": "PC SUBHAN",
-  "date": "2026-07-27",
-  "time": "19:00",
-  "venue": "Padel Up",
-  "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u489358",
-    "name": "FanFan"
-   }
-  ]
- },
- {
   "id": "rm4501240",
   "name": "NPC COACHING CLASS - CONTROL & RALLY by Coach Nanda",
   "date": "2026-07-28",
@@ -187,10 +84,6 @@
     "name": "Stefani H"
    },
    {
-    "id": "u584079",
-    "name": "kezia lizina"
-   },
-   {
     "id": "u371828",
     "name": "Heidi"
    },
@@ -205,28 +98,6 @@
    {
     "id": "u448426",
     "name": "Cathy"
-   },
-   {
-    "id": "u824701",
-    "name": "Meirissa"
-   }
-  ]
- },
- {
-  "id": "rm3965706",
-  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
-  "date": "2026-07-28",
-  "time": "19:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   },
-   {
-    "id": "u385415",
-    "name": "Alvin Tojid"
    }
   ]
  },
@@ -368,6 +239,24 @@
    {
     "id": "u341047",
     "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4510023",
+  "name": "PC NANDA",
+  "date": "2026-08-01",
+  "time": "17:00",
+  "venue": "Panghegar de Padel",
+  "format": null,
+  "players": [
+   {
+    "id": "u406311",
+    "name": "Ananda Ari R"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
    }
   ]
  },
