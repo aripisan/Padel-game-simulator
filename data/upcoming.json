@@ -1,79 +1,5 @@
 [
  {
-  "id": "rm4044948",
-  "name": "Remidial Friendly Match AsoyGeboy NPC x South",
-  "date": "2026-07-28",
-  "time": "16:00",
-  "venue": "LA FAMILIA PADEL BANDUNG",
-  "format": null,
-  "players": [
-   {
-    "id": "u449900",
-    "name": "Talia"
-   },
-   {
-    "id": "u357172",
-    "name": "Vivi"
-   },
-   {
-    "id": "u515035",
-    "name": "Henni"
-   },
-   {
-    "id": "u70485",
-    "name": "Inez"
-   },
-   {
-    "id": "u517277",
-    "name": "Jessica"
-   },
-   {
-    "id": "u385433",
-    "name": "Pijeh"
-   },
-   {
-    "id": "u471675",
-    "name": "Lina wang"
-   },
-   {
-    "id": "u597755",
-    "name": "Jilly"
-   },
-   {
-    "id": "u543817",
-    "name": "melissa cha2"
-   },
-   {
-    "id": "u499335",
-    "name": "Stefani H"
-   },
-   {
-    "id": "u371828",
-    "name": "Heidi"
-   },
-   {
-    "id": "u521237",
-    "name": "Caroline"
-   },
-   {
-    "id": "u503607",
-    "name": "Nita Sofiani"
-   },
-   {
-    "id": "u448426",
-    "name": "Cathy"
-   },
-   {
-    "id": "u632708",
-    "name": "Shelly"
-   },
-   {
-    "id": "u543445",
-    "name": "Joco"
-   }
-  ]
- },
- {
   "id": "rm4322211",
   "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
   "date": "2026-07-29",
@@ -103,7 +29,12 @@
   "time": "12:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u2039435",
+    "name": "Luvina"
+   }
+  ]
  },
  {
   "id": "rm4502943",
