@@ -1,41 +1,5 @@
 [
  {
-  "id": "rm4501240",
-  "name": "NPC COACHING CLASS - CONTROL & RALLY by Coach Nanda",
-  "date": "2026-07-28",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm4474930",
-  "name": "PC SUBHAN",
-  "date": "2026-07-28",
-  "time": "11:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u634897",
-    "name": "Subhan"
-   },
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   }
-  ]
- },
- {
-  "id": "rm4502932",
-  "name": "NPC CLASS by SUBHAN - CONTROL & RALLY",
-  "date": "2026-07-28",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm4044948",
   "name": "Remidial Friendly Match AsoyGeboy NPC x South",
   "date": "2026-07-28",
@@ -269,6 +233,24 @@
   ]
  },
  {
+  "id": "rm4528544",
+  "name": "PC NANDA",
+  "date": "2026-08-02",
+  "time": "08:00",
+  "venue": "Panghegar de Padel",
+  "format": null,
+  "players": [
+   {
+    "id": "u406311",
+    "name": "Ananda Ari R"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   }
+  ]
+ },
+ {
   "id": "rm4502009",
   "name": "NPC COACHING CLASS - PADEL BASIC STROKES by Coach Nanda",
   "date": "2026-08-03",
@@ -286,8 +268,8 @@
   "format": "mexicano",
   "players": [
    {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
+    "id": "u385433",
+    "name": "Pijeh"
    }
   ]
  },
