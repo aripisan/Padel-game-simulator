@@ -1,42 +1,5 @@
 [
  {
-  "id": "rm4298533",
-  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
-  "date": "2026-07-29",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
-  "id": "rm4298576",
-  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
-  "date": "2026-07-29",
-  "time": "12:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u2039435",
-    "name": "Luvina"
-   }
-  ]
- },
- {
-  "id": "rm4502943",
-  "name": "NPC CLASS by SUBHAN - BACKWALL & SIDEWALL",
-  "date": "2026-07-29",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm4443797",
   "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
   "date": "2026-07-30",
@@ -411,12 +374,53 @@
  },
  {
   "id": "rm4298546",
-  "name": "70K NPC SLAY LADIES FIXED PARTNER UPPER BEG-INTERMEDIATE",
+  "name": "NPC SLAY LADIES QUEEN OF THE CRAB",
   "date": "2026-08-14",
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": []
+  "format": null,
+  "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   },
+   {
+    "id": "u517654",
+    "name": "Oline21"
+   },
+   {
+    "id": "u463264",
+    "name": "cherry"
+   },
+   {
+    "id": "u694069",
+    "name": "CC"
+   },
+   {
+    "id": "u463197",
+    "name": "Cindy Cimon"
+   },
+   {
+    "id": "u647801",
+    "name": "Evelyna"
+   },
+   {
+    "id": "u517219",
+    "name": "YeGuo"
+   },
+   {
+    "id": "u710604",
+    "name": "Michelle Yang"
+   },
+   {
+    "id": "u335243",
+    "name": "Maria Kornelius"
+   },
+   {
+    "id": "u517746",
+    "name": "Fris"
+   }
+  ]
  },
  {
   "id": "rm4298564",
