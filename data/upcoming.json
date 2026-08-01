@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm4510023",
-  "name": "PC NANDA",
-  "date": "2026-08-01",
-  "time": "17:00",
-  "venue": "Panghegar de Padel",
-  "format": null,
-  "players": [
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   },
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   }
-  ]
- },
- {
   "id": "rm4528544",
   "name": "PC NANDA",
   "date": "2026-08-02",
@@ -52,6 +34,14 @@
   "venue": "Tambuhak Padel Garden",
   "format": "mexicano",
   "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
    {
     "id": "u385433",
     "name": "Pijeh"
@@ -110,7 +100,7 @@
  },
  {
   "id": "rm4298578",
-  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
+  "name": "NPC (50k only) LADIES BEGINNER SESSION",
   "date": "2026-08-05",
   "time": "12:00",
   "venue": "Tambuhak Padel Garden",
@@ -168,6 +158,15 @@
   ]
  },
  {
+  "id": "rm4602240",
+  "name": "NPC (50k) MABAR MEN BEGINNER",
+  "date": "2026-08-07",
+  "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm4298563",
   "name": "NPC MABAR WITH COACH SUBHAN beginner friendly",
   "date": "2026-08-07",
@@ -210,6 +209,14 @@
    {
     "id": "u385433",
     "name": "Pijeh"
+   },
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
    }
   ]
  },
@@ -265,7 +272,7 @@
  },
  {
   "id": "rm4298580",
-  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
+  "name": "NPC (50k only) LADIES BEGINNER SESSION",
   "date": "2026-08-12",
   "time": "12:00",
   "venue": "Tambuhak Padel Garden",
@@ -323,6 +330,15 @@
   ]
  },
  {
+  "id": "rm4602220",
+  "name": "NPC (50k) MABAR MEN BEGINNER",
+  "date": "2026-08-14",
+  "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm4298564",
   "name": "NPC MABAR WITH COACH SUBHAN beginner friendly",
   "date": "2026-08-14",
@@ -362,6 +378,14 @@
   "venue": "Tambuhak Padel Garden",
   "format": "mexicano",
   "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
    {
     "id": "u385433",
     "name": "Pijeh"
@@ -411,7 +435,7 @@
  },
  {
   "id": "rm4298581",
-  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
+  "name": "NPC (50k only) LADIES BEGINNER SESSION",
   "date": "2026-08-19",
   "time": "12:00",
   "venue": "Tambuhak Padel Garden",
@@ -425,6 +449,15 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
+  "players": []
+ },
+ {
+  "id": "rm4602221",
+  "name": "NPC (50k) MABAR MEN BEGINNER",
+  "date": "2026-08-21",
+  "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
   "players": []
  },
  {
@@ -467,6 +500,14 @@
   "venue": "Tambuhak Padel Garden",
   "format": "mexicano",
   "players": [
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
    {
     "id": "u385433",
     "name": "Pijeh"
@@ -516,7 +557,7 @@
  },
  {
   "id": "rm4298584",
-  "name": "NPC (50k only) BEGINNER SESSION (no newbie & first timers)",
+  "name": "NPC (50k only) LADIES BEGINNER SESSION",
   "date": "2026-08-26",
   "time": "12:00",
   "venue": "Tambuhak Padel Garden",
@@ -530,6 +571,15 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
+  "players": []
+ },
+ {
+  "id": "rm4602223",
+  "name": "NPC (50k) MABAR MEN BEGINNER",
+  "date": "2026-08-28",
+  "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
   "players": []
  },
  {
@@ -575,6 +625,14 @@
    {
     "id": "u385433",
     "name": "Pijeh"
+   },
+   {
+    "id": "u385433",
+    "name": "Pijeh"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
    }
   ]
  }
