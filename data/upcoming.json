@@ -58,6 +58,15 @@
   "players": []
  },
  {
+  "id": "rm4607130",
+  "name": "NPC goes to KBP MABAR BARBAR MEN",
+  "date": "2026-08-04",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm4298571",
   "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
   "date": "2026-08-04",
@@ -199,6 +208,24 @@
   ]
  },
  {
+  "id": "rm4607134",
+  "name": "NPC goes to KBP SEPADEL SEMATI FIXED MIXED PARTNER",
+  "date": "2026-08-09",
+  "time": "15:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   }
+  ]
+ },
+ {
   "id": "rm4503989",
   "name": "70K NPC SLAY LADIES MEXICANO UPPER BEG-INTERMEDIATE",
   "date": "2026-08-10",
@@ -227,6 +254,15 @@
   "time": "14:00",
   "venue": "H2O Padel Club Bandung",
   "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4607129",
+  "name": "NPC goes to KBP MABAR BARBAR MEN",
+  "date": "2026-08-11",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": null,
   "players": []
  },
  {
@@ -371,6 +407,24 @@
   ]
  },
  {
+  "id": "rm4607137",
+  "name": "NPC goes to KBP SEPADEL SEMATI FIXED MIXED PARTNER",
+  "date": "2026-08-16",
+  "time": "15:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
   "id": "rm4503996",
   "name": "70K NPC SLAY LADIES MEXICANO UPPER BEG-INTERMEDIATE",
   "date": "2026-08-17",
@@ -399,6 +453,15 @@
   "time": "14:00",
   "venue": "H2O Padel Club Bandung",
   "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4607148",
+  "name": "NPC goes to KBP MABAR BARBAR MEN",
+  "date": "2026-08-18",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": null,
   "players": []
  },
  {
@@ -493,6 +556,24 @@
   ]
  },
  {
+  "id": "rm4607138",
+  "name": "NPC goes to KBP SEPADEL SEMATI FIXED MIXED PARTNER",
+  "date": "2026-08-23",
+  "time": "15:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
   "id": "rm4504002",
   "name": "70K NPC SLAY LADIES MEXICANO UPPER BEG-INTERMEDIATE",
   "date": "2026-08-24",
@@ -521,6 +602,15 @@
   "time": "14:00",
   "venue": "H2O Padel Club Bandung",
   "format": "americano",
+  "players": []
+ },
+ {
+  "id": "rm4607149",
+  "name": "NPC goes to KBP MABAR BARBAR MEN",
+  "date": "2026-08-25",
+  "time": "14:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": null,
   "players": []
  },
  {
@@ -602,6 +692,24 @@
   "date": "2026-08-28",
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4607139",
+  "name": "NPC goes to KBP SEPADEL SEMATI FIXED MIXED PARTNER",
+  "date": "2026-08-30",
+  "time": "15:00",
+  "venue": "H2O Padel Club Bandung",
   "format": "fixed",
   "players": [
    {
