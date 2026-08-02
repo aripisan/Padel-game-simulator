@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm4528544",
-  "name": "PC NANDA",
-  "date": "2026-08-02",
-  "time": "08:00",
-  "venue": "Panghegar de Padel",
-  "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u1254569",
-    "name": "Fransisca inne"
-   }
-  ]
- },
- {
   "id": "rm4502009",
   "name": "NPC COACHING CLASS - PADEL BASIC STROKES by Coach Nanda",
   "date": "2026-08-03",
