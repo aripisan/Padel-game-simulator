@@ -154,6 +154,24 @@
   ]
  },
  {
+  "id": "rm4657399",
+  "name": "PC NANDA",
+  "date": "2026-08-09",
+  "time": "08:00",
+  "venue": "Panghegar de Padel",
+  "format": null,
+  "players": [
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   },
+   {
+    "id": "u1254569",
+    "name": "Fransisca inne"
+   }
+  ]
+ },
+ {
   "id": "rm4607134",
   "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER",
   "date": "2026-08-09",
