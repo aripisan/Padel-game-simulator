@@ -1,14 +1,5 @@
 [
  {
-  "id": "rm4298578",
-  "name": "NPC (50k only) LADIES BEGINNER SESSION",
-  "date": "2026-08-05",
-  "time": "12:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm4443794",
   "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
   "date": "2026-08-06",
@@ -247,10 +238,6 @@
     "name": "Pijeh"
    },
    {
-    "id": "u517654",
-    "name": "Oline21"
-   },
-   {
     "id": "u463264",
     "name": "cherry"
    },
@@ -273,6 +260,10 @@
    {
     "id": "u710604",
     "name": "Michelle Yang"
+   },
+   {
+    "id": "u503607",
+    "name": "Nita Sofiani"
    },
    {
     "id": "u335243",
