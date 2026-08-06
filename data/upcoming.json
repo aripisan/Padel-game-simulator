@@ -28,12 +28,17 @@
  },
  {
   "id": "rm4298543",
-  "name": "70K NPC SLAY LADIES FIXED PARTNER UPPER BEG-INTERMEDIATE",
+  "name": "70K NPC SLAY LADIES UPPER BEG-INTERMEDIATE",
   "date": "2026-08-07",
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": []
+  "format": null,
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4602240",
