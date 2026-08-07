@@ -1,32 +1,5 @@
 [
  {
-  "id": "rm4320577",
-  "name": "PC SUBHAN",
-  "date": "2026-08-07",
-  "time": "06:00",
-  "venue": "Padel talks",
-  "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u717833",
-    "name": "Lelaa"
-   }
-  ]
- },
- {
-  "id": "rm4472368",
-  "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
-  "date": "2026-08-07",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm4298543",
   "name": "70K NPC SLAY LADIES UPPER BEG-INTERMEDIATE",
   "date": "2026-08-07",
@@ -53,6 +26,10 @@
    {
     "id": "u670684",
     "name": "Elyta"
+   },
+   {
+    "id": "u756086",
+    "name": "Riri Fran"
    }
   ]
  },
@@ -232,6 +209,15 @@
   "id": "rm4677004",
   "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
   "date": "2026-08-13",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4693176",
+  "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
+  "date": "2026-08-14",
   "time": "07:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
@@ -440,6 +426,15 @@
   "id": "rm4677005",
   "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
   "date": "2026-08-20",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4693179",
+  "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
+  "date": "2026-08-21",
   "time": "07:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
