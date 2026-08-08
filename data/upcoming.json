@@ -90,6 +90,24 @@
   "players": []
  },
  {
+  "id": "rm4716276",
+  "name": "PC SUBHAN",
+  "date": "2026-08-10",
+  "time": "18:00",
+  "venue": "Padel Up",
+  "format": null,
+  "players": [
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   }
+  ]
+ },
+ {
   "id": "rm4607129",
   "name": "NPC goes to KBP MABAR BARBAR MEN",
   "date": "2026-08-11",
