@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm4657399",
-  "name": "PC NANDA",
-  "date": "2026-08-09",
-  "time": "08:00",
-  "venue": "Panghegar de Padel",
-  "format": null,
-  "players": [
-   {
-    "id": "u1254569",
-    "name": "Fransisca inne"
-   },
-   {
-    "id": "u1348731",
-    "name": "Natalia Maximilian"
-   }
-  ]
- },
- {
   "id": "rm4607134",
   "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER",
   "date": "2026-08-09",
@@ -293,10 +275,6 @@
   "format": "mexicano",
   "players": [
    {
-    "id": "u385433",
-    "name": "Pijeh"
-   },
-   {
     "id": "u341047",
     "name": "Sherlyta"
    },
@@ -459,10 +437,6 @@
   "venue": "Tambuhak Padel Garden",
   "format": "mexicano",
   "players": [
-   {
-    "id": "u385433",
-    "name": "Pijeh"
-   },
    {
     "id": "u341047",
     "name": "Sherlyta"
