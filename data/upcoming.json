@@ -78,7 +78,16 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
-  "players": []
+  "players": [
+   {
+    "id": "u453248",
+    "name": "Tina"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4298580",
