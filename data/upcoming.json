@@ -1,19 +1,5 @@
 [
  {
-  "id": "rm4503989",
-  "name": "70K NPC SLAY LADIES MEXICANO UPPER BEG-INTERMEDIATE",
-  "date": "2026-08-10",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "mexicano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
   "id": "rm4298480",
   "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
   "date": "2026-08-10",
@@ -92,16 +78,7 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
-  "players": [
-   {
-    "id": "u453248",
-    "name": "Tina"
-   },
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
+  "players": []
  },
  {
   "id": "rm4298580",
