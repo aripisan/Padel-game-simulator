@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm4766266",
-  "name": "PC NANDA",
-  "date": "2026-08-11",
-  "time": "20:00",
-  "venue": "Cherryfield Padel Club",
-  "format": null,
-  "players": [
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   },
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   }
-  ]
- },
- {
   "id": "rm4500837",
   "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
   "date": "2026-08-12",
@@ -253,7 +235,12 @@
   "time": "14:00",
   "venue": "H2O Padel Club Bandung",
   "format": "americano",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4607148",
@@ -416,7 +403,12 @@
   "time": "14:00",
   "venue": "H2O Padel Club Bandung",
   "format": "americano",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4607149",
