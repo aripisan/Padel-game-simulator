@@ -1,14 +1,5 @@
 [
  {
-  "id": "rm4734585",
-  "name": "NPC CLASS by SUBHAN - CONTROL & RALLY",
-  "date": "2026-08-11",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm4607129",
   "name": "NPC goes to KBP MABAR BARBAR MEN",
   "date": "2026-08-11",
@@ -32,6 +23,24 @@
    {
     "id": "u341047",
     "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm4766266",
+  "name": "PC NANDA",
+  "date": "2026-08-11",
+  "time": "20:00",
+  "venue": "Cherryfield Padel Club",
+  "format": null,
+  "players": [
+   {
+    "id": "u406311",
+    "name": "Ananda Ari R"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
    }
   ]
  },
