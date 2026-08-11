@@ -90,48 +90,7 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": [
-   {
-    "id": "u385433",
-    "name": "Pijeh"
-   },
-   {
-    "id": "u463264",
-    "name": "cherry"
-   },
-   {
-    "id": "u694069",
-    "name": "CC"
-   },
-   {
-    "id": "u463197",
-    "name": "Cindy Cimon"
-   },
-   {
-    "id": "u647801",
-    "name": "Evelyna"
-   },
-   {
-    "id": "u517219",
-    "name": "YeGuo"
-   },
-   {
-    "id": "u710604",
-    "name": "Michelle Yang"
-   },
-   {
-    "id": "u503607",
-    "name": "Nita Sofiani"
-   },
-   {
-    "id": "u335243",
-    "name": "Maria Kornelius"
-   },
-   {
-    "id": "u517746",
-    "name": "Fris"
-   }
-  ]
+  "players": []
  },
  {
   "id": "rm4602220",
