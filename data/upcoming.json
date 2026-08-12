@@ -1,31 +1,19 @@
 [
  {
-  "id": "rm4298535",
-  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
+  "id": "rm4781681",
+  "name": "PC SUBHAN",
   "date": "2026-08-12",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
+  "time": "11:00",
+  "venue": "Padela",
+  "format": null,
   "players": [
    {
-    "id": "u453248",
-    "name": "Tina"
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
    },
    {
-    "id": "u516074",
-    "name": "Marchela"
-   },
-   {
-    "id": "u105719",
-    "name": "Petra Aldila"
-   },
-   {
-    "id": "u406310",
-    "name": "Laura"
-   },
-   {
-    "id": "u939637",
-    "name": "HERA"
+    "id": "u634897",
+    "name": "Subhan"
    }
   ]
  },
@@ -261,6 +249,15 @@
   ]
  },
  {
+  "id": "rm4780410",
+  "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
+  "date": "2026-08-19",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm4298537",
   "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
   "date": "2026-08-19",
@@ -427,6 +424,15 @@
     "name": "Alvin Tojid"
    }
   ]
+ },
+ {
+  "id": "rm4780408",
+  "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
+  "date": "2026-08-26",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
  },
  {
   "id": "rm4298538",
