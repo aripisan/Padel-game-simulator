@@ -1,32 +1,5 @@
 [
  {
-  "id": "rm4781681",
-  "name": "PC SUBHAN",
-  "date": "2026-08-12",
-  "time": "11:00",
-  "venue": "Padela",
-  "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u634897",
-    "name": "Subhan"
-   }
-  ]
- },
- {
-  "id": "rm4298580",
-  "name": "NPC (50k only) LADIES BEGINNER SESSION",
-  "date": "2026-08-12",
-  "time": "12:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm4734582",
   "name": "NPC CLASS by SUBHAN - BACKWALL & SIDEWALL",
   "date": "2026-08-12",
