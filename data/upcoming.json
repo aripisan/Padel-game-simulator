@@ -1,14 +1,5 @@
 [
  {
-  "id": "rm4677004",
-  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
-  "date": "2026-08-13",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm4734579",
   "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Subhan",
   "date": "2026-08-13",
@@ -37,10 +28,6 @@
    {
     "id": "u385433",
     "name": "Pijeh"
-   },
-   {
-    "id": "u463264",
-    "name": "cherry"
    },
    {
     "id": "u694069",
@@ -73,6 +60,10 @@
    {
     "id": "u517746",
     "name": "Fris"
+   },
+   {
+    "id": "u471675",
+    "name": "Lina wang"
    }
   ]
  },
