@@ -1,55 +1,5 @@
 [
  {
-  "id": "rm4298546",
-  "name": "NPC SLAY LADIES QUEEN OF THE CRAB",
-  "date": "2026-08-14",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u385433",
-    "name": "Pijeh"
-   },
-   {
-    "id": "u694069",
-    "name": "CC"
-   },
-   {
-    "id": "u463197",
-    "name": "Cindy Cimon"
-   },
-   {
-    "id": "u647801",
-    "name": "Evelyna"
-   },
-   {
-    "id": "u517219",
-    "name": "YeGuo"
-   },
-   {
-    "id": "u710604",
-    "name": "Michelle Yang"
-   },
-   {
-    "id": "u503607",
-    "name": "Nita Sofiani"
-   },
-   {
-    "id": "u335243",
-    "name": "Maria Kornelius"
-   },
-   {
-    "id": "u517746",
-    "name": "Fris"
-   },
-   {
-    "id": "u471675",
-    "name": "Lina wang"
-   }
-  ]
- },
- {
   "id": "rm4602220",
   "name": "NPC (50k) MABAR MEN BEGINNER",
   "date": "2026-08-14",
@@ -62,7 +12,7 @@
   "id": "rm4734569",
   "name": "NPC CLASS by SUBHAN - DEFENSE & ATTACK",
   "date": "2026-08-14",
-  "time": "14:00",
+  "time": "13:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
@@ -133,12 +83,7 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "mexicano",
-  "players": [
-   {
-    "id": "u385433",
-    "name": "Pijeh"
-   }
-  ]
+  "players": []
  },
  {
   "id": "rm4298482",
