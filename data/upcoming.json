@@ -37,6 +37,24 @@
   ]
  },
  {
+  "id": "rm4851026",
+  "name": "PC SUBHAN",
+  "date": "2026-08-17",
+  "time": "15:00",
+  "venue": "Pala Padel Club",
+  "format": null,
+  "players": [
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   },
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   }
+  ]
+ },
+ {
   "id": "rm4607148",
   "name": "NPC goes to KBP MABAR BARBAR MEN",
   "date": "2026-08-18",
