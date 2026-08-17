@@ -1,19 +1,5 @@
 [
  {
-  "id": "rm4503996",
-  "name": "70K NPC SLAY LADIES MEXICANO UPPER BEG-INTERMEDIATE",
-  "date": "2026-08-17",
-  "time": "10:00",
-  "venue": "The Lob Padelhaus | Bandung",
-  "format": "mexicano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
   "id": "rm4851026",
   "name": "PC SUBHAN",
   "date": "2026-08-17",
@@ -42,6 +28,10 @@
    {
     "id": "u341047",
     "name": "Sherlyta"
+   },
+   {
+    "id": "u1349577",
+    "name": "Ayu"
    }
   ]
  },
