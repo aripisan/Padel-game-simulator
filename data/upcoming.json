@@ -15,12 +15,7 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
+  "players": []
  },
  {
   "id": "rm4298581",
@@ -56,12 +51,7 @@
   "time": "13:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": [
-   {
-    "id": "u634897",
-    "name": "Subhan"
-   }
-  ]
+  "players": []
  },
  {
   "id": "rm4693179",
@@ -109,7 +99,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "Sherlyta"
+    "name": "user_341047"
    }
   ]
  },
@@ -123,7 +113,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "Sherlyta"
+    "name": "user_341047"
    }
   ]
  },
@@ -146,11 +136,11 @@
   "players": [
    {
     "id": "u341047",
-    "name": "Sherlyta"
+    "name": "user_341047"
    },
    {
     "id": "u385415",
-    "name": "user_385415"
+    "name": "Alvin Tojid"
    }
   ]
  },
@@ -173,7 +163,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "Sherlyta"
+    "name": "user_341047"
    }
   ]
  },
@@ -211,20 +201,7 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": [
-   {
-    "id": "u385415",
-    "name": "user_385415"
-   },
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   },
-   {
-    "id": "u388145",
-    "name": "Shaun"
-   }
-  ]
+  "players": []
  },
  {
   "id": "rm4848251",
@@ -245,7 +222,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "Sherlyta"
+    "name": "user_341047"
    }
   ]
  },
@@ -256,16 +233,7 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": [
-   {
-    "id": "u385415",
-    "name": "user_385415"
-   },
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
+  "players": []
  },
  {
   "id": "rm4848237",
@@ -286,7 +254,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "Sherlyta"
+    "name": "user_341047"
    }
   ]
  },
@@ -336,7 +304,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "Sherlyta"
+    "name": "user_341047"
    }
   ]
  },
@@ -350,11 +318,11 @@
   "players": [
    {
     "id": "u341047",
-    "name": "Sherlyta"
+    "name": "user_341047"
    },
    {
     "id": "u385415",
-    "name": "user_385415"
+    "name": "Alvin Tojid"
    }
   ]
  },
@@ -374,12 +342,7 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
+  "players": []
  },
  {
   "id": "rm4848207",
@@ -418,7 +381,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "Sherlyta"
+    "name": "user_341047"
    }
   ]
  },
@@ -432,11 +395,11 @@
   "players": [
    {
     "id": "u341047",
-    "name": "Sherlyta"
+    "name": "user_341047"
    },
    {
     "id": "u385415",
-    "name": "user_385415"
+    "name": "Alvin Tojid"
    }
   ]
  },
@@ -459,7 +422,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "Sherlyta"
+    "name": "user_341047"
    }
   ]
  },
@@ -488,12 +451,7 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "mexicano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
+  "players": []
  },
  {
   "id": "rm4848213",
@@ -505,11 +463,11 @@
   "players": [
    {
     "id": "u341047",
-    "name": "Sherlyta"
+    "name": "user_341047"
    },
    {
     "id": "u385415",
-    "name": "user_385415"
+    "name": "Alvin Tojid"
    }
   ]
  },
@@ -532,7 +490,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "Sherlyta"
+    "name": "user_341047"
    }
   ]
  },
@@ -561,7 +519,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "mexicano",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "user_341047"
+   }
+  ]
  },
  {
   "id": "rm4848214",
@@ -570,7 +533,16 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   },
+   {
+    "id": "u341047",
+    "name": "user_341047"
+   }
+  ]
  },
  {
   "id": "rm4848245",
