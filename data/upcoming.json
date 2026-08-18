@@ -1,41 +1,5 @@
 [
  {
-  "id": "rm4789100",
-  "name": "PC NANDA",
-  "date": "2026-08-18",
-  "time": "19:00",
-  "venue": "Court 1977",
-  "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u1297357",
-    "name": "Debora"
-   }
-  ]
- },
- {
-  "id": "rm4298573",
-  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
-  "date": "2026-08-18",
-  "time": "19:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u385415",
-    "name": "Alvin Tojid"
-   },
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
   "id": "rm4780410",
   "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
   "date": "2026-08-19",
@@ -68,10 +32,28 @@
   "players": []
  },
  {
+  "id": "rm4890028",
+  "name": "NPC CLASS by SUBHAN - BACKWALL & SIDEWALL",
+  "date": "2026-08-19",
+  "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm4677005",
   "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
   "date": "2026-08-20",
   "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm4890023",
+  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Subhan",
+  "date": "2026-08-20",
+  "time": "13:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
@@ -95,10 +77,10 @@
   "players": []
  },
  {
-  "id": "rm4602221",
-  "name": "NPC (50k) MABAR MEN BEGINNER",
+  "id": "rm4890011",
+  "name": "NPC CLASS by SUBHAN - DEFENSE & ATTACK",
   "date": "2026-08-21",
-  "time": "12:00",
+  "time": "13:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
@@ -215,15 +197,6 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
- },
- {
-  "id": "rm4602223",
-  "name": "NPC (50k) MABAR MEN BEGINNER",
-  "date": "2026-08-28",
-  "time": "12:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
   "players": []
  },
  {
