@@ -1,19 +1,5 @@
 [
  {
-  "id": "rm4298537",
-  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
-  "date": "2026-08-19",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
   "id": "rm4298581",
   "name": "NPC (50k only) LADIES BEGINNER SESSION",
   "date": "2026-08-19",
@@ -65,7 +51,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4890011",
@@ -415,7 +406,16 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   }
+  ]
  },
  {
   "id": "rm4848243",
