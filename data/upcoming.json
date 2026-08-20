@@ -6,7 +6,12 @@
   "time": "07:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u775104",
+    "name": "Santi Su"
+   }
+  ]
  },
  {
   "id": "rm4917906",
@@ -18,11 +23,11 @@
   "players": [
    {
     "id": "u422677",
-    "name": "Nonstop Padel Club"
+    "name": "user_422677"
    },
    {
     "id": "u634897",
-    "name": "user_634897"
+    "name": "Subhan"
    }
   ]
  },
@@ -51,7 +56,16 @@
   "time": "07:00",
   "venue": "Main court bandung",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u422677",
+    "name": "user_422677"
+   },
+   {
+    "id": "u406311",
+    "name": "user_406311"
+   }
+  ]
  },
  {
   "id": "rm4910178",
@@ -60,7 +74,16 @@
   "time": "08:00",
   "venue": "Vivaldi Padel",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u406311",
+    "name": "user_406311"
+   },
+   {
+    "id": "u1254569",
+    "name": "Fransisca inne"
+   }
+  ]
  },
  {
   "id": "rm4848250",
@@ -81,7 +104,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "user_341047"
+    "name": "Sherlyta"
    }
   ]
  },
@@ -95,7 +118,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "user_341047"
+    "name": "Sherlyta"
    }
   ]
  },
@@ -106,16 +129,7 @@
   "time": "07:00",
   "venue": "Pala Padel Club",
   "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u491342",
-    "name": "Gita"
-   }
-  ]
+  "players": []
  },
  {
   "id": "rm4607149",
@@ -133,7 +147,16 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u385415",
+    "name": "user_385415"
+   }
+  ]
  },
  {
   "id": "rm4780408",
@@ -154,7 +177,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "user_341047"
+    "name": "Sherlyta"
    }
   ]
  },
@@ -213,7 +236,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "user_341047"
+    "name": "Sherlyta"
    }
   ]
  },
@@ -224,7 +247,16 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u385415",
+    "name": "user_385415"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4848237",
@@ -245,7 +277,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "user_341047"
+    "name": "Sherlyta"
    }
   ]
  },
@@ -295,7 +327,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "user_341047"
+    "name": "Sherlyta"
    }
   ]
  },
@@ -309,11 +341,11 @@
   "players": [
    {
     "id": "u341047",
-    "name": "user_341047"
+    "name": "Sherlyta"
    },
    {
     "id": "u385415",
-    "name": "Alvin Tojid"
+    "name": "user_385415"
    }
   ]
  },
@@ -336,7 +368,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "user_341047"
+    "name": "Sherlyta"
    }
   ]
  },
@@ -377,7 +409,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "user_341047"
+    "name": "Sherlyta"
    }
   ]
  },
@@ -391,11 +423,11 @@
   "players": [
    {
     "id": "u341047",
-    "name": "user_341047"
+    "name": "Sherlyta"
    },
    {
     "id": "u385415",
-    "name": "Alvin Tojid"
+    "name": "user_385415"
    }
   ]
  },
@@ -418,7 +450,7 @@
   "players": [
    {
     "id": "u341047",
-    "name": "user_341047"
+    "name": "Sherlyta"
    }
   ]
  },
@@ -447,12 +479,7 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "mexicano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "user_341047"
-   }
-  ]
+  "players": []
  },
  {
   "id": "rm4848213",
@@ -464,11 +491,11 @@
   "players": [
    {
     "id": "u341047",
-    "name": "user_341047"
+    "name": "Sherlyta"
    },
    {
     "id": "u385415",
-    "name": "Alvin Tojid"
+    "name": "user_385415"
    }
   ]
  },
@@ -488,12 +515,7 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "user_341047"
-   }
-  ]
+  "players": []
  },
  {
   "id": "rm4848230",
@@ -520,7 +542,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "mexicano",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4848214",
@@ -532,11 +559,11 @@
   "players": [
    {
     "id": "u385415",
-    "name": "Alvin Tojid"
+    "name": "user_385415"
    },
    {
     "id": "u341047",
-    "name": "user_341047"
+    "name": "Sherlyta"
    }
   ]
  },
