@@ -23,7 +23,7 @@
   "players": [
    {
     "id": "u422677",
-    "name": "user_422677"
+    "name": "Nonstop Padel Club"
    },
    {
     "id": "u634897",
@@ -38,7 +38,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4890011",
@@ -59,11 +64,11 @@
   "players": [
    {
     "id": "u422677",
-    "name": "user_422677"
+    "name": "Nonstop Padel Club"
    },
    {
     "id": "u406311",
-    "name": "user_406311"
+    "name": "Ananda Ari R"
    }
   ]
  },
@@ -77,7 +82,7 @@
   "players": [
    {
     "id": "u406311",
-    "name": "user_406311"
+    "name": "Ananda Ari R"
    },
    {
     "id": "u1254569",
@@ -129,7 +134,16 @@
   "time": "07:00",
   "venue": "Pala Padel Club",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   },
+   {
+    "id": "u491342",
+    "name": "Gita"
+   }
+  ]
  },
  {
   "id": "rm4607149",
@@ -154,7 +168,7 @@
    },
    {
     "id": "u385415",
-    "name": "user_385415"
+    "name": "Alvin Tojid"
    }
   ]
  },
@@ -215,7 +229,20 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u385415",
+    "name": "Alvin Tojid"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u388145",
+    "name": "Shaun"
+   }
+  ]
  },
  {
   "id": "rm4848251",
@@ -250,7 +277,7 @@
   "players": [
    {
     "id": "u385415",
-    "name": "user_385415"
+    "name": "Alvin Tojid"
    },
    {
     "id": "u341047",
@@ -345,7 +372,7 @@
    },
    {
     "id": "u385415",
-    "name": "user_385415"
+    "name": "Alvin Tojid"
    }
   ]
  },
@@ -427,7 +454,7 @@
    },
    {
     "id": "u385415",
-    "name": "user_385415"
+    "name": "Alvin Tojid"
    }
   ]
  },
@@ -479,7 +506,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "mexicano",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4848213",
@@ -495,7 +527,7 @@
    },
    {
     "id": "u385415",
-    "name": "user_385415"
+    "name": "Alvin Tojid"
    }
   ]
  },
@@ -515,7 +547,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "americano",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4848230",
@@ -559,7 +596,7 @@
   "players": [
    {
     "id": "u385415",
-    "name": "user_385415"
+    "name": "Alvin Tojid"
    },
    {
     "id": "u341047",
