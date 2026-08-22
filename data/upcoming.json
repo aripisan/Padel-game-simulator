@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm4907217",
-  "name": "PC NANDA",
-  "date": "2026-08-22",
-  "time": "07:00",
-  "venue": "Main court bandung",
-  "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   }
-  ]
- },
- {
   "id": "rm4910178",
   "name": "PC NANDA",
   "date": "2026-08-23",
