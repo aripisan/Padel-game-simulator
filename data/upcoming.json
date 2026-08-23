@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm4910178",
-  "name": "PC NANDA",
-  "date": "2026-08-23",
-  "time": "08:00",
-  "venue": "Vivaldi Padel",
-  "format": null,
-  "players": [
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   },
-   {
-    "id": "u1254569",
-    "name": "Fransisca inne"
-   }
-  ]
- },
- {
   "id": "rm4956928",
   "name": "PC NANDA",
   "date": "2026-08-23",
