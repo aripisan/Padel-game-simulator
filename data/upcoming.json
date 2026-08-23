@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm4956928",
-  "name": "PC NANDA",
-  "date": "2026-08-23",
-  "time": "10:00",
-  "venue": "My Padel Club",
-  "format": null,
-  "players": [
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   },
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   }
-  ]
- },
- {
   "id": "rm4944516",
   "name": "Fun match",
   "date": "2026-08-23",
