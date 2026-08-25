@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm4907189",
-  "name": "PC NANDA",
-  "date": "2026-08-25",
-  "time": "07:00",
-  "venue": "Pala Padel Club",
-  "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u491342",
-    "name": "Gita"
-   }
-  ]
- },
- {
   "id": "rm4961111",
   "name": "NPC CLASS by SUBHAN - CONTROL & RALLY",
   "date": "2026-08-25",
