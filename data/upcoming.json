@@ -1,14 +1,5 @@
 [
  {
-  "id": "rm4961089",
-  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Subhan",
-  "date": "2026-08-27",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm4848223",
   "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
   "date": "2026-08-28",
@@ -24,7 +15,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4961082",
@@ -55,7 +51,7 @@
  },
  {
   "id": "rm4298556",
-  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
+  "name": "NPC CASABLANCA DOME SEPADEL SEMATI FIXED MIXED PARTNER min. upper begi",
   "date": "2026-08-28",
   "time": "19:00",
   "venue": "The Casablanca Dome",
@@ -158,20 +154,6 @@
   "players": []
  },
  {
-  "id": "rm4848178",
-  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
-  "date": "2026-09-02",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
   "id": "rm4848206",
   "name": "NPC NEWBIE & BEGINNER SESSION",
   "date": "2026-09-02",
@@ -187,15 +169,6 @@
   "time": "07:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
- },
- {
-  "id": "rm4848194",
-  "name": "70K NPC SLAY LADIES FIXED PARTNER UPPER BEG-INTERMEDIATE",
-  "date": "2026-09-04",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
   "players": []
  },
  {
@@ -263,20 +236,6 @@
   "players": []
  },
  {
-  "id": "rm4848179",
-  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
-  "date": "2026-09-09",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
   "id": "rm4848207",
   "name": "NPC NEWBIE & BEGINNER SESSION",
   "date": "2026-09-09",
@@ -301,7 +260,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4848189",
@@ -345,20 +309,6 @@
   "players": []
  },
  {
-  "id": "rm4848181",
-  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
-  "date": "2026-09-16",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
   "id": "rm4848228",
   "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
   "date": "2026-09-18",
@@ -374,7 +324,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4848190",
@@ -418,20 +373,6 @@
   "players": []
  },
  {
-  "id": "rm4848182",
-  "name": "NPC SLAY LADIES AMERICANO UPPER BEGINNER - INTERMEDIATE",
-  "date": "2026-09-23",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
   "id": "rm4848230",
   "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
   "date": "2026-09-25",
@@ -447,7 +388,12 @@
   "time": "10:00",
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
-  "players": []
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  },
  {
   "id": "rm4848191",
