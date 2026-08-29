@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm5065418",
-  "name": "PC NANDA",
-  "date": "2026-08-29",
-  "time": "17:00",
-  "venue": "Vivaldi Padel",
-  "format": null,
-  "players": [
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   },
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   }
-  ]
- },
- {
   "id": "rm4848251",
   "name": "NPC COACHING CLASS - PADEL BASIC STROKES by Coach Nanda",
   "date": "2026-08-31",
