@@ -1,32 +1,5 @@
 [
  {
-  "id": "rm4848251",
-  "name": "NPC COACHING CLASS - PADEL BASIC STROKES by Coach Nanda",
-  "date": "2026-08-31",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm5110222",
-  "name": "PC MIKE",
-  "date": "2026-08-31",
-  "time": "08:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u350469",
-    "name": "Mike"
-   },
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   }
-  ]
- },
- {
   "id": "rm4504005",
   "name": "70K NPC SLAY LADIES MEXICANO UPPER BEG-INTERMEDIATE",
   "date": "2026-08-31",
@@ -55,8 +28,8 @@
   ]
  },
  {
-  "id": "rm5109542",
-  "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
+  "id": "rm5109663",
+  "name": "NPC COACHING CLASS - PADEL BASIC STROKES by Coach Subhan",
   "date": "2026-08-31",
   "time": "13:00",
   "venue": "Tambuhak Padel Garden",
@@ -64,8 +37,8 @@
   "players": []
  },
  {
-  "id": "rm5109663",
-  "name": "NPC COACHING CLASS - PADEL BASIC STROKES by Coach Subhan",
+  "id": "rm5109542",
+  "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
   "date": "2026-08-31",
   "time": "13:00",
   "venue": "Tambuhak Padel Garden",
@@ -91,8 +64,8 @@
   ]
  },
  {
-  "id": "rm5109621",
-  "name": "NPC CLASS by SUBHAN - CONTROL & RALLY",
+  "id": "rm5109629",
+  "name": "NPC COACHING CLASS PADEL BACKWALL & SIDEWALL CLASS by Coach Subhan",
   "date": "2026-09-01",
   "time": "13:00",
   "venue": "Tambuhak Padel Garden",
@@ -100,8 +73,8 @@
   "players": []
  },
  {
-  "id": "rm5109629",
-  "name": "NPC COACHING CLASS PADEL BACKWALL & SIDEWALL CLASS by Coach Subhan",
+  "id": "rm5109621",
+  "name": "NPC CLASS by SUBHAN - CONTROL & RALLY",
   "date": "2026-09-01",
   "time": "13:00",
   "venue": "Tambuhak Padel Garden",
