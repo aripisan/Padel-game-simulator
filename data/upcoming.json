@@ -1,51 +1,5 @@
 [
  {
-  "id": "rm4504005",
-  "name": "70K NPC SLAY LADIES MEXICANO UPPER BEG-INTERMEDIATE",
-  "date": "2026-08-31",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "mexicano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
-  "id": "rm4993817",
-  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
-  "date": "2026-08-31",
-  "time": "12:00",
-  "venue": "H2O Padel Club Bandung",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
-  "id": "rm5109663",
-  "name": "NPC COACHING CLASS - PADEL BASIC STROKES by Coach Subhan",
-  "date": "2026-08-31",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm5109542",
-  "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
-  "date": "2026-08-31",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm4957646",
   "name": "PC SUBHAN",
   "date": "2026-08-31",
@@ -64,8 +18,8 @@
   ]
  },
  {
-  "id": "rm5109629",
-  "name": "NPC COACHING CLASS PADEL BACKWALL & SIDEWALL CLASS by Coach Subhan",
+  "id": "rm5109621",
+  "name": "NPC CLASS by SUBHAN - CONTROL & RALLY",
   "date": "2026-09-01",
   "time": "13:00",
   "venue": "Tambuhak Padel Garden",
@@ -73,8 +27,8 @@
   "players": []
  },
  {
-  "id": "rm5109621",
-  "name": "NPC CLASS by SUBHAN - CONTROL & RALLY",
+  "id": "rm5109629",
+  "name": "NPC COACHING CLASS PADEL BACKWALL & SIDEWALL CLASS by Coach Subhan",
   "date": "2026-09-01",
   "time": "13:00",
   "venue": "Tambuhak Padel Garden",
