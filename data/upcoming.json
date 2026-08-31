@@ -18,15 +18,6 @@
   ]
  },
  {
-  "id": "rm5109629",
-  "name": "NPC COACHING CLASS PADEL BACKWALL & SIDEWALL CLASS by Coach Subhan",
-  "date": "2026-09-01",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm5109621",
   "name": "NPC CLASS by SUBHAN - CONTROL & RALLY",
   "date": "2026-09-01",
@@ -36,22 +27,13 @@
   "players": []
  },
  {
-  "id": "rm4848208",
-  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
+  "id": "rm5109629",
+  "name": "NPC COACHING CLASS PADEL BACKWALL & SIDEWALL CLASS by Coach Subhan",
   "date": "2026-09-01",
-  "time": "19:00",
+  "time": "13:00",
   "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u385415",
-    "name": "Alvin Tojid"
-   },
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
+  "format": null,
+  "players": []
  },
  {
   "id": "rm4848237",
@@ -125,6 +107,14 @@
   "format": "fixed",
   "players": [
    {
+    "id": "u440986",
+    "name": "Ryan van Rooijen"
+   },
+   {
+    "id": "u452947",
+    "name": "Ranny"
+   },
+   {
     "id": "u341047",
     "name": "Sherlyta"
    },
@@ -188,24 +178,6 @@
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
- },
- {
-  "id": "rm4848210",
-  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
-  "date": "2026-09-08",
-  "time": "19:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   },
-   {
-    "id": "u385415",
-    "name": "Alvin Tojid"
-   }
-  ]
  },
  {
   "id": "rm4848241",
@@ -290,24 +262,6 @@
   ]
  },
  {
-  "id": "rm4848211",
-  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
-  "date": "2026-09-15",
-  "time": "19:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   },
-   {
-    "id": "u385415",
-    "name": "Alvin Tojid"
-   }
-  ]
- },
- {
   "id": "rm4848243",
   "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
   "date": "2026-09-16",
@@ -354,24 +308,6 @@
   ]
  },
  {
-  "id": "rm4848213",
-  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
-  "date": "2026-09-22",
-  "time": "19:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   },
-   {
-    "id": "u385415",
-    "name": "Alvin Tojid"
-   }
-  ]
- },
- {
   "id": "rm4848244",
   "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
   "date": "2026-09-23",
@@ -411,24 +347,6 @@
   "venue": "Tambuhak Padel Garden",
   "format": "mexicano",
   "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
-  "id": "rm4848214",
-  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
-  "date": "2026-09-29",
-  "time": "19:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u385415",
-    "name": "Alvin Tojid"
-   },
    {
     "id": "u341047",
     "name": "Sherlyta"
