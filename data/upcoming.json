@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm5138562",
-  "name": "PC NANDA",
-  "date": "2026-09-03",
-  "time": "18:00",
-  "venue": "Court 1977",
-  "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   }
-  ]
- },
- {
   "id": "rm4848224",
   "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
   "date": "2026-09-04",
