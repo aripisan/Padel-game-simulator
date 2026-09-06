@@ -6,7 +6,12 @@
   "time": "07:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u773185",
+    "name": "Tiya33"
+   }
+  ]
  },
  {
   "id": "rm4848186",
@@ -109,8 +114,8 @@
   "players": []
  },
  {
-  "id": "rm5216429",
-  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Subhan",
+  "id": "rm5216530",
+  "name": "NPC COACHING CLASS PADEL VOLLEY & OVERHEAD CLASS by Coach Subhan",
   "date": "2026-09-10",
   "time": "13:00",
   "venue": "Tambuhak Padel Garden",
@@ -118,8 +123,8 @@
   "players": []
  },
  {
-  "id": "rm5216530",
-  "name": "NPC COACHING CLASS PADEL VOLLEY & OVERHEAD CLASS by Coach Subhan",
+  "id": "rm5216429",
+  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Subhan",
   "date": "2026-09-10",
   "time": "13:00",
   "venue": "Tambuhak Padel Garden",
