@@ -1,14 +1,5 @@
 [
  {
-  "id": "rm5109541",
-  "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
-  "date": "2026-09-07",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm5186915",
   "name": "PC SUBHAN",
   "date": "2026-09-07",
@@ -34,6 +25,24 @@
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
+ },
+ {
+  "id": "rm5253507",
+  "name": "PC MIKE",
+  "date": "2026-09-08",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": [
+   {
+    "id": "u350469",
+    "name": "Mike"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   }
+  ]
  },
  {
   "id": "rm4848241",
@@ -163,6 +172,29 @@
   ]
  },
  {
+  "id": "rm5253348",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-09-14",
+  "time": "12:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm5252165",
+  "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
+  "date": "2026-09-14",
+  "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm4848243",
   "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
   "date": "2026-09-16",
@@ -225,6 +257,29 @@
     "name": "Sherlyta"
    }
   ]
+ },
+ {
+  "id": "rm5253381",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-09-21",
+  "time": "12:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm5252159",
+  "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
+  "date": "2026-09-21",
+  "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
  },
  {
   "id": "rm5186926",
