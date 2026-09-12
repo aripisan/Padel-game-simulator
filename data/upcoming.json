@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm5326052",
-  "name": "PC NANDA",
-  "date": "2026-09-12",
-  "time": "08:00",
-  "venue": "Main court bandung",
-  "format": null,
-  "players": [
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   },
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   }
-  ]
- },
- {
   "id": "rm5326070",
   "name": "PC NANDA",
   "date": "2026-09-12",
@@ -151,7 +133,12 @@
   "time": "19:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u406311",
+    "name": "Ananda Ari R"
+   }
+  ]
  },
  {
   "id": "rm4848243",
