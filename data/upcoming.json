@@ -1,40 +1,21 @@
 [
  {
-  "id": "rm4848189",
-  "name": "70K NPC SLAY LADIES MEXICANO UPPER BEG-INTERMEDIATE",
+  "id": "rm5377500",
+  "name": "PC RYAN",
   "date": "2026-09-14",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "mexicano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
-  "id": "rm5253348",
-  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
-  "date": "2026-09-14",
-  "time": "12:00",
-  "venue": "H2O Padel Club Bandung",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
-  "id": "rm5252165",
-  "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
-  "date": "2026-09-14",
-  "time": "13:00",
+  "time": "16:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   },
+   {
+    "id": "u440986",
+    "name": "Ryan van Rooijen"
+   }
+  ]
  },
  {
   "id": "rm5296845",
