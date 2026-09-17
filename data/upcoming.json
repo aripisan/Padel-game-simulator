@@ -195,15 +195,6 @@
   "players": []
  },
  {
-  "id": "rm5427568",
-  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
-  "date": "2026-09-24",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm5422202",
   "name": "PC NANDA",
   "date": "2026-09-24",
@@ -220,6 +211,24 @@
     "name": "Ananda Ari R"
    }
   ]
+ },
+ {
+  "id": "rm5427568",
+  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
+  "date": "2026-09-24",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm5433220",
+  "name": "NPC COACHING CLASS PADEL VOLLEY & OVERHEAD CLASS by Coach Subhan",
+  "date": "2026-09-24",
+  "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
  },
  {
   "id": "rm4848230",
@@ -299,6 +308,15 @@
   "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
   "date": "2026-10-01",
   "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm5433203",
+  "name": "NPC COACHING CLASS PADEL VOLLEY & OVERHEAD CLASS by Coach Subhan",
+  "date": "2026-10-01",
+  "time": "13:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
