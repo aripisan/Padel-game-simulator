@@ -1,41 +1,5 @@
 [
  {
-  "id": "rm5414327",
-  "name": "PC NANDA",
-  "date": "2026-09-19",
-  "time": "15:00",
-  "venue": "Mandalaloka padel",
-  "format": null,
-  "players": [
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   },
-   {
-    "id": "u1254569",
-    "name": "Fransisca inne"
-   }
-  ]
- },
- {
-  "id": "rm5428987",
-  "name": "PC NANDA",
-  "date": "2026-09-19",
-  "time": "17:00",
-  "venue": "My Padel Club",
-  "format": null,
-  "players": [
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   },
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   }
-  ]
- },
- {
   "id": "rm5414340",
   "name": "PC NANDA",
   "date": "2026-09-20",
