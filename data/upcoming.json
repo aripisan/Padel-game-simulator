@@ -9,24 +9,6 @@
   "players": []
  },
  {
-  "id": "rm4848190",
-  "name": "70K NPC SLAY LADIES MEXICANO UPPER BEG-INTERMEDIATE",
-  "date": "2026-09-21",
-  "time": "10:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "mexicano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   },
-   {
-    "id": "u672838",
-    "name": "Feiliana"
-   }
-  ]
- },
- {
   "id": "rm5253381",
   "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
   "date": "2026-09-21",
@@ -131,6 +113,15 @@
   "players": []
  },
  {
+  "id": "rm5427568",
+  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
+  "date": "2026-09-24",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm5422202",
   "name": "PC NANDA",
   "date": "2026-09-24",
@@ -147,15 +138,6 @@
     "name": "Ananda Ari R"
    }
   ]
- },
- {
-  "id": "rm5427568",
-  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
-  "date": "2026-09-24",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
  },
  {
   "id": "rm5433220",
