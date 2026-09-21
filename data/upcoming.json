@@ -1,42 +1,5 @@
 [
  {
-  "id": "rm5496946",
-  "name": "70K NPC SLAY LADIES MEXICANO UPPER BEG-INTERMEDIATE",
-  "date": "2026-09-21",
-  "time": "09:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "mexicano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
-  "id": "rm5253381",
-  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
-  "date": "2026-09-21",
-  "time": "12:00",
-  "venue": "H2O Padel Club Bandung",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
-  "id": "rm5252159",
-  "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
-  "date": "2026-09-21",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm5186926",
   "name": "PC SUBHAN",
   "date": "2026-09-21",
@@ -236,6 +199,29 @@
   ]
  },
  {
+  "id": "rm5505312",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-09-28",
+  "time": "12:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm5506434",
+  "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
+  "date": "2026-09-28",
+  "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm5296851",
   "name": "PC SUBHAN",
   "date": "2026-09-28",
@@ -297,6 +283,29 @@
     "name": "Sherlyta"
    }
   ]
+ },
+ {
+  "id": "rm5505276",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-10-05",
+  "time": "12:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm5506463",
+  "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
+  "date": "2026-10-05",
+  "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
  },
  {
   "id": "rm5296857",
