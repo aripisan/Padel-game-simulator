@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm5473846",
-  "name": "PC SUBHAN",
-  "date": "2026-09-24",
-  "time": "14:00",
-  "venue": "DPC - Dago Padel Club",
-  "format": null,
-  "players": [
-   {
-    "id": "u634897",
-    "name": "Subhan"
-   },
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   }
-  ]
- },
- {
   "id": "rm4848230",
   "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
   "date": "2026-09-25",
@@ -177,6 +159,10 @@
    {
     "id": "u718553",
     "name": "Cherry W."
+   },
+   {
+    "id": "u780458",
+    "name": "David Danihardja"
    },
    {
     "id": "u385415",
