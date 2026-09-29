@@ -1,14 +1,5 @@
 [
  {
-  "id": "rm5525998",
-  "name": "NPC COACHING CLASS PADEL BACKWALL & SIDEWALL CLASS by Coach Subhan",
-  "date": "2026-09-29",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm5529381",
   "name": "NPC KIDS COACHING with Coach Ryan van Rooijen",
   "date": "2026-09-29",
@@ -102,6 +93,24 @@
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
+ },
+ {
+  "id": "rm5654726",
+  "name": "PC SUBHAN",
+  "date": "2026-10-01",
+  "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": [
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   },
+   {
+    "id": "u634897",
+    "name": "Subhan"
+   }
+  ]
  },
  {
   "id": "rm5433203",
@@ -266,6 +275,15 @@
   "name": "NPC NEWBIE & BEGINNER SESSION",
   "date": "2026-10-07",
   "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm5654702",
+  "name": "NPC COACHING CLASS PADEL VOLLEY & OVERHEAD CLASS by Coach Subhan",
+  "date": "2026-10-07",
+  "time": "13:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
