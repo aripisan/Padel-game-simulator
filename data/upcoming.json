@@ -1,42 +1,5 @@
 [
  {
-  "id": "rm5634871",
-  "name": "70K NPC SLAY LADIES MEXICANO UPPER BEG-INTERMEDIATE",
-  "date": "2026-10-05",
-  "time": "09:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": "mexicano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
-  "id": "rm5505276",
-  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
-  "date": "2026-10-05",
-  "time": "12:00",
-  "venue": "H2O Padel Club Bandung",
-  "format": "americano",
-  "players": [
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   }
-  ]
- },
- {
-  "id": "rm5506463",
-  "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
-  "date": "2026-10-05",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm5296857",
   "name": "PC SUBHAN",
   "date": "2026-10-05",
@@ -196,6 +159,29 @@
   "players": []
  },
  {
+  "id": "rm5774627",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-10-12",
+  "time": "12:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm5776003",
+  "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
+  "date": "2026-10-12",
+  "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm5296865",
   "name": "PC SUBHAN",
   "date": "2026-10-12",
@@ -212,15 +198,6 @@
     "name": "FanFan"
    }
   ]
- },
- {
-  "id": "rm5673838",
-  "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
-  "date": "2026-10-14",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
  },
  {
   "id": "rm5422225",
@@ -241,6 +218,15 @@
   ]
  },
  {
+  "id": "rm5673838",
+  "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
+  "date": "2026-10-14",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm5693661",
   "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
   "date": "2026-10-15",
@@ -253,6 +239,29 @@
   "id": "rm5699685",
   "name": "NPC COACHING CLASS PADEL VOLLEY & OVERHEAD CLASS by Coach Subhan",
   "date": "2026-10-15",
+  "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm5774650",
+  "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
+  "date": "2026-10-19",
+  "time": "12:00",
+  "venue": "H2O Padel Club Bandung",
+  "format": "americano",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
+  "id": "rm5775966",
+  "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
+  "date": "2026-10-19",
   "time": "13:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
