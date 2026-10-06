@@ -1,23 +1,5 @@
 [
  {
-  "id": "rm5525980",
-  "name": "NPC COACHING CLASS PADEL BACKWALL & SIDEWALL CLASS by Coach Subhan",
-  "date": "2026-10-06",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
-  "id": "rm5529374",
-  "name": "NPC KIDS COACHING with Coach Ryan van Rooijen",
-  "date": "2026-10-06",
-  "time": "16:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm5673841",
   "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
   "date": "2026-10-07",
@@ -182,6 +164,15 @@
   ]
  },
  {
+  "id": "rm5796572",
+  "name": "NPC COACHING CLASS PADEL BACKWALL & SIDEWALL CLASS by Coach Subhan",
+  "date": "2026-10-13",
+  "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm5422225",
   "name": "PC NANDA",
   "date": "2026-10-14",
@@ -244,6 +235,15 @@
   "id": "rm5775966",
   "name": "NPC COACHING CLASS PADEL BASIC STROKES with COACH SUBHAN",
   "date": "2026-10-19",
+  "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm5796564",
+  "name": "NPC COACHING CLASS PADEL BACKWALL & SIDEWALL CLASS by Coach Subhan",
+  "date": "2026-10-20",
   "time": "13:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
