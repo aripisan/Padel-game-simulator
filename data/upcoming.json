@@ -33,7 +33,12 @@
   "time": "11:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u453248",
+    "name": "Tina"
+   }
+  ]
  },
  {
   "id": "rm5542857",
