@@ -1,32 +1,5 @@
 [
  {
-  "id": "rm5422220",
-  "name": "PC NANDA",
-  "date": "2026-10-07",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": [
-   {
-    "id": "u406311",
-    "name": "Ananda Ari R"
-   },
-   {
-    "id": "u422677",
-    "name": "Nonstop Padel Club"
-   }
-  ]
- },
- {
-  "id": "rm5673841",
-  "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
-  "date": "2026-10-07",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm5654702",
   "name": "NPC COACHING CLASS PADEL VOLLEY & OVERHEAD CLASS by Coach Subhan",
   "date": "2026-10-07",
@@ -37,6 +10,10 @@
    {
     "id": "u453248",
     "name": "Tina"
+   },
+   {
+    "id": "u2139308",
+    "name": "Victor Mario"
    }
   ]
  },
