@@ -132,6 +132,15 @@
   "players": []
  },
  {
+  "id": "rm5673838",
+  "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
+  "date": "2026-10-14",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm5422225",
   "name": "PC NANDA",
   "date": "2026-10-14",
@@ -148,15 +157,6 @@
     "name": "Nonstop Padel Club"
    }
   ]
- },
- {
-  "id": "rm5673838",
-  "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
-  "date": "2026-10-14",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
  },
  {
   "id": "rm5814446",
@@ -234,6 +234,24 @@
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
+ },
+ {
+  "id": "rm5839473",
+  "name": "PC NANDA",
+  "date": "2026-10-21",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": [
+   {
+    "id": "u406311",
+    "name": "Ananda Ari R"
+   },
+   {
+    "id": "u422677",
+    "name": "Nonstop Padel Club"
+   }
+  ]
  },
  {
   "id": "rm5814460",
