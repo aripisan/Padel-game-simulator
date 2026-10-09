@@ -177,6 +177,15 @@
   "players": []
  },
  {
+  "id": "rm5846540",
+  "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
+  "date": "2026-10-16",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm5774650",
   "name": "NPC GOES TO KBP SLAY LADIES Americano 1C2H6P upper beginner++",
   "date": "2026-10-19",
@@ -249,6 +258,15 @@
   "name": "NPC NEWBIE & BEGINNER SESSION",
   "date": "2026-10-21",
   "time": "12:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm5846504",
+  "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
+  "date": "2026-10-23",
+  "time": "07:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
