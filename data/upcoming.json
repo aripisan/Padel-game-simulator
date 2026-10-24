@@ -104,6 +104,20 @@
   "players": []
  },
  {
+  "id": "rm6137254",
+  "name": "70K NPC SLAY LADIES FIXED PARTNER min. UPPER BEG",
+  "date": "2026-10-30",
+  "time": "09:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
   "id": "rm6114688",
   "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
   "date": "2026-10-30",
@@ -170,5 +184,19 @@
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
+ },
+ {
+  "id": "rm6137250",
+  "name": "70K NPC SLAY LADIES FIXED PARTNER min. UPPER BEG",
+  "date": "2026-11-06",
+  "time": "09:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": "fixed",
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
  }
 ]
