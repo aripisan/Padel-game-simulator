@@ -95,6 +95,20 @@
   "players": []
  },
  {
+  "id": "rm6161949",
+  "name": "NPC Mahjong (newbie friendly)",
+  "date": "2026-10-29",
+  "time": "19:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": [
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   }
+  ]
+ },
+ {
   "id": "rm6117206",
   "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
   "date": "2026-10-30",
@@ -165,6 +179,10 @@
   "venue": "Tambuhak Padel Garden",
   "format": "fixed",
   "players": [
+   {
+    "id": "u421983",
+    "name": "Grace"
+   },
    {
     "id": "u341047",
     "name": "Sherlyta"
