@@ -1,14 +1,5 @@
 [
  {
-  "id": "rm6066980",
-  "name": "NPC COACHING CLASS PADEL BACKWALL & SIDEWALL CLASS by Coach Subhan",
-  "date": "2026-10-27",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm5943530",
   "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
   "date": "2026-10-28",
@@ -21,7 +12,7 @@
   "id": "rm6084478",
   "name": "NPC NEWBIE & BEGINNER SESSION",
   "date": "2026-10-28",
-  "time": "12:00",
+  "time": "14:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
@@ -143,6 +134,10 @@
     "name": "Grace"
    },
    {
+    "id": "u817409",
+    "name": "Jessica A"
+   },
+   {
     "id": "u341047",
     "name": "Sherlyta"
    },
@@ -156,7 +151,7 @@
   "id": "rm6084554",
   "name": "NPC NEWBIE & BEGINNER SESSION",
   "date": "2026-11-04",
-  "time": "12:00",
+  "time": "14:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
