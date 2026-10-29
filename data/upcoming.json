@@ -1,14 +1,5 @@
 [
  {
-  "id": "rm5968571",
-  "name": "NPC COACHING CLASS PADEL VOLLEY & OVERHEAD CLASS by Coach Subhan",
-  "date": "2026-10-29",
-  "time": "13:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm6161949",
   "name": "NPC Mahjong (newbie friendly)",
   "date": "2026-10-29",
@@ -152,6 +143,15 @@
   "players": []
  },
  {
+  "id": "rm6242076",
+  "name": "NPC COACHING CLASS PADEL VOLLEY & OVERHEAD CLASS by Coach Subhan",
+  "date": "2026-11-05",
+  "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm6117181",
   "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
   "date": "2026-11-06",
@@ -201,6 +201,15 @@
   "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
   "date": "2026-11-12",
   "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm6242111",
+  "name": "NPC COACHING CLASS PADEL VOLLEY & OVERHEAD CLASS by Coach Subhan",
+  "date": "2026-11-12",
+  "time": "13:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
