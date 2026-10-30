@@ -224,20 +224,20 @@
   "players": []
  },
  {
-  "id": "rm6225225",
-  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER min. upper beginner",
+  "id": "rm6272733",
+  "name": "NPC PLAYTOMIC 2C2H8P",
   "date": "2026-11-13",
-  "time": "19:00",
+  "time": "09:00",
   "venue": "Tambuhak Padel Garden",
-  "format": "fixed",
+  "format": null,
   "players": [
-   {
-    "id": "u385415",
-    "name": "Alvin Tojid"
-   },
    {
     "id": "u341047",
     "name": "Sherlyta"
+   },
+   {
+    "id": "u672838",
+    "name": "Feiliana"
    }
   ]
  }
