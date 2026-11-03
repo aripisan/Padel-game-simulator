@@ -1,31 +1,5 @@
 [
  {
-  "id": "rm6114688",
-  "name": "NPC SEPADEL SEMATI FIXED MIXED PARTNER beginner friendly",
-  "date": "2026-11-03",
-  "time": "19:00",
-  "venue": "The Six Points Club",
-  "format": "fixed",
-  "players": [
-   {
-    "id": "u817409",
-    "name": "Jessica A"
-   },
-   {
-    "id": "u341047",
-    "name": "Sherlyta"
-   },
-   {
-    "id": "u385415",
-    "name": "Alvin Tojid"
-   },
-   {
-    "id": "u817497",
-    "name": "Isaac Silas"
-   }
-  ]
- },
- {
   "id": "rm6216490",
   "name": "NPC COACHING CLASS - PADEL BACKWALL & SIDEWALL by Coach Nanda",
   "date": "2026-11-04",
