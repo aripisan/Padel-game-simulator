@@ -1,14 +1,5 @@
 [
  {
-  "id": "rm6117181",
-  "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
-  "date": "2026-11-06",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm6137250",
   "name": "70K NPC SLAY LADIES FIXED PARTNER min. UPPER BEG",
   "date": "2026-11-06",
@@ -140,6 +131,15 @@
   "players": []
  },
  {
+  "id": "rm6398411",
+  "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
+  "date": "2026-11-13",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm6272733",
   "name": "NPC PLAYTOMIC 2C2H8P",
   "date": "2026-11-13",
@@ -179,6 +179,15 @@
   "name": "NPC COACHING CLASS PADEL BACKWALL & SIDEWALL CLASS by Coach Subhan",
   "date": "2026-11-17",
   "time": "13:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm6398431",
+  "name": "NPC COACHING CLASS DEFENSE AND ATTACK by Coach Nanda",
+  "date": "2026-11-20",
+  "time": "07:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
