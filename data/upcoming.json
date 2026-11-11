@@ -1,14 +1,5 @@
 [
  {
-  "id": "rm6363672",
-  "name": "NPC NEWBIE & BEGINNER SESSION",
-  "date": "2026-11-11",
-  "time": "14:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm6235997",
   "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
   "date": "2026-11-12",
@@ -120,6 +111,15 @@
   "players": []
  },
  {
+  "id": "rm6504882",
+  "name": "NPC NEWBIE & BEGINNER SESSION",
+  "date": "2026-11-18",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm6486635",
   "name": "PC SUBHAN",
   "date": "2026-11-18",
@@ -204,6 +204,15 @@
     "name": "Nonstop Padel Club"
    }
   ]
+ },
+ {
+  "id": "rm6504889",
+  "name": "NPC NEWBIE & BEGINNER SESSION",
+  "date": "2026-11-25",
+  "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
  },
  {
   "id": "rm6486642",
