@@ -1,14 +1,5 @@
 [
  {
-  "id": "rm6235997",
-  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
-  "date": "2026-11-12",
-  "time": "07:00",
-  "venue": "Tambuhak Padel Garden",
-  "format": null,
-  "players": []
- },
- {
   "id": "rm6242111",
   "name": "NPC COACHING CLASS PADEL VOLLEY & OVERHEAD CLASS by Coach Subhan",
   "date": "2026-11-12",
@@ -37,6 +28,10 @@
    {
     "id": "u1921351",
     "name": "Ocha"
+   },
+   {
+    "id": "u766826",
+    "name": "Bibuuuu"
    },
    {
     "id": "u1217595",
@@ -142,6 +137,15 @@
   ]
  },
  {
+  "id": "rm6516826",
+  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
+  "date": "2026-11-19",
+  "time": "07:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
   "id": "rm6418872",
   "name": "NPC COACHING CLASS PADEL VOLLEY & OVERHEAD CLASS by Coach Subhan",
   "date": "2026-11-19",
@@ -214,6 +218,15 @@
   "name": "NPC NEWBIE & BEGINNER SESSION",
   "date": "2026-11-25",
   "time": "14:00",
+  "venue": "Tambuhak Padel Garden",
+  "format": null,
+  "players": []
+ },
+ {
+  "id": "rm6516801",
+  "name": "NPC COACHING CLASS - VOLLEY & OVERHEAD by Coach Nanda",
+  "date": "2026-11-26",
+  "time": "07:00",
   "venue": "Tambuhak Padel Garden",
   "format": null,
   "players": []
