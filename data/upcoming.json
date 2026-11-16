@@ -83,16 +83,8 @@
     "name": "Alvin Tojid"
    },
    {
-    "id": "u797551",
-    "name": "Adjie"
-   },
-   {
     "id": "u341047",
     "name": "Sherlyta"
-   },
-   {
-    "id": "u766826",
-    "name": "Bibuuuu"
    }
   ]
  },
@@ -139,7 +131,20 @@
   "time": "09:00",
   "venue": "Goat Arena Bandung",
   "format": null,
-  "players": []
+  "players": [
+   {
+    "id": "u766826",
+    "name": "Bibuuuu"
+   },
+   {
+    "id": "u341047",
+    "name": "Sherlyta"
+   },
+   {
+    "id": "u1921351",
+    "name": "Ocha"
+   }
+  ]
  },
  {
   "id": "rm6516801",
